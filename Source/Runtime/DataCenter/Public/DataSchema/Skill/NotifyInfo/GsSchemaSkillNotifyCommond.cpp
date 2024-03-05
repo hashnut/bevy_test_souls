@@ -1,0 +1,11 @@
+﻿/// DO NOT EDIT THIS. This file is an auto generated file. Just use header generator.
+#include "DataSchema/Skill/NotifyInfo/GsSchemaSkillNotifyCommond.h"
+#include "Runtime/CoreUObject/Public/UObject/NoExportTypes.h"
+#include "Runtime/Engine/Classes/EditorFramework/AssetImportData.h"
+#include "Runtime/Engine/Classes/Engine/DataTable.h"
+#include "../Plugins/RSQL/Source/Runtime/Public/DataTable/GsDataTable.h"
+FGsSchemaSkillNotifyCommond::FGsSchemaSkillNotifyCommond()
+{
+	SET_ALL_PROPERTIES_FROM_ASSETSCHEMA_DEFAULT(FGsSchemaSkillNotifyCommond)
+	
+}

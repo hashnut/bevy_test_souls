@@ -1,0 +1,1505 @@
+﻿#pragma once
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Do not modify this file because it was generated automatically
+// SharedMqMsgEnumClient.h
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Enums
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+UENUM()
+// 메세지 큐 메세지 타입
+enum class MqMsgType : uint16
+{
+
+	// 운영 공지사항 등록
+	GM_NOTICE_REGISTER = 0,
+
+	// 운영 공지사항 삭제
+	GM_NOTICE_DELETE = 1,
+
+	// 운영자 치트
+	GM_ADMIN_COMMAND = 2,
+
+	// 유저 강제퇴장
+	GM_KICK_USER = 3,
+
+	// 유저 밸런스를 위해서 스텟 변경
+	GM_USER_QA_STAT = 4,
+
+	// 유저 근처에 몬스터 소환
+	GM_USER_SPAWN_NPC = 5,
+
+	// 서버 점검 시작
+	GM_START_SERVER_MAINTENANCE = 6,
+
+	// 서버 점검 끝
+	GM_END_SERVER_MAINTENANCE = 7,
+
+	// 유저 차단
+	GM_BLOCK_USER = 8,
+
+	// 유저 차단 해제
+	GM_UNBLOCK_USER = 9,
+
+	// 계정 등급을 변경 
+	GM_ACCOUNT_GRADE = 10,
+
+	// 유저 데이터 기본 데이터 변경 
+	GM_USER_BASIC_DATA_SAVE = 11,
+
+	// 유저 인벤토리 확장
+	GM_USER_DATA_INVENTORY_EXTENDED = 12,
+
+	// 유저 데이터를 Fairy 변경 
+	GM_USER_DATA_FAIRY_INSERT = 13,
+
+	// 유저 데이터를 Fairy 삭제 
+	GM_USER_DATA_FAIRY_DELETE = 14,
+
+	// 유저 데이터를 Fairy 변경 
+	GM_USER_DATA_FAIRY_UPDATE = 15,
+
+	// 유저 데이터를 Fairy 소환확정 추가 
+	GM_USER_DATA_FAIRY_CONFIRM_ADD = 16,
+
+	// 유저 데이터를 Fairy Collection 변경 
+	GM_USER_DATA_FAIRY_COLLECTION = 17,
+
+	// 유저 데이터를 QUEST 추가 
+	GM_USER_DATA_QUEST_INSERT = 18,
+
+	// 유저 데이터를 QUEST 변경 
+	GM_USER_DATA_QUEST_UPDATE = 19,
+
+	// 유저 데이터 Main QUEST를 Story의 첫번째 퀘스트로 변경 
+	GM_USER_DATA_QUEST_MAIN_UPDATE_INIT = 20,
+
+	// 유저 데이터 Main QUEST를 Story의 마지막 퀘스트 COMPLETED(보상받을 수 있는 상태) 변경
+	GM_USER_DATA_QUEST_MAIN_UPDATE_LAST_COMPLETED = 21,
+
+	// 유저 데이터 Main QUEST를 Story의 마지막 퀘스트 REWARED(보상받은 상태) 변경
+	GM_USER_DATA_QUEST_MAIN_UPDATE_REWARED = 22,
+
+	// 유저 데이터를 NAME 변경 
+	GM_USER_DATA_NAME = 23,
+
+	// 유저 데이터를  스텟 변경 
+	GM_USER_DATA_STAT = 24,
+
+	// 유저 데이터를 CURRENCY 변경 
+	GM_USER_DATA_CURRENCY = 25,
+
+	// 유저 데이터를 CURRENCY 변경 
+	GM_USER_DATA_SKILL = 26,
+
+	// 대상 유저의 스킬 삭제, 삭제 성공하면 유저는 킥 발생(스킬 슬롯 데이터 정리를 위함)
+	GM_USER_DATA_SKILL_DELETE = 27,
+
+	// 유저 데이터를 ITEM 변경 
+	GM_USER_DATA_ITEM = 28,
+
+	// 유저 데이터를 장착 아이템 변경
+	GM_USER_DATA_EQUIP_ITEM = 29,
+
+	// 유저 데이터를 costume 변경 
+	GM_USER_ADD_COSTUME = 30,
+
+	// 유저 데이터를 costume 변경 
+	GM_USER_UPDATE_COSTUME = 31,
+
+	// 유저 데이터를 칭호 추가
+	GM_USER_DATA_TITLE_INSERT = 32,
+
+	// 유저 데이터를 칭호 변경 
+	GM_USER_DATA_TITLE_UPDATE = 33,
+
+	// 기타 적인 내용 변경 묶어서 처리 할려고 
+	GM_USER_RETURN_TOWN = 34,
+
+	// 우편 추가 (계정 우편 포함)
+	GM_USER_DATA_NEW_MAIL = 35,
+
+	// 유저 데이터를 도감 변경 
+	GM_USER_DATA_MONSTER_KNOWLEDGE = 36,
+
+	// 게임 이벤트 등록
+	GM_GAME_EVENT_REGISTER = 37,
+
+	// 게임 이벤트 삭제
+	GM_GAME_EVENT_DELETE = 38,
+
+	// 채널 추가
+	GM_ADD_CHANNEL = 39,
+
+	// BM 보관함에서 아이템 삭제
+	GM_BM_DEPOT_ITEM_DELETE = 40,
+
+	// 우편함에서 우편 삭제
+	GM_MAIL_DELETE = 41,
+
+	// 서버 최대 인원수 /  대기열 최대 인원수 제한 변경
+	GM_CHANGE_PLAYING_LIMIT = 42,
+
+	// 사용안함
+	GM_CHANGE_WATING_QUEUE_LIMIT = 43,
+
+	// 최대 채널 수 조절
+	GM_MAX_CHANNEL = 44,
+
+	// 채널당 최대 유저 수 조절
+	GM_USER_MAX_PER_CHANNEL = 45,
+
+	// 시스템 우편 등록
+	GM_SYSTEM_MAIL_REGISTER = 46,
+
+	// 시스템 우편 문구 등록
+	GM_SYSTEM_MAIL_STRING_REGISTER = 47,
+
+	// 게이트 서버 상태 제어(입장블럭등)
+	GM_GATEWAY_SEVER_CHANGE_STATUS = 48,
+
+	// 인벤토리 아이템 차감
+	GM_DECREASE_INVENTORYT_ITEM = 49,
+
+	// 인벤토리 아이템 차감
+	GM_DECREASE_DEPOT_ITEM = 50,
+
+	// 게이트 웨이 서버 추가
+	GM_GATEWAY_SEVER_ADD = 51,
+
+	// 게이트 웨이 서버 변경
+	GM_GATEWAY_SEVER_UPDATE = 52,
+
+	// 이벤트 등록(이벤트는 중복하여 등록할 수 없다)
+	GM_CONTENTS_EVENT_ADD = 53,
+
+	// 이벤트 삭제
+	GM_CONTENTS_EVENT_REMOVE = 54,
+
+	// PlayableEvent
+	GM_ACCOUNT_PLAYABLE_EVENT = 55,
+
+	// 오프라인 플레이 정보 변경
+	GM_USER_DATA_OFFLINE_PLAY = 56,
+
+	// 플레이어 상태 정보 가져오기
+	GM_USER_DATA_GET_STATUS = 57,
+
+	// 단체 그룹 메일 전송
+	GM_SEND_GROUP_MAIL = 58,
+
+	// 유저 칭호 장착 변경
+	GM_USER_TITLE_EQUIP = 59,
+
+	// 유저 배틀 패스 레벨 변경
+	GM_USER_BATTLE_PASS_LEVEL_UPDATE = 60,
+
+	// 유저 배틀 패스 추가 보상 활성화/비활성화
+	GM_USER_BATTLE_PASS_ACTIVATE = 61,
+
+	// 기간제 아이템 만료 시간 수정
+	GM_ITEM_EXPIRED_TIME_UPDATE = 62,
+
+	// 유저 배틀 패스 경험치 변경
+	GM_USER_BATTLE_PASS_EXP_UPDATE = 63,
+
+	// 유저 배틀 패스 미션 포인트 삽입
+	GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_ADD = 64,
+
+	// 유저 배틀 패스 미션 포인트 업데이트
+	GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_UPDATE = 65,
+
+	// 유저 업적 추가
+	GM_USER_ACHIEVEMENT_LEVEL_ADD = 66,
+
+	// 유저 업적 레벨 변경
+	GM_USER_ACHIEVEMENT_LEVEL_UPDATE = 67,
+
+	// 유저 업적 포인트 변경
+	GM_USER_ACHIEVEMENT_COMPLETE_POINT_UPDATE = 68,
+
+	// 유저 승급 슬롯 상태 변경
+	GM_USER_MULTI_LEVEL_RANK_SLOT_STATE_UPDATE = 69,
+
+	// 프로필 코멘트 삭제
+	GM_USER_PROFILE_COMMENT_DELETE = 70,
+
+	// 계정 캐시 삭제
+	GM_ACCOUNT_CACHE_DELETE = 71,
+
+	// 아이템 재련 정보(옵션 스탯, 보너스) 삭제
+	GM_ITEM_REFINE_DELETE = 72,
+
+	// 아이템 재련 옵션 삽입
+	GM_ITEM_REFINE_OPTION_INSERT = 73,
+
+	// 아이템 재련 보너스 삽입
+	GM_ITEM_REFINE_BONUS_INSERT = 74,
+
+	// 시스템 우편 삭제
+	GM_SYSTEM_MAIL_DELETE = 75,
+
+	// 계정 랭킹 삭제
+	GM_ACCOUNT_RANK_BLOCK = 76,
+
+	// 아이템 컬렉션 완성
+	GM_USER_ITEM_COLLECTION_CLEAR = 77,
+
+	// 아이템 컬렉션 추가 
+	GM_USER_ITEM_COLLECTION_ADD = 78,
+
+	// 아이템 컬렉션 제거 
+	GM_USER_ITEM_COLLECTION_DELETE = 79,
+
+	// 유저 출석 이벤트 추가
+	GM_USER_ATTENDANCE_ADD = 80,
+
+	// 유저 출석 이벤트 삭제
+	GM_USER_ATTENDANCE_DELETE = 81,
+
+	// 반복퀘스트 삭제
+	GM_USER_DATA_QUEST_REPEAT_DELETE = 82,
+
+	// 의뢰게시판 퀘스트 삭제
+	GM_USER_DATA_QUEST_BOARD_DELETE = 83,
+
+	// 승급 삭제
+	GM_USER_MULTI_LEVEL_RANK_DELETE = 84,
+
+	// 승급 퀘스트 초기화
+	GM_USER_QUEST_MULTI_LEVEL_RANK_RESET = 85,
+
+	// 승급 퀘스트 삭제
+	GM_USER_QUEST_MULTI_LEVEL_RANK_DELETE = 86,
+
+	// 승급 퀘스트 완료
+	GM_USER_QUEST_MULTI_LEVEL_RANK_COMPLETE = 87,
+
+	// 업적 삭제
+	GM_USER_ACHIEVEMENT_DELETE = 88,
+
+	// 대기열 입장제어
+	GM_WORLD_ENTERING_LIMIT = 89,
+
+	// 맵 별 최대 유저 수 제어
+	GM_WORLD_MAP_MAX_USER_COUNT = 90,
+
+	// 맵 별 NPC 스폰 빈도 조정
+	GM_WORLD_MAP_NPC_RESPAWN_RATE = 91,
+
+	// Npc 소셜 모션 빈도 조절
+	GM_WORLD_MAP_NPC_SOCIAL_MOTION_RATE = 92,
+
+	// 기사단 던전 티켓 변경
+	GM_GUILD_DUNGEON_TICKET = 93,
+
+	// 시스템 우편 등록(vid 기반)
+	GM_VID_SYSTEM_MAIL_REGISTER = 94,
+
+	// 계정 복구(새 VID로 교체)
+	GM_VID_NEW_TO_DELETED = 95,
+
+	// 성소 중지
+	GM_SANCTUM_PAUSE = 96,
+
+	// 성소 다시시작
+	GM_SANCTUM_RESUME = 97,
+
+	// 설치된 성소 파괴하기
+	GM_SANCTUM_NEXUS_DESTORY = 98,
+
+	// 강제 캐싱하기
+	GM_ACCOUNT_FORCE_CACHE = 99,
+
+	// Gateway가 시작할 때 모든 랭킹 정보를 RankServer에 요청한다.
+	GR_RANK_LIST = 100,
+
+	// 랭킹 정보 리스트. 랭킹 타입별 랭킹 정보가 들어간다. GR_RANK_LIST 가 오면 모든 랭킹 정보, 이후에는 랭킹 타입별로 해당 주기에 전송한다. 
+	RG_RANK_LIST = 101,
+
+	// 랭킹 정보 리스트 정보 갱신 및 요청
+	GR_RANK_LIST_COMMAND = 102,
+
+	// 운영툴에서 사용할 랭킹 리스트 요청
+	GM_RANK_LIST = 103,
+
+	// 밸런드 데이터 추가
+	BALANCE_SIMULATOR = 150,
+
+	// 유저 데이터 얻기
+	GM_USER_DATA_GET = 151,
+
+	// 몬스터 스텟 변경
+	CHANGE_NPC_STAT = 152,
+
+	// 아이템 사용 활성 / 비활성
+	ITEM_ACTIVATION = 153,
+
+	// 운영 공지 전송
+	GM_NOTICE_SEND = 154,
+
+	// Hive 아이템 처리 요청
+	HG_ITEM = 200,
+
+	// Hive 아이템 처리 응답
+	GH_ITEM = 201,
+
+	// 인터서버 컨텐츠 잠금
+	GM_INTER_SERVER_UNLOCK_CONTENTS_ADD = 248,
+
+	// 인터서버 컨텐츠 잠금 해제
+	GM_INTER_SERVER_UNLOCK_CONTENTS_DELETE = 249,
+
+	// 컨텐츠 잠금(서버별)
+	GM_UNLOCK_CONTENTS_ADD = 250,
+
+	// 컨텐츠 잠금해제(서버별)
+	GM_UNLOCK_CONTENTS_DELETE = 251,
+
+	// 맵 차단
+	GM_UNLOCK_MAP_ADD = 252,
+
+	// 맵 차단해제
+	GM_UNLOCK_MAP_DELETE = 253,
+
+	// 아이템 잠금
+	GM_UNLOCK_ITEM_ADD = 254,
+
+	// 아이템 잠금해제
+	GM_UNLOCK_ITEM_DELETE = 255,
+
+	// 유저 채팅 잠금
+	GM_UNLOCK_CONTENTS_BY_USER_ADD = 256,
+
+	// 유저 채팅 잠금해제
+	GM_UNLOCK_CONTENTS_BY_USER_DELETE = 257,
+
+	// 출석 체크 변경
+	GM_USER_ATTENDANCE_CHECK_UPDATE = 258,
+
+	// 던전 유저 던전 타임 변경
+	GM_USER_DUNGEON_TIME_UPDATE = 259,
+
+	// 유저 팝업 상점 상태 변경
+	GM_USER_BM_SHOP_POPUP_UPDATE = 260,
+
+	// BM 상점 구매 제한 데이터 변경(계정)
+	GM_BM_SHOP_PURCHASED_LIMIT_ACCOUNT = 261,
+
+	// BM 상점 구매 제한 데이터 변경(서버)
+	GM_BM_SHOP_PURCHASED_LIMIT_SERVER = 262,
+
+	// BM 상점 구매 제한 데이터 변경(캐릭터)
+	GM_BM_SHOP_PURCHASED_LIMIT_USER = 263,
+
+	// 그룹 유저 로그 아웃 처리
+	GM_LOG_OUT_ACCOUNT_BY_VID = 264,
+
+	// BM 상점 PID로 구매 막음
+	GM_SHOP_BLOCK_MARKET_PID_ADD = 265,
+
+	// BM 상점 PID로 구매 제한 삭제
+	GM_SHOP_BLOCK_MARKET_PID_DELETE = 266,
+
+	// BM 보관함에서 아이템 추가
+	GM_BM_DEPOT_ITEM_ADD = 267,
+
+	// 제작 잠금
+	GM_UNLOCK_CRAFT_ID_ADD = 268,
+
+	// 제작 잠금해제
+	GM_UNLOCK_CRAFT_ID_DELETE = 269,
+
+	// 동시 접속 정보
+	GM_WORLD_USER = 300,
+
+	// 몬스터 도감 지식 업데이트
+	GM_USER_MONSTER_KNOWLEDGE_UPDATE = 350,
+
+	// 도감 지식의 석판 슬롯 활성화
+	GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_ACTIVATE = 351,
+
+	// 도감 지식의 석판 슬롯 삭제
+	GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_DELETE = 352,
+
+	// 도감 지식의 석판 슬롯 초기화
+	GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_RESET = 353,
+
+	// 도감 지식의 석판 특수 노드 확성화
+	GM_USER_SLATE_SPECIAL_NODE_ACTIVATE = 354,
+
+	// 도감 지식의 석판 특수 노드 확성화
+	GM_USER_SLATE_SPECIAL_NODE_RESET = 355,
+
+	// 친구 삭제
+	GM_USER_BUDDY_DELETE = 400,
+
+	// 보낸 친구요청 삭제
+	GM_USER_BUDDY_SEND_INVITATION_DELETE = 401,
+
+	// 받은 친구요청 거절
+	GM_USER_BUDDY_RECV_INVITATION_DELETE = 402,
+
+	// 채팀 금지
+	GM_USER_CHAT_BAN = 450,
+
+	// 채팀 금지 해제
+	GM_USER_CHAT_UNBAN = 451,
+
+	// 침공 채팅
+	GG_CHAT_INVADE_CHAT = 500,
+
+	// 서버 채팅 bypass 전송 방식 on/off
+	GM_USE_BYPASS_CHAT = 501,
+
+	// 거래소 판매 물품 회수
+	GM_MARKET_TRANSACTION_CANCEL = 550,
+
+	// 유저 서버 이동 요청
+	GG_USER_MIGRATE_SERVER_REQ = 600,
+
+	// 유저 서버 이동 응답
+	GG_USER_MIGRATE_SERVER_ACK = 601,
+
+	// 기사단 재화 업데이트
+	GM_GUILD_ASSET_UPDATE = 650,
+
+	// 기사단 맴버 쫓아냄
+	GM_GUILD_MEMBER_EXPEL = 651,
+
+	// 기사단 이름 변경
+	GM_GUILD_NAME = 652,
+
+	// 사망 아이템 복구 
+	GM_DEATH_ITEM_RESTORE = 700,
+
+	// 삭제 아이템  복구
+	GM_DELETE_ITEM_RESTORE = 701,
+
+	// 월드 친구 초대 취소 알림(초대 수신자에게 전송되는 알림)
+	GG_NOTIFY_DELETED_RECV_INVITATION_WORLD = 750,
+
+	// 월드 친구 초대 거절 알림(초대 요청자에게 전송되는 알림)
+	GG_NOTIFY_DELETED_SEND_INVITATION_WORLD = 751,
+
+	// 월드 친구 삭제 알림
+	GG_NOTIFY_DELETED_BUDDY_WORLD = 752,
+
+	// 기단 분배 아이템 등록 
+	GUILD_STORE_ITEM_REGISTER = 800,
+
+	// 기사단 분배 아이템 삭제
+	GUILD_STORE_ITEM_DELETE = 801,
+
+	// 기사단 경매장 등록
+	GUILD_AUCTION_REGISTER = 802,
+
+	// 기사단 경매장 삭제
+	GUILD_AUCTION_DELETE = 803,
+
+	// 기사단 경매장 값을 변경하는 경우 사용 
+	GUILD_AUCTION_CHANGE_DATA = 804,
+
+	// 인터서버 컨텐츠 이벤트 추가 등록
+	GG_INTER_CONTENTS_EVENT_REG = 805,
+
+	// 게이트 서버 통신이 가능한지 체크
+	GM_GATEWAY_SERVER_ALIVE = 1000,
+
+	// 친구 이름 변경
+	BUDDY_USER_NICKNAME_CHANGE = 1001,
+
+	// 초대 보낸 친구 이름 변경
+	SEND_BUDDY_USER_NICKNAME_CHANGE = 1002,
+
+	// 초대 받은 친구 이름 변경
+	RECV_BUDDY_USER_NICKNAME_CHANGE = 1003,
+
+	// 경계 대상 이름 변경
+	MONITORING_USER_NICKNAME_CHANGE = 1004,
+
+	// 서버 이벤트 요청
+	GG_REQUEST_SERVER_EVENT = 1005,
+
+	// 확률 조정 하기
+	GM_PROBILITY_CORRECT = 1006,
+
+	// 월드 거래소 물품 등록 알림
+	GG_WDMARKET_RESIGTERED = 1100,
+
+	// 월드 거래소 물품 판매 알림
+	GG_WDMARKET_PURCHASED = 1101,
+
+	// 월드 거래소 물품 회수/취소 알림
+	GG_WDMARKET_CANCELED = 1102,
+
+	// 아이템 마법부여 추가
+	GM_ITEM_MAGICAL_FORGE_INSERT = 1200,
+
+	// 아이템 마법부여 갱신
+	GM_ITEM_MAGICAL_FORGE_UPDATE = 1201,
+
+	// 아이템 마법부여 삭제
+	GM_ITEM_MAGICAL_FORGE_DELETE = 1202,
+
+	// 천마석 강화 추가
+	GM_SPIRIT_SHOT_ENCHANT_INSERT = 1210,
+
+	// 천마석 강화 갱신
+	GM_SPIRIT_SHOT_ENCHANT_UPDATE = 1211,
+
+	// 천마석 강화 삭제
+	GM_SPIRIT_SHOT_ENCHANT_DELETE = 1212,
+
+	// 월드 거래소 판매 물품 회수
+	GM_WDMARKET_TRANSACTION_CANCEL = 1220,
+
+	// 서버 응답 속도 체크
+	GM_SERVER_RESPONSE_TIME = 1300,
+
+	// 서버 처널잡 test
+	GM_SERVER_CHANNEL_JOB_TEST = 1301,
+
+	// 서버 이전 데이터 변경
+	GM_SERVER_MIGRATE = 1302,
+
+	// 동맹 채팅 전달
+	ALLY_CHAT_TRANSMIT = 1303,
+
+	// 동맹 채팅 DB 삭제
+	ALLY_CHAT_DELETE = 1304,
+
+	// 서버 이전 그룹 삽입
+	GM_SERVER_MIGRATE_GROUP_INSERT = 1305,
+
+	// 서버 이전 그룹 갱신
+	GM_SERVER_MIGRATE_GROUP_UPDATE = 1306,
+
+	// 서버 이전 그룹 삭제
+	GM_SERVER_MIGRATE_GROUP_DELETE = 1307,
+
+	// 서버 이전 기간 삽입
+	GM_SERVER_MIGRATE_PERIOD_INSERT = 1308,
+
+	// 서버 이전 기간 갱신
+	GM_SERVER_MIGRATE_PERIOD_UPDATE = 1309,
+
+	// 서버 이전 기간 삭제
+	GM_SERVER_MIGRATE_PERIOD_DELETE = 1310,
+
+	// 서버 이전 삭제된 데이터 롤백
+	GM_SERVER_MIGRATE_DATA_ROLLBACK = 1311,
+
+	// 원정대 클리어 횟수 수정
+	GM_AGIT_DUNGEON_RAID_CLEAR_COUNT_UPDATE = 1312,
+
+	// 원정대 입장 티켓 개수 수정
+	GM_AGIT_DUNGEON_RAID_TICKET_COUNT_UPDATE = 1313,
+
+	// 길드 정보 요청
+	GET_GUILD_INFO_REQ = 1314,
+
+	// 길드 정보 응답
+	GET_GUILD_INFO_ACK = 1315,
+
+	// 그룹 채팅 그룹 변경
+	GROUP_CHAT_CHANGE = 1316,
+
+	// 길드 그룹 채팅
+	GROUP_CHAT = 1317,
+
+	// 길드 그룹 채팅 리더 변경
+	GROUP_CHAT_LEADER_CHANGE = 1318,
+
+	// 길드 그룹 채팅 권한 변경
+	GROUP_CHAT_GRADE_CHANGE = 1319,
+
+	MAX = 1320,
+};
+
+UENUM()
+// 데이터를 변경할 컨텐츠 종류
+enum class MQ_ContentsType : uint8
+{
+	ITEM = 0,
+	CURRENCY = 1,
+	DEPOT = 2,
+	MAILBOX = 3,
+	RESURRECT = 4,
+	MAINQUEST = 5,
+	SUBQUEST = 6,
+	REPEATQUEST = 7,
+	MULTILEVELRANK = 8,
+	GUILDKNIGHT = 9,
+	GUILD = 10,
+	BOOKMARK = 11,
+	CRAFT = 12,
+	FAIRY = 13,
+	FAIRYCONFIRM = 14,
+	FAIRYCOLLECTION = 15,
+	COSTUME = 16,
+	TIMETICKET = 17,
+	ATTENDANCE = 18,
+	TITLE = 19,
+	MONSTERKNOWLEDGE = 20,
+	STATISTICS = 21,
+
+	MAX = 22,
+};
+
+UENUM()
+// 타입별 Mq Routing Key
+enum class RoutingKeyType : uint8
+{
+
+	// 전체 Mq 서버대상
+	MQ_ROUTING_DEFAULT = 0,
+
+	// 랭킹 서버 Mq 대상 라우팅 키
+	MQ_ROUTING_RANK = 1,
+
+	// Hive Item 서버 Mq 대상 라우팅 키
+	MQ_HIVE_ITEM = 2,
+
+	// 밸런스 시뮬레이터 라우팅 키
+	MQ_BALANCE_SIMULATOR = 3,
+
+	// 길찾기
+	MQ_RECAST_SIMULATOR = 4,
+
+	// 운영 관리자 툴
+	MQ_ADMINISTRATOR = 5,
+
+	// 게이트웨이 서버
+	MQ_GATEWAY_SERVER = 6,
+
+	MQ_ROUTING_NONE = 7,
+};
+
+UENUM()
+// 운영툴 디비 변경 정보
+enum class DBCrudType : uint8
+{
+	DB_NONE = 0,
+	DB_CREATE = 1,
+	DB_UPDATE = 2,
+	DB_DELETE = 3,
+};
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// String -> Enum
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline MqMsgType MqMsgTypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("GM_NOTICE_REGISTER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_NOTICE_REGISTER;
+	if (str.Compare(TEXT("GM_NOTICE_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_NOTICE_DELETE;
+	if (str.Compare(TEXT("GM_ADMIN_COMMAND"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ADMIN_COMMAND;
+	if (str.Compare(TEXT("GM_KICK_USER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_KICK_USER;
+	if (str.Compare(TEXT("GM_USER_QA_STAT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_QA_STAT;
+	if (str.Compare(TEXT("GM_USER_SPAWN_NPC"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_SPAWN_NPC;
+	if (str.Compare(TEXT("GM_START_SERVER_MAINTENANCE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_START_SERVER_MAINTENANCE;
+	if (str.Compare(TEXT("GM_END_SERVER_MAINTENANCE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_END_SERVER_MAINTENANCE;
+	if (str.Compare(TEXT("GM_BLOCK_USER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_BLOCK_USER;
+	if (str.Compare(TEXT("GM_UNBLOCK_USER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNBLOCK_USER;
+	if (str.Compare(TEXT("GM_ACCOUNT_GRADE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ACCOUNT_GRADE;
+	if (str.Compare(TEXT("GM_USER_BASIC_DATA_SAVE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BASIC_DATA_SAVE;
+	if (str.Compare(TEXT("GM_USER_DATA_INVENTORY_EXTENDED"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_INVENTORY_EXTENDED;
+	if (str.Compare(TEXT("GM_USER_DATA_FAIRY_INSERT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_FAIRY_INSERT;
+	if (str.Compare(TEXT("GM_USER_DATA_FAIRY_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_FAIRY_DELETE;
+	if (str.Compare(TEXT("GM_USER_DATA_FAIRY_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_FAIRY_UPDATE;
+	if (str.Compare(TEXT("GM_USER_DATA_FAIRY_CONFIRM_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_FAIRY_CONFIRM_ADD;
+	if (str.Compare(TEXT("GM_USER_DATA_FAIRY_COLLECTION"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_FAIRY_COLLECTION;
+	if (str.Compare(TEXT("GM_USER_DATA_QUEST_INSERT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_QUEST_INSERT;
+	if (str.Compare(TEXT("GM_USER_DATA_QUEST_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_QUEST_UPDATE;
+	if (str.Compare(TEXT("GM_USER_DATA_QUEST_MAIN_UPDATE_INIT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_QUEST_MAIN_UPDATE_INIT;
+	if (str.Compare(TEXT("GM_USER_DATA_QUEST_MAIN_UPDATE_LAST_COMPLETED"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_QUEST_MAIN_UPDATE_LAST_COMPLETED;
+	if (str.Compare(TEXT("GM_USER_DATA_QUEST_MAIN_UPDATE_REWARED"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_QUEST_MAIN_UPDATE_REWARED;
+	if (str.Compare(TEXT("GM_USER_DATA_NAME"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_NAME;
+	if (str.Compare(TEXT("GM_USER_DATA_STAT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_STAT;
+	if (str.Compare(TEXT("GM_USER_DATA_CURRENCY"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_CURRENCY;
+	if (str.Compare(TEXT("GM_USER_DATA_SKILL"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_SKILL;
+	if (str.Compare(TEXT("GM_USER_DATA_SKILL_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_SKILL_DELETE;
+	if (str.Compare(TEXT("GM_USER_DATA_ITEM"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_ITEM;
+	if (str.Compare(TEXT("GM_USER_DATA_EQUIP_ITEM"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_EQUIP_ITEM;
+	if (str.Compare(TEXT("GM_USER_ADD_COSTUME"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ADD_COSTUME;
+	if (str.Compare(TEXT("GM_USER_UPDATE_COSTUME"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_UPDATE_COSTUME;
+	if (str.Compare(TEXT("GM_USER_DATA_TITLE_INSERT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_TITLE_INSERT;
+	if (str.Compare(TEXT("GM_USER_DATA_TITLE_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_TITLE_UPDATE;
+	if (str.Compare(TEXT("GM_USER_RETURN_TOWN"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_RETURN_TOWN;
+	if (str.Compare(TEXT("GM_USER_DATA_NEW_MAIL"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_NEW_MAIL;
+	if (str.Compare(TEXT("GM_USER_DATA_MONSTER_KNOWLEDGE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_MONSTER_KNOWLEDGE;
+	if (str.Compare(TEXT("GM_GAME_EVENT_REGISTER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GAME_EVENT_REGISTER;
+	if (str.Compare(TEXT("GM_GAME_EVENT_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GAME_EVENT_DELETE;
+	if (str.Compare(TEXT("GM_ADD_CHANNEL"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ADD_CHANNEL;
+	if (str.Compare(TEXT("GM_BM_DEPOT_ITEM_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_BM_DEPOT_ITEM_DELETE;
+	if (str.Compare(TEXT("GM_MAIL_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_MAIL_DELETE;
+	if (str.Compare(TEXT("GM_CHANGE_PLAYING_LIMIT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_CHANGE_PLAYING_LIMIT;
+	if (str.Compare(TEXT("GM_CHANGE_WATING_QUEUE_LIMIT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_CHANGE_WATING_QUEUE_LIMIT;
+	if (str.Compare(TEXT("GM_MAX_CHANNEL"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_MAX_CHANNEL;
+	if (str.Compare(TEXT("GM_USER_MAX_PER_CHANNEL"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_MAX_PER_CHANNEL;
+	if (str.Compare(TEXT("GM_SYSTEM_MAIL_REGISTER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SYSTEM_MAIL_REGISTER;
+	if (str.Compare(TEXT("GM_SYSTEM_MAIL_STRING_REGISTER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SYSTEM_MAIL_STRING_REGISTER;
+	if (str.Compare(TEXT("GM_GATEWAY_SEVER_CHANGE_STATUS"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GATEWAY_SEVER_CHANGE_STATUS;
+	if (str.Compare(TEXT("GM_DECREASE_INVENTORYT_ITEM"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_DECREASE_INVENTORYT_ITEM;
+	if (str.Compare(TEXT("GM_DECREASE_DEPOT_ITEM"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_DECREASE_DEPOT_ITEM;
+	if (str.Compare(TEXT("GM_GATEWAY_SEVER_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GATEWAY_SEVER_ADD;
+	if (str.Compare(TEXT("GM_GATEWAY_SEVER_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GATEWAY_SEVER_UPDATE;
+	if (str.Compare(TEXT("GM_CONTENTS_EVENT_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_CONTENTS_EVENT_ADD;
+	if (str.Compare(TEXT("GM_CONTENTS_EVENT_REMOVE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_CONTENTS_EVENT_REMOVE;
+	if (str.Compare(TEXT("GM_ACCOUNT_PLAYABLE_EVENT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ACCOUNT_PLAYABLE_EVENT;
+	if (str.Compare(TEXT("GM_USER_DATA_OFFLINE_PLAY"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_OFFLINE_PLAY;
+	if (str.Compare(TEXT("GM_USER_DATA_GET_STATUS"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_GET_STATUS;
+	if (str.Compare(TEXT("GM_SEND_GROUP_MAIL"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SEND_GROUP_MAIL;
+	if (str.Compare(TEXT("GM_USER_TITLE_EQUIP"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_TITLE_EQUIP;
+	if (str.Compare(TEXT("GM_USER_BATTLE_PASS_LEVEL_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BATTLE_PASS_LEVEL_UPDATE;
+	if (str.Compare(TEXT("GM_USER_BATTLE_PASS_ACTIVATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BATTLE_PASS_ACTIVATE;
+	if (str.Compare(TEXT("GM_ITEM_EXPIRED_TIME_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ITEM_EXPIRED_TIME_UPDATE;
+	if (str.Compare(TEXT("GM_USER_BATTLE_PASS_EXP_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BATTLE_PASS_EXP_UPDATE;
+	if (str.Compare(TEXT("GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_ADD;
+	if (str.Compare(TEXT("GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_UPDATE;
+	if (str.Compare(TEXT("GM_USER_ACHIEVEMENT_LEVEL_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ACHIEVEMENT_LEVEL_ADD;
+	if (str.Compare(TEXT("GM_USER_ACHIEVEMENT_LEVEL_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ACHIEVEMENT_LEVEL_UPDATE;
+	if (str.Compare(TEXT("GM_USER_ACHIEVEMENT_COMPLETE_POINT_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ACHIEVEMENT_COMPLETE_POINT_UPDATE;
+	if (str.Compare(TEXT("GM_USER_MULTI_LEVEL_RANK_SLOT_STATE_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_MULTI_LEVEL_RANK_SLOT_STATE_UPDATE;
+	if (str.Compare(TEXT("GM_USER_PROFILE_COMMENT_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_PROFILE_COMMENT_DELETE;
+	if (str.Compare(TEXT("GM_ACCOUNT_CACHE_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ACCOUNT_CACHE_DELETE;
+	if (str.Compare(TEXT("GM_ITEM_REFINE_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ITEM_REFINE_DELETE;
+	if (str.Compare(TEXT("GM_ITEM_REFINE_OPTION_INSERT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ITEM_REFINE_OPTION_INSERT;
+	if (str.Compare(TEXT("GM_ITEM_REFINE_BONUS_INSERT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ITEM_REFINE_BONUS_INSERT;
+	if (str.Compare(TEXT("GM_SYSTEM_MAIL_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SYSTEM_MAIL_DELETE;
+	if (str.Compare(TEXT("GM_ACCOUNT_RANK_BLOCK"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ACCOUNT_RANK_BLOCK;
+	if (str.Compare(TEXT("GM_USER_ITEM_COLLECTION_CLEAR"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ITEM_COLLECTION_CLEAR;
+	if (str.Compare(TEXT("GM_USER_ITEM_COLLECTION_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ITEM_COLLECTION_ADD;
+	if (str.Compare(TEXT("GM_USER_ITEM_COLLECTION_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ITEM_COLLECTION_DELETE;
+	if (str.Compare(TEXT("GM_USER_ATTENDANCE_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ATTENDANCE_ADD;
+	if (str.Compare(TEXT("GM_USER_ATTENDANCE_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ATTENDANCE_DELETE;
+	if (str.Compare(TEXT("GM_USER_DATA_QUEST_REPEAT_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_QUEST_REPEAT_DELETE;
+	if (str.Compare(TEXT("GM_USER_DATA_QUEST_BOARD_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_QUEST_BOARD_DELETE;
+	if (str.Compare(TEXT("GM_USER_MULTI_LEVEL_RANK_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_MULTI_LEVEL_RANK_DELETE;
+	if (str.Compare(TEXT("GM_USER_QUEST_MULTI_LEVEL_RANK_RESET"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_QUEST_MULTI_LEVEL_RANK_RESET;
+	if (str.Compare(TEXT("GM_USER_QUEST_MULTI_LEVEL_RANK_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_QUEST_MULTI_LEVEL_RANK_DELETE;
+	if (str.Compare(TEXT("GM_USER_QUEST_MULTI_LEVEL_RANK_COMPLETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_QUEST_MULTI_LEVEL_RANK_COMPLETE;
+	if (str.Compare(TEXT("GM_USER_ACHIEVEMENT_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ACHIEVEMENT_DELETE;
+	if (str.Compare(TEXT("GM_WORLD_ENTERING_LIMIT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_WORLD_ENTERING_LIMIT;
+	if (str.Compare(TEXT("GM_WORLD_MAP_MAX_USER_COUNT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_WORLD_MAP_MAX_USER_COUNT;
+	if (str.Compare(TEXT("GM_WORLD_MAP_NPC_RESPAWN_RATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_WORLD_MAP_NPC_RESPAWN_RATE;
+	if (str.Compare(TEXT("GM_WORLD_MAP_NPC_SOCIAL_MOTION_RATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_WORLD_MAP_NPC_SOCIAL_MOTION_RATE;
+	if (str.Compare(TEXT("GM_GUILD_DUNGEON_TICKET"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GUILD_DUNGEON_TICKET;
+	if (str.Compare(TEXT("GM_VID_SYSTEM_MAIL_REGISTER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_VID_SYSTEM_MAIL_REGISTER;
+	if (str.Compare(TEXT("GM_VID_NEW_TO_DELETED"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_VID_NEW_TO_DELETED;
+	if (str.Compare(TEXT("GM_SANCTUM_PAUSE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SANCTUM_PAUSE;
+	if (str.Compare(TEXT("GM_SANCTUM_RESUME"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SANCTUM_RESUME;
+	if (str.Compare(TEXT("GM_SANCTUM_NEXUS_DESTORY"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SANCTUM_NEXUS_DESTORY;
+	if (str.Compare(TEXT("GM_ACCOUNT_FORCE_CACHE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ACCOUNT_FORCE_CACHE;
+	if (str.Compare(TEXT("GR_RANK_LIST"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GR_RANK_LIST;
+	if (str.Compare(TEXT("RG_RANK_LIST"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::RG_RANK_LIST;
+	if (str.Compare(TEXT("GR_RANK_LIST_COMMAND"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GR_RANK_LIST_COMMAND;
+	if (str.Compare(TEXT("GM_RANK_LIST"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_RANK_LIST;
+	if (str.Compare(TEXT("BALANCE_SIMULATOR"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::BALANCE_SIMULATOR;
+	if (str.Compare(TEXT("GM_USER_DATA_GET"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DATA_GET;
+	if (str.Compare(TEXT("CHANGE_NPC_STAT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::CHANGE_NPC_STAT;
+	if (str.Compare(TEXT("ITEM_ACTIVATION"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::ITEM_ACTIVATION;
+	if (str.Compare(TEXT("GM_NOTICE_SEND"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_NOTICE_SEND;
+	if (str.Compare(TEXT("HG_ITEM"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::HG_ITEM;
+	if (str.Compare(TEXT("GH_ITEM"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GH_ITEM;
+	if (str.Compare(TEXT("GM_INTER_SERVER_UNLOCK_CONTENTS_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_INTER_SERVER_UNLOCK_CONTENTS_ADD;
+	if (str.Compare(TEXT("GM_INTER_SERVER_UNLOCK_CONTENTS_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_INTER_SERVER_UNLOCK_CONTENTS_DELETE;
+	if (str.Compare(TEXT("GM_UNLOCK_CONTENTS_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_CONTENTS_ADD;
+	if (str.Compare(TEXT("GM_UNLOCK_CONTENTS_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_CONTENTS_DELETE;
+	if (str.Compare(TEXT("GM_UNLOCK_MAP_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_MAP_ADD;
+	if (str.Compare(TEXT("GM_UNLOCK_MAP_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_MAP_DELETE;
+	if (str.Compare(TEXT("GM_UNLOCK_ITEM_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_ITEM_ADD;
+	if (str.Compare(TEXT("GM_UNLOCK_ITEM_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_ITEM_DELETE;
+	if (str.Compare(TEXT("GM_UNLOCK_CONTENTS_BY_USER_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_CONTENTS_BY_USER_ADD;
+	if (str.Compare(TEXT("GM_UNLOCK_CONTENTS_BY_USER_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_CONTENTS_BY_USER_DELETE;
+	if (str.Compare(TEXT("GM_USER_ATTENDANCE_CHECK_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_ATTENDANCE_CHECK_UPDATE;
+	if (str.Compare(TEXT("GM_USER_DUNGEON_TIME_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_DUNGEON_TIME_UPDATE;
+	if (str.Compare(TEXT("GM_USER_BM_SHOP_POPUP_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BM_SHOP_POPUP_UPDATE;
+	if (str.Compare(TEXT("GM_BM_SHOP_PURCHASED_LIMIT_ACCOUNT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_BM_SHOP_PURCHASED_LIMIT_ACCOUNT;
+	if (str.Compare(TEXT("GM_BM_SHOP_PURCHASED_LIMIT_SERVER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_BM_SHOP_PURCHASED_LIMIT_SERVER;
+	if (str.Compare(TEXT("GM_BM_SHOP_PURCHASED_LIMIT_USER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_BM_SHOP_PURCHASED_LIMIT_USER;
+	if (str.Compare(TEXT("GM_LOG_OUT_ACCOUNT_BY_VID"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_LOG_OUT_ACCOUNT_BY_VID;
+	if (str.Compare(TEXT("GM_SHOP_BLOCK_MARKET_PID_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SHOP_BLOCK_MARKET_PID_ADD;
+	if (str.Compare(TEXT("GM_SHOP_BLOCK_MARKET_PID_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SHOP_BLOCK_MARKET_PID_DELETE;
+	if (str.Compare(TEXT("GM_BM_DEPOT_ITEM_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_BM_DEPOT_ITEM_ADD;
+	if (str.Compare(TEXT("GM_UNLOCK_CRAFT_ID_ADD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_CRAFT_ID_ADD;
+	if (str.Compare(TEXT("GM_UNLOCK_CRAFT_ID_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_UNLOCK_CRAFT_ID_DELETE;
+	if (str.Compare(TEXT("GM_WORLD_USER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_WORLD_USER;
+	if (str.Compare(TEXT("GM_USER_MONSTER_KNOWLEDGE_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_MONSTER_KNOWLEDGE_UPDATE;
+	if (str.Compare(TEXT("GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_ACTIVATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_ACTIVATE;
+	if (str.Compare(TEXT("GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_DELETE;
+	if (str.Compare(TEXT("GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_RESET"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_RESET;
+	if (str.Compare(TEXT("GM_USER_SLATE_SPECIAL_NODE_ACTIVATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_SLATE_SPECIAL_NODE_ACTIVATE;
+	if (str.Compare(TEXT("GM_USER_SLATE_SPECIAL_NODE_RESET"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_SLATE_SPECIAL_NODE_RESET;
+	if (str.Compare(TEXT("GM_USER_BUDDY_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BUDDY_DELETE;
+	if (str.Compare(TEXT("GM_USER_BUDDY_SEND_INVITATION_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BUDDY_SEND_INVITATION_DELETE;
+	if (str.Compare(TEXT("GM_USER_BUDDY_RECV_INVITATION_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_BUDDY_RECV_INVITATION_DELETE;
+	if (str.Compare(TEXT("GM_USER_CHAT_BAN"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_CHAT_BAN;
+	if (str.Compare(TEXT("GM_USER_CHAT_UNBAN"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USER_CHAT_UNBAN;
+	if (str.Compare(TEXT("GG_CHAT_INVADE_CHAT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_CHAT_INVADE_CHAT;
+	if (str.Compare(TEXT("GM_USE_BYPASS_CHAT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_USE_BYPASS_CHAT;
+	if (str.Compare(TEXT("GM_MARKET_TRANSACTION_CANCEL"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_MARKET_TRANSACTION_CANCEL;
+	if (str.Compare(TEXT("GG_USER_MIGRATE_SERVER_REQ"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_USER_MIGRATE_SERVER_REQ;
+	if (str.Compare(TEXT("GG_USER_MIGRATE_SERVER_ACK"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_USER_MIGRATE_SERVER_ACK;
+	if (str.Compare(TEXT("GM_GUILD_ASSET_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GUILD_ASSET_UPDATE;
+	if (str.Compare(TEXT("GM_GUILD_MEMBER_EXPEL"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GUILD_MEMBER_EXPEL;
+	if (str.Compare(TEXT("GM_GUILD_NAME"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GUILD_NAME;
+	if (str.Compare(TEXT("GM_DEATH_ITEM_RESTORE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_DEATH_ITEM_RESTORE;
+	if (str.Compare(TEXT("GM_DELETE_ITEM_RESTORE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_DELETE_ITEM_RESTORE;
+	if (str.Compare(TEXT("GG_NOTIFY_DELETED_RECV_INVITATION_WORLD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_NOTIFY_DELETED_RECV_INVITATION_WORLD;
+	if (str.Compare(TEXT("GG_NOTIFY_DELETED_SEND_INVITATION_WORLD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_NOTIFY_DELETED_SEND_INVITATION_WORLD;
+	if (str.Compare(TEXT("GG_NOTIFY_DELETED_BUDDY_WORLD"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_NOTIFY_DELETED_BUDDY_WORLD;
+	if (str.Compare(TEXT("GUILD_STORE_ITEM_REGISTER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GUILD_STORE_ITEM_REGISTER;
+	if (str.Compare(TEXT("GUILD_STORE_ITEM_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GUILD_STORE_ITEM_DELETE;
+	if (str.Compare(TEXT("GUILD_AUCTION_REGISTER"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GUILD_AUCTION_REGISTER;
+	if (str.Compare(TEXT("GUILD_AUCTION_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GUILD_AUCTION_DELETE;
+	if (str.Compare(TEXT("GUILD_AUCTION_CHANGE_DATA"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GUILD_AUCTION_CHANGE_DATA;
+	if (str.Compare(TEXT("GG_INTER_CONTENTS_EVENT_REG"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_INTER_CONTENTS_EVENT_REG;
+	if (str.Compare(TEXT("GM_GATEWAY_SERVER_ALIVE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_GATEWAY_SERVER_ALIVE;
+	if (str.Compare(TEXT("BUDDY_USER_NICKNAME_CHANGE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::BUDDY_USER_NICKNAME_CHANGE;
+	if (str.Compare(TEXT("SEND_BUDDY_USER_NICKNAME_CHANGE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::SEND_BUDDY_USER_NICKNAME_CHANGE;
+	if (str.Compare(TEXT("RECV_BUDDY_USER_NICKNAME_CHANGE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::RECV_BUDDY_USER_NICKNAME_CHANGE;
+	if (str.Compare(TEXT("MONITORING_USER_NICKNAME_CHANGE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::MONITORING_USER_NICKNAME_CHANGE;
+	if (str.Compare(TEXT("GG_REQUEST_SERVER_EVENT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_REQUEST_SERVER_EVENT;
+	if (str.Compare(TEXT("GM_PROBILITY_CORRECT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_PROBILITY_CORRECT;
+	if (str.Compare(TEXT("GG_WDMARKET_RESIGTERED"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_WDMARKET_RESIGTERED;
+	if (str.Compare(TEXT("GG_WDMARKET_PURCHASED"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_WDMARKET_PURCHASED;
+	if (str.Compare(TEXT("GG_WDMARKET_CANCELED"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GG_WDMARKET_CANCELED;
+	if (str.Compare(TEXT("GM_ITEM_MAGICAL_FORGE_INSERT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ITEM_MAGICAL_FORGE_INSERT;
+	if (str.Compare(TEXT("GM_ITEM_MAGICAL_FORGE_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ITEM_MAGICAL_FORGE_UPDATE;
+	if (str.Compare(TEXT("GM_ITEM_MAGICAL_FORGE_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_ITEM_MAGICAL_FORGE_DELETE;
+	if (str.Compare(TEXT("GM_SPIRIT_SHOT_ENCHANT_INSERT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SPIRIT_SHOT_ENCHANT_INSERT;
+	if (str.Compare(TEXT("GM_SPIRIT_SHOT_ENCHANT_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SPIRIT_SHOT_ENCHANT_UPDATE;
+	if (str.Compare(TEXT("GM_SPIRIT_SHOT_ENCHANT_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SPIRIT_SHOT_ENCHANT_DELETE;
+	if (str.Compare(TEXT("GM_WDMARKET_TRANSACTION_CANCEL"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_WDMARKET_TRANSACTION_CANCEL;
+	if (str.Compare(TEXT("GM_SERVER_RESPONSE_TIME"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_RESPONSE_TIME;
+	if (str.Compare(TEXT("GM_SERVER_CHANNEL_JOB_TEST"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_CHANNEL_JOB_TEST;
+	if (str.Compare(TEXT("GM_SERVER_MIGRATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_MIGRATE;
+	if (str.Compare(TEXT("ALLY_CHAT_TRANSMIT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::ALLY_CHAT_TRANSMIT;
+	if (str.Compare(TEXT("ALLY_CHAT_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::ALLY_CHAT_DELETE;
+	if (str.Compare(TEXT("GM_SERVER_MIGRATE_GROUP_INSERT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_MIGRATE_GROUP_INSERT;
+	if (str.Compare(TEXT("GM_SERVER_MIGRATE_GROUP_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_MIGRATE_GROUP_UPDATE;
+	if (str.Compare(TEXT("GM_SERVER_MIGRATE_GROUP_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_MIGRATE_GROUP_DELETE;
+	if (str.Compare(TEXT("GM_SERVER_MIGRATE_PERIOD_INSERT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_MIGRATE_PERIOD_INSERT;
+	if (str.Compare(TEXT("GM_SERVER_MIGRATE_PERIOD_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_MIGRATE_PERIOD_UPDATE;
+	if (str.Compare(TEXT("GM_SERVER_MIGRATE_PERIOD_DELETE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_MIGRATE_PERIOD_DELETE;
+	if (str.Compare(TEXT("GM_SERVER_MIGRATE_DATA_ROLLBACK"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_SERVER_MIGRATE_DATA_ROLLBACK;
+	if (str.Compare(TEXT("GM_AGIT_DUNGEON_RAID_CLEAR_COUNT_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_AGIT_DUNGEON_RAID_CLEAR_COUNT_UPDATE;
+	if (str.Compare(TEXT("GM_AGIT_DUNGEON_RAID_TICKET_COUNT_UPDATE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GM_AGIT_DUNGEON_RAID_TICKET_COUNT_UPDATE;
+	if (str.Compare(TEXT("GET_GUILD_INFO_REQ"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GET_GUILD_INFO_REQ;
+	if (str.Compare(TEXT("GET_GUILD_INFO_ACK"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GET_GUILD_INFO_ACK;
+	if (str.Compare(TEXT("GROUP_CHAT_CHANGE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GROUP_CHAT_CHANGE;
+	if (str.Compare(TEXT("GROUP_CHAT"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GROUP_CHAT;
+	if (str.Compare(TEXT("GROUP_CHAT_LEADER_CHANGE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GROUP_CHAT_LEADER_CHANGE;
+	if (str.Compare(TEXT("GROUP_CHAT_GRADE_CHANGE"), ESearchCase::IgnoreCase) == 0)	return MqMsgType::GROUP_CHAT_GRADE_CHANGE;
+	return MqMsgType::MAX;
+}
+inline MQ_ContentsType MQ_ContentsTypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("ITEM"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::ITEM;
+	if (str.Compare(TEXT("CURRENCY"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::CURRENCY;
+	if (str.Compare(TEXT("DEPOT"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::DEPOT;
+	if (str.Compare(TEXT("MAILBOX"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::MAILBOX;
+	if (str.Compare(TEXT("RESURRECT"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::RESURRECT;
+	if (str.Compare(TEXT("MAINQUEST"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::MAINQUEST;
+	if (str.Compare(TEXT("SUBQUEST"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::SUBQUEST;
+	if (str.Compare(TEXT("REPEATQUEST"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::REPEATQUEST;
+	if (str.Compare(TEXT("MULTILEVELRANK"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::MULTILEVELRANK;
+	if (str.Compare(TEXT("GUILDKNIGHT"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::GUILDKNIGHT;
+	if (str.Compare(TEXT("GUILD"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::GUILD;
+	if (str.Compare(TEXT("BOOKMARK"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::BOOKMARK;
+	if (str.Compare(TEXT("CRAFT"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::CRAFT;
+	if (str.Compare(TEXT("FAIRY"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::FAIRY;
+	if (str.Compare(TEXT("FAIRYCONFIRM"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::FAIRYCONFIRM;
+	if (str.Compare(TEXT("FAIRYCOLLECTION"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::FAIRYCOLLECTION;
+	if (str.Compare(TEXT("COSTUME"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::COSTUME;
+	if (str.Compare(TEXT("TIMETICKET"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::TIMETICKET;
+	if (str.Compare(TEXT("ATTENDANCE"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::ATTENDANCE;
+	if (str.Compare(TEXT("TITLE"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::TITLE;
+	if (str.Compare(TEXT("MONSTERKNOWLEDGE"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::MONSTERKNOWLEDGE;
+	if (str.Compare(TEXT("STATISTICS"), ESearchCase::IgnoreCase) == 0)	return MQ_ContentsType::STATISTICS;
+	return MQ_ContentsType::MAX;
+}
+inline RoutingKeyType RoutingKeyTypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("MQ_ROUTING_DEFAULT"), ESearchCase::IgnoreCase) == 0)	return RoutingKeyType::MQ_ROUTING_DEFAULT;
+	if (str.Compare(TEXT("MQ_ROUTING_RANK"), ESearchCase::IgnoreCase) == 0)	return RoutingKeyType::MQ_ROUTING_RANK;
+	if (str.Compare(TEXT("MQ_HIVE_ITEM"), ESearchCase::IgnoreCase) == 0)	return RoutingKeyType::MQ_HIVE_ITEM;
+	if (str.Compare(TEXT("MQ_BALANCE_SIMULATOR"), ESearchCase::IgnoreCase) == 0)	return RoutingKeyType::MQ_BALANCE_SIMULATOR;
+	if (str.Compare(TEXT("MQ_RECAST_SIMULATOR"), ESearchCase::IgnoreCase) == 0)	return RoutingKeyType::MQ_RECAST_SIMULATOR;
+	if (str.Compare(TEXT("MQ_ADMINISTRATOR"), ESearchCase::IgnoreCase) == 0)	return RoutingKeyType::MQ_ADMINISTRATOR;
+	if (str.Compare(TEXT("MQ_GATEWAY_SERVER"), ESearchCase::IgnoreCase) == 0)	return RoutingKeyType::MQ_GATEWAY_SERVER;
+	return RoutingKeyType::MQ_ROUTING_NONE;
+}
+inline DBCrudType DBCrudTypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("DB_NONE"), ESearchCase::IgnoreCase) == 0)	return DBCrudType::DB_NONE;
+	if (str.Compare(TEXT("DB_CREATE"), ESearchCase::IgnoreCase) == 0)	return DBCrudType::DB_CREATE;
+	if (str.Compare(TEXT("DB_UPDATE"), ESearchCase::IgnoreCase) == 0)	return DBCrudType::DB_UPDATE;
+	if (str.Compare(TEXT("DB_DELETE"), ESearchCase::IgnoreCase) == 0)	return DBCrudType::DB_DELETE;
+	return DBCrudType::DB_DELETE;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Enum -> String
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline FString MqMsgTypeEnumToString(MqMsgType value)
+{
+	switch (value)
+	{
+		case MqMsgType::GM_NOTICE_REGISTER: return TEXT("GM_NOTICE_REGISTER");
+		case MqMsgType::GM_NOTICE_DELETE: return TEXT("GM_NOTICE_DELETE");
+		case MqMsgType::GM_ADMIN_COMMAND: return TEXT("GM_ADMIN_COMMAND");
+		case MqMsgType::GM_KICK_USER: return TEXT("GM_KICK_USER");
+		case MqMsgType::GM_USER_QA_STAT: return TEXT("GM_USER_QA_STAT");
+		case MqMsgType::GM_USER_SPAWN_NPC: return TEXT("GM_USER_SPAWN_NPC");
+		case MqMsgType::GM_START_SERVER_MAINTENANCE: return TEXT("GM_START_SERVER_MAINTENANCE");
+		case MqMsgType::GM_END_SERVER_MAINTENANCE: return TEXT("GM_END_SERVER_MAINTENANCE");
+		case MqMsgType::GM_BLOCK_USER: return TEXT("GM_BLOCK_USER");
+		case MqMsgType::GM_UNBLOCK_USER: return TEXT("GM_UNBLOCK_USER");
+		case MqMsgType::GM_ACCOUNT_GRADE: return TEXT("GM_ACCOUNT_GRADE");
+		case MqMsgType::GM_USER_BASIC_DATA_SAVE: return TEXT("GM_USER_BASIC_DATA_SAVE");
+		case MqMsgType::GM_USER_DATA_INVENTORY_EXTENDED: return TEXT("GM_USER_DATA_INVENTORY_EXTENDED");
+		case MqMsgType::GM_USER_DATA_FAIRY_INSERT: return TEXT("GM_USER_DATA_FAIRY_INSERT");
+		case MqMsgType::GM_USER_DATA_FAIRY_DELETE: return TEXT("GM_USER_DATA_FAIRY_DELETE");
+		case MqMsgType::GM_USER_DATA_FAIRY_UPDATE: return TEXT("GM_USER_DATA_FAIRY_UPDATE");
+		case MqMsgType::GM_USER_DATA_FAIRY_CONFIRM_ADD: return TEXT("GM_USER_DATA_FAIRY_CONFIRM_ADD");
+		case MqMsgType::GM_USER_DATA_FAIRY_COLLECTION: return TEXT("GM_USER_DATA_FAIRY_COLLECTION");
+		case MqMsgType::GM_USER_DATA_QUEST_INSERT: return TEXT("GM_USER_DATA_QUEST_INSERT");
+		case MqMsgType::GM_USER_DATA_QUEST_UPDATE: return TEXT("GM_USER_DATA_QUEST_UPDATE");
+		case MqMsgType::GM_USER_DATA_QUEST_MAIN_UPDATE_INIT: return TEXT("GM_USER_DATA_QUEST_MAIN_UPDATE_INIT");
+		case MqMsgType::GM_USER_DATA_QUEST_MAIN_UPDATE_LAST_COMPLETED: return TEXT("GM_USER_DATA_QUEST_MAIN_UPDATE_LAST_COMPLETED");
+		case MqMsgType::GM_USER_DATA_QUEST_MAIN_UPDATE_REWARED: return TEXT("GM_USER_DATA_QUEST_MAIN_UPDATE_REWARED");
+		case MqMsgType::GM_USER_DATA_NAME: return TEXT("GM_USER_DATA_NAME");
+		case MqMsgType::GM_USER_DATA_STAT: return TEXT("GM_USER_DATA_STAT");
+		case MqMsgType::GM_USER_DATA_CURRENCY: return TEXT("GM_USER_DATA_CURRENCY");
+		case MqMsgType::GM_USER_DATA_SKILL: return TEXT("GM_USER_DATA_SKILL");
+		case MqMsgType::GM_USER_DATA_SKILL_DELETE: return TEXT("GM_USER_DATA_SKILL_DELETE");
+		case MqMsgType::GM_USER_DATA_ITEM: return TEXT("GM_USER_DATA_ITEM");
+		case MqMsgType::GM_USER_DATA_EQUIP_ITEM: return TEXT("GM_USER_DATA_EQUIP_ITEM");
+		case MqMsgType::GM_USER_ADD_COSTUME: return TEXT("GM_USER_ADD_COSTUME");
+		case MqMsgType::GM_USER_UPDATE_COSTUME: return TEXT("GM_USER_UPDATE_COSTUME");
+		case MqMsgType::GM_USER_DATA_TITLE_INSERT: return TEXT("GM_USER_DATA_TITLE_INSERT");
+		case MqMsgType::GM_USER_DATA_TITLE_UPDATE: return TEXT("GM_USER_DATA_TITLE_UPDATE");
+		case MqMsgType::GM_USER_RETURN_TOWN: return TEXT("GM_USER_RETURN_TOWN");
+		case MqMsgType::GM_USER_DATA_NEW_MAIL: return TEXT("GM_USER_DATA_NEW_MAIL");
+		case MqMsgType::GM_USER_DATA_MONSTER_KNOWLEDGE: return TEXT("GM_USER_DATA_MONSTER_KNOWLEDGE");
+		case MqMsgType::GM_GAME_EVENT_REGISTER: return TEXT("GM_GAME_EVENT_REGISTER");
+		case MqMsgType::GM_GAME_EVENT_DELETE: return TEXT("GM_GAME_EVENT_DELETE");
+		case MqMsgType::GM_ADD_CHANNEL: return TEXT("GM_ADD_CHANNEL");
+		case MqMsgType::GM_BM_DEPOT_ITEM_DELETE: return TEXT("GM_BM_DEPOT_ITEM_DELETE");
+		case MqMsgType::GM_MAIL_DELETE: return TEXT("GM_MAIL_DELETE");
+		case MqMsgType::GM_CHANGE_PLAYING_LIMIT: return TEXT("GM_CHANGE_PLAYING_LIMIT");
+		case MqMsgType::GM_CHANGE_WATING_QUEUE_LIMIT: return TEXT("GM_CHANGE_WATING_QUEUE_LIMIT");
+		case MqMsgType::GM_MAX_CHANNEL: return TEXT("GM_MAX_CHANNEL");
+		case MqMsgType::GM_USER_MAX_PER_CHANNEL: return TEXT("GM_USER_MAX_PER_CHANNEL");
+		case MqMsgType::GM_SYSTEM_MAIL_REGISTER: return TEXT("GM_SYSTEM_MAIL_REGISTER");
+		case MqMsgType::GM_SYSTEM_MAIL_STRING_REGISTER: return TEXT("GM_SYSTEM_MAIL_STRING_REGISTER");
+		case MqMsgType::GM_GATEWAY_SEVER_CHANGE_STATUS: return TEXT("GM_GATEWAY_SEVER_CHANGE_STATUS");
+		case MqMsgType::GM_DECREASE_INVENTORYT_ITEM: return TEXT("GM_DECREASE_INVENTORYT_ITEM");
+		case MqMsgType::GM_DECREASE_DEPOT_ITEM: return TEXT("GM_DECREASE_DEPOT_ITEM");
+		case MqMsgType::GM_GATEWAY_SEVER_ADD: return TEXT("GM_GATEWAY_SEVER_ADD");
+		case MqMsgType::GM_GATEWAY_SEVER_UPDATE: return TEXT("GM_GATEWAY_SEVER_UPDATE");
+		case MqMsgType::GM_CONTENTS_EVENT_ADD: return TEXT("GM_CONTENTS_EVENT_ADD");
+		case MqMsgType::GM_CONTENTS_EVENT_REMOVE: return TEXT("GM_CONTENTS_EVENT_REMOVE");
+		case MqMsgType::GM_ACCOUNT_PLAYABLE_EVENT: return TEXT("GM_ACCOUNT_PLAYABLE_EVENT");
+		case MqMsgType::GM_USER_DATA_OFFLINE_PLAY: return TEXT("GM_USER_DATA_OFFLINE_PLAY");
+		case MqMsgType::GM_USER_DATA_GET_STATUS: return TEXT("GM_USER_DATA_GET_STATUS");
+		case MqMsgType::GM_SEND_GROUP_MAIL: return TEXT("GM_SEND_GROUP_MAIL");
+		case MqMsgType::GM_USER_TITLE_EQUIP: return TEXT("GM_USER_TITLE_EQUIP");
+		case MqMsgType::GM_USER_BATTLE_PASS_LEVEL_UPDATE: return TEXT("GM_USER_BATTLE_PASS_LEVEL_UPDATE");
+		case MqMsgType::GM_USER_BATTLE_PASS_ACTIVATE: return TEXT("GM_USER_BATTLE_PASS_ACTIVATE");
+		case MqMsgType::GM_ITEM_EXPIRED_TIME_UPDATE: return TEXT("GM_ITEM_EXPIRED_TIME_UPDATE");
+		case MqMsgType::GM_USER_BATTLE_PASS_EXP_UPDATE: return TEXT("GM_USER_BATTLE_PASS_EXP_UPDATE");
+		case MqMsgType::GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_ADD: return TEXT("GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_ADD");
+		case MqMsgType::GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_UPDATE: return TEXT("GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_UPDATE");
+		case MqMsgType::GM_USER_ACHIEVEMENT_LEVEL_ADD: return TEXT("GM_USER_ACHIEVEMENT_LEVEL_ADD");
+		case MqMsgType::GM_USER_ACHIEVEMENT_LEVEL_UPDATE: return TEXT("GM_USER_ACHIEVEMENT_LEVEL_UPDATE");
+		case MqMsgType::GM_USER_ACHIEVEMENT_COMPLETE_POINT_UPDATE: return TEXT("GM_USER_ACHIEVEMENT_COMPLETE_POINT_UPDATE");
+		case MqMsgType::GM_USER_MULTI_LEVEL_RANK_SLOT_STATE_UPDATE: return TEXT("GM_USER_MULTI_LEVEL_RANK_SLOT_STATE_UPDATE");
+		case MqMsgType::GM_USER_PROFILE_COMMENT_DELETE: return TEXT("GM_USER_PROFILE_COMMENT_DELETE");
+		case MqMsgType::GM_ACCOUNT_CACHE_DELETE: return TEXT("GM_ACCOUNT_CACHE_DELETE");
+		case MqMsgType::GM_ITEM_REFINE_DELETE: return TEXT("GM_ITEM_REFINE_DELETE");
+		case MqMsgType::GM_ITEM_REFINE_OPTION_INSERT: return TEXT("GM_ITEM_REFINE_OPTION_INSERT");
+		case MqMsgType::GM_ITEM_REFINE_BONUS_INSERT: return TEXT("GM_ITEM_REFINE_BONUS_INSERT");
+		case MqMsgType::GM_SYSTEM_MAIL_DELETE: return TEXT("GM_SYSTEM_MAIL_DELETE");
+		case MqMsgType::GM_ACCOUNT_RANK_BLOCK: return TEXT("GM_ACCOUNT_RANK_BLOCK");
+		case MqMsgType::GM_USER_ITEM_COLLECTION_CLEAR: return TEXT("GM_USER_ITEM_COLLECTION_CLEAR");
+		case MqMsgType::GM_USER_ITEM_COLLECTION_ADD: return TEXT("GM_USER_ITEM_COLLECTION_ADD");
+		case MqMsgType::GM_USER_ITEM_COLLECTION_DELETE: return TEXT("GM_USER_ITEM_COLLECTION_DELETE");
+		case MqMsgType::GM_USER_ATTENDANCE_ADD: return TEXT("GM_USER_ATTENDANCE_ADD");
+		case MqMsgType::GM_USER_ATTENDANCE_DELETE: return TEXT("GM_USER_ATTENDANCE_DELETE");
+		case MqMsgType::GM_USER_DATA_QUEST_REPEAT_DELETE: return TEXT("GM_USER_DATA_QUEST_REPEAT_DELETE");
+		case MqMsgType::GM_USER_DATA_QUEST_BOARD_DELETE: return TEXT("GM_USER_DATA_QUEST_BOARD_DELETE");
+		case MqMsgType::GM_USER_MULTI_LEVEL_RANK_DELETE: return TEXT("GM_USER_MULTI_LEVEL_RANK_DELETE");
+		case MqMsgType::GM_USER_QUEST_MULTI_LEVEL_RANK_RESET: return TEXT("GM_USER_QUEST_MULTI_LEVEL_RANK_RESET");
+		case MqMsgType::GM_USER_QUEST_MULTI_LEVEL_RANK_DELETE: return TEXT("GM_USER_QUEST_MULTI_LEVEL_RANK_DELETE");
+		case MqMsgType::GM_USER_QUEST_MULTI_LEVEL_RANK_COMPLETE: return TEXT("GM_USER_QUEST_MULTI_LEVEL_RANK_COMPLETE");
+		case MqMsgType::GM_USER_ACHIEVEMENT_DELETE: return TEXT("GM_USER_ACHIEVEMENT_DELETE");
+		case MqMsgType::GM_WORLD_ENTERING_LIMIT: return TEXT("GM_WORLD_ENTERING_LIMIT");
+		case MqMsgType::GM_WORLD_MAP_MAX_USER_COUNT: return TEXT("GM_WORLD_MAP_MAX_USER_COUNT");
+		case MqMsgType::GM_WORLD_MAP_NPC_RESPAWN_RATE: return TEXT("GM_WORLD_MAP_NPC_RESPAWN_RATE");
+		case MqMsgType::GM_WORLD_MAP_NPC_SOCIAL_MOTION_RATE: return TEXT("GM_WORLD_MAP_NPC_SOCIAL_MOTION_RATE");
+		case MqMsgType::GM_GUILD_DUNGEON_TICKET: return TEXT("GM_GUILD_DUNGEON_TICKET");
+		case MqMsgType::GM_VID_SYSTEM_MAIL_REGISTER: return TEXT("GM_VID_SYSTEM_MAIL_REGISTER");
+		case MqMsgType::GM_VID_NEW_TO_DELETED: return TEXT("GM_VID_NEW_TO_DELETED");
+		case MqMsgType::GM_SANCTUM_PAUSE: return TEXT("GM_SANCTUM_PAUSE");
+		case MqMsgType::GM_SANCTUM_RESUME: return TEXT("GM_SANCTUM_RESUME");
+		case MqMsgType::GM_SANCTUM_NEXUS_DESTORY: return TEXT("GM_SANCTUM_NEXUS_DESTORY");
+		case MqMsgType::GM_ACCOUNT_FORCE_CACHE: return TEXT("GM_ACCOUNT_FORCE_CACHE");
+		case MqMsgType::GR_RANK_LIST: return TEXT("GR_RANK_LIST");
+		case MqMsgType::RG_RANK_LIST: return TEXT("RG_RANK_LIST");
+		case MqMsgType::GR_RANK_LIST_COMMAND: return TEXT("GR_RANK_LIST_COMMAND");
+		case MqMsgType::GM_RANK_LIST: return TEXT("GM_RANK_LIST");
+		case MqMsgType::BALANCE_SIMULATOR: return TEXT("BALANCE_SIMULATOR");
+		case MqMsgType::GM_USER_DATA_GET: return TEXT("GM_USER_DATA_GET");
+		case MqMsgType::CHANGE_NPC_STAT: return TEXT("CHANGE_NPC_STAT");
+		case MqMsgType::ITEM_ACTIVATION: return TEXT("ITEM_ACTIVATION");
+		case MqMsgType::GM_NOTICE_SEND: return TEXT("GM_NOTICE_SEND");
+		case MqMsgType::HG_ITEM: return TEXT("HG_ITEM");
+		case MqMsgType::GH_ITEM: return TEXT("GH_ITEM");
+		case MqMsgType::GM_INTER_SERVER_UNLOCK_CONTENTS_ADD: return TEXT("GM_INTER_SERVER_UNLOCK_CONTENTS_ADD");
+		case MqMsgType::GM_INTER_SERVER_UNLOCK_CONTENTS_DELETE: return TEXT("GM_INTER_SERVER_UNLOCK_CONTENTS_DELETE");
+		case MqMsgType::GM_UNLOCK_CONTENTS_ADD: return TEXT("GM_UNLOCK_CONTENTS_ADD");
+		case MqMsgType::GM_UNLOCK_CONTENTS_DELETE: return TEXT("GM_UNLOCK_CONTENTS_DELETE");
+		case MqMsgType::GM_UNLOCK_MAP_ADD: return TEXT("GM_UNLOCK_MAP_ADD");
+		case MqMsgType::GM_UNLOCK_MAP_DELETE: return TEXT("GM_UNLOCK_MAP_DELETE");
+		case MqMsgType::GM_UNLOCK_ITEM_ADD: return TEXT("GM_UNLOCK_ITEM_ADD");
+		case MqMsgType::GM_UNLOCK_ITEM_DELETE: return TEXT("GM_UNLOCK_ITEM_DELETE");
+		case MqMsgType::GM_UNLOCK_CONTENTS_BY_USER_ADD: return TEXT("GM_UNLOCK_CONTENTS_BY_USER_ADD");
+		case MqMsgType::GM_UNLOCK_CONTENTS_BY_USER_DELETE: return TEXT("GM_UNLOCK_CONTENTS_BY_USER_DELETE");
+		case MqMsgType::GM_USER_ATTENDANCE_CHECK_UPDATE: return TEXT("GM_USER_ATTENDANCE_CHECK_UPDATE");
+		case MqMsgType::GM_USER_DUNGEON_TIME_UPDATE: return TEXT("GM_USER_DUNGEON_TIME_UPDATE");
+		case MqMsgType::GM_USER_BM_SHOP_POPUP_UPDATE: return TEXT("GM_USER_BM_SHOP_POPUP_UPDATE");
+		case MqMsgType::GM_BM_SHOP_PURCHASED_LIMIT_ACCOUNT: return TEXT("GM_BM_SHOP_PURCHASED_LIMIT_ACCOUNT");
+		case MqMsgType::GM_BM_SHOP_PURCHASED_LIMIT_SERVER: return TEXT("GM_BM_SHOP_PURCHASED_LIMIT_SERVER");
+		case MqMsgType::GM_BM_SHOP_PURCHASED_LIMIT_USER: return TEXT("GM_BM_SHOP_PURCHASED_LIMIT_USER");
+		case MqMsgType::GM_LOG_OUT_ACCOUNT_BY_VID: return TEXT("GM_LOG_OUT_ACCOUNT_BY_VID");
+		case MqMsgType::GM_SHOP_BLOCK_MARKET_PID_ADD: return TEXT("GM_SHOP_BLOCK_MARKET_PID_ADD");
+		case MqMsgType::GM_SHOP_BLOCK_MARKET_PID_DELETE: return TEXT("GM_SHOP_BLOCK_MARKET_PID_DELETE");
+		case MqMsgType::GM_BM_DEPOT_ITEM_ADD: return TEXT("GM_BM_DEPOT_ITEM_ADD");
+		case MqMsgType::GM_UNLOCK_CRAFT_ID_ADD: return TEXT("GM_UNLOCK_CRAFT_ID_ADD");
+		case MqMsgType::GM_UNLOCK_CRAFT_ID_DELETE: return TEXT("GM_UNLOCK_CRAFT_ID_DELETE");
+		case MqMsgType::GM_WORLD_USER: return TEXT("GM_WORLD_USER");
+		case MqMsgType::GM_USER_MONSTER_KNOWLEDGE_UPDATE: return TEXT("GM_USER_MONSTER_KNOWLEDGE_UPDATE");
+		case MqMsgType::GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_ACTIVATE: return TEXT("GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_ACTIVATE");
+		case MqMsgType::GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_DELETE: return TEXT("GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_DELETE");
+		case MqMsgType::GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_RESET: return TEXT("GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_RESET");
+		case MqMsgType::GM_USER_SLATE_SPECIAL_NODE_ACTIVATE: return TEXT("GM_USER_SLATE_SPECIAL_NODE_ACTIVATE");
+		case MqMsgType::GM_USER_SLATE_SPECIAL_NODE_RESET: return TEXT("GM_USER_SLATE_SPECIAL_NODE_RESET");
+		case MqMsgType::GM_USER_BUDDY_DELETE: return TEXT("GM_USER_BUDDY_DELETE");
+		case MqMsgType::GM_USER_BUDDY_SEND_INVITATION_DELETE: return TEXT("GM_USER_BUDDY_SEND_INVITATION_DELETE");
+		case MqMsgType::GM_USER_BUDDY_RECV_INVITATION_DELETE: return TEXT("GM_USER_BUDDY_RECV_INVITATION_DELETE");
+		case MqMsgType::GM_USER_CHAT_BAN: return TEXT("GM_USER_CHAT_BAN");
+		case MqMsgType::GM_USER_CHAT_UNBAN: return TEXT("GM_USER_CHAT_UNBAN");
+		case MqMsgType::GG_CHAT_INVADE_CHAT: return TEXT("GG_CHAT_INVADE_CHAT");
+		case MqMsgType::GM_USE_BYPASS_CHAT: return TEXT("GM_USE_BYPASS_CHAT");
+		case MqMsgType::GM_MARKET_TRANSACTION_CANCEL: return TEXT("GM_MARKET_TRANSACTION_CANCEL");
+		case MqMsgType::GG_USER_MIGRATE_SERVER_REQ: return TEXT("GG_USER_MIGRATE_SERVER_REQ");
+		case MqMsgType::GG_USER_MIGRATE_SERVER_ACK: return TEXT("GG_USER_MIGRATE_SERVER_ACK");
+		case MqMsgType::GM_GUILD_ASSET_UPDATE: return TEXT("GM_GUILD_ASSET_UPDATE");
+		case MqMsgType::GM_GUILD_MEMBER_EXPEL: return TEXT("GM_GUILD_MEMBER_EXPEL");
+		case MqMsgType::GM_GUILD_NAME: return TEXT("GM_GUILD_NAME");
+		case MqMsgType::GM_DEATH_ITEM_RESTORE: return TEXT("GM_DEATH_ITEM_RESTORE");
+		case MqMsgType::GM_DELETE_ITEM_RESTORE: return TEXT("GM_DELETE_ITEM_RESTORE");
+		case MqMsgType::GG_NOTIFY_DELETED_RECV_INVITATION_WORLD: return TEXT("GG_NOTIFY_DELETED_RECV_INVITATION_WORLD");
+		case MqMsgType::GG_NOTIFY_DELETED_SEND_INVITATION_WORLD: return TEXT("GG_NOTIFY_DELETED_SEND_INVITATION_WORLD");
+		case MqMsgType::GG_NOTIFY_DELETED_BUDDY_WORLD: return TEXT("GG_NOTIFY_DELETED_BUDDY_WORLD");
+		case MqMsgType::GUILD_STORE_ITEM_REGISTER: return TEXT("GUILD_STORE_ITEM_REGISTER");
+		case MqMsgType::GUILD_STORE_ITEM_DELETE: return TEXT("GUILD_STORE_ITEM_DELETE");
+		case MqMsgType::GUILD_AUCTION_REGISTER: return TEXT("GUILD_AUCTION_REGISTER");
+		case MqMsgType::GUILD_AUCTION_DELETE: return TEXT("GUILD_AUCTION_DELETE");
+		case MqMsgType::GUILD_AUCTION_CHANGE_DATA: return TEXT("GUILD_AUCTION_CHANGE_DATA");
+		case MqMsgType::GG_INTER_CONTENTS_EVENT_REG: return TEXT("GG_INTER_CONTENTS_EVENT_REG");
+		case MqMsgType::GM_GATEWAY_SERVER_ALIVE: return TEXT("GM_GATEWAY_SERVER_ALIVE");
+		case MqMsgType::BUDDY_USER_NICKNAME_CHANGE: return TEXT("BUDDY_USER_NICKNAME_CHANGE");
+		case MqMsgType::SEND_BUDDY_USER_NICKNAME_CHANGE: return TEXT("SEND_BUDDY_USER_NICKNAME_CHANGE");
+		case MqMsgType::RECV_BUDDY_USER_NICKNAME_CHANGE: return TEXT("RECV_BUDDY_USER_NICKNAME_CHANGE");
+		case MqMsgType::MONITORING_USER_NICKNAME_CHANGE: return TEXT("MONITORING_USER_NICKNAME_CHANGE");
+		case MqMsgType::GG_REQUEST_SERVER_EVENT: return TEXT("GG_REQUEST_SERVER_EVENT");
+		case MqMsgType::GM_PROBILITY_CORRECT: return TEXT("GM_PROBILITY_CORRECT");
+		case MqMsgType::GG_WDMARKET_RESIGTERED: return TEXT("GG_WDMARKET_RESIGTERED");
+		case MqMsgType::GG_WDMARKET_PURCHASED: return TEXT("GG_WDMARKET_PURCHASED");
+		case MqMsgType::GG_WDMARKET_CANCELED: return TEXT("GG_WDMARKET_CANCELED");
+		case MqMsgType::GM_ITEM_MAGICAL_FORGE_INSERT: return TEXT("GM_ITEM_MAGICAL_FORGE_INSERT");
+		case MqMsgType::GM_ITEM_MAGICAL_FORGE_UPDATE: return TEXT("GM_ITEM_MAGICAL_FORGE_UPDATE");
+		case MqMsgType::GM_ITEM_MAGICAL_FORGE_DELETE: return TEXT("GM_ITEM_MAGICAL_FORGE_DELETE");
+		case MqMsgType::GM_SPIRIT_SHOT_ENCHANT_INSERT: return TEXT("GM_SPIRIT_SHOT_ENCHANT_INSERT");
+		case MqMsgType::GM_SPIRIT_SHOT_ENCHANT_UPDATE: return TEXT("GM_SPIRIT_SHOT_ENCHANT_UPDATE");
+		case MqMsgType::GM_SPIRIT_SHOT_ENCHANT_DELETE: return TEXT("GM_SPIRIT_SHOT_ENCHANT_DELETE");
+		case MqMsgType::GM_WDMARKET_TRANSACTION_CANCEL: return TEXT("GM_WDMARKET_TRANSACTION_CANCEL");
+		case MqMsgType::GM_SERVER_RESPONSE_TIME: return TEXT("GM_SERVER_RESPONSE_TIME");
+		case MqMsgType::GM_SERVER_CHANNEL_JOB_TEST: return TEXT("GM_SERVER_CHANNEL_JOB_TEST");
+		case MqMsgType::GM_SERVER_MIGRATE: return TEXT("GM_SERVER_MIGRATE");
+		case MqMsgType::ALLY_CHAT_TRANSMIT: return TEXT("ALLY_CHAT_TRANSMIT");
+		case MqMsgType::ALLY_CHAT_DELETE: return TEXT("ALLY_CHAT_DELETE");
+		case MqMsgType::GM_SERVER_MIGRATE_GROUP_INSERT: return TEXT("GM_SERVER_MIGRATE_GROUP_INSERT");
+		case MqMsgType::GM_SERVER_MIGRATE_GROUP_UPDATE: return TEXT("GM_SERVER_MIGRATE_GROUP_UPDATE");
+		case MqMsgType::GM_SERVER_MIGRATE_GROUP_DELETE: return TEXT("GM_SERVER_MIGRATE_GROUP_DELETE");
+		case MqMsgType::GM_SERVER_MIGRATE_PERIOD_INSERT: return TEXT("GM_SERVER_MIGRATE_PERIOD_INSERT");
+		case MqMsgType::GM_SERVER_MIGRATE_PERIOD_UPDATE: return TEXT("GM_SERVER_MIGRATE_PERIOD_UPDATE");
+		case MqMsgType::GM_SERVER_MIGRATE_PERIOD_DELETE: return TEXT("GM_SERVER_MIGRATE_PERIOD_DELETE");
+		case MqMsgType::GM_SERVER_MIGRATE_DATA_ROLLBACK: return TEXT("GM_SERVER_MIGRATE_DATA_ROLLBACK");
+		case MqMsgType::GM_AGIT_DUNGEON_RAID_CLEAR_COUNT_UPDATE: return TEXT("GM_AGIT_DUNGEON_RAID_CLEAR_COUNT_UPDATE");
+		case MqMsgType::GM_AGIT_DUNGEON_RAID_TICKET_COUNT_UPDATE: return TEXT("GM_AGIT_DUNGEON_RAID_TICKET_COUNT_UPDATE");
+		case MqMsgType::GET_GUILD_INFO_REQ: return TEXT("GET_GUILD_INFO_REQ");
+		case MqMsgType::GET_GUILD_INFO_ACK: return TEXT("GET_GUILD_INFO_ACK");
+		case MqMsgType::GROUP_CHAT_CHANGE: return TEXT("GROUP_CHAT_CHANGE");
+		case MqMsgType::GROUP_CHAT: return TEXT("GROUP_CHAT");
+		case MqMsgType::GROUP_CHAT_LEADER_CHANGE: return TEXT("GROUP_CHAT_LEADER_CHANGE");
+		case MqMsgType::GROUP_CHAT_GRADE_CHANGE: return TEXT("GROUP_CHAT_GRADE_CHANGE");
+	}
+	return FString();
+}
+inline FString MQ_ContentsTypeEnumToString(MQ_ContentsType value)
+{
+	switch (value)
+	{
+		case MQ_ContentsType::ITEM: return TEXT("ITEM");
+		case MQ_ContentsType::CURRENCY: return TEXT("CURRENCY");
+		case MQ_ContentsType::DEPOT: return TEXT("DEPOT");
+		case MQ_ContentsType::MAILBOX: return TEXT("MAILBOX");
+		case MQ_ContentsType::RESURRECT: return TEXT("RESURRECT");
+		case MQ_ContentsType::MAINQUEST: return TEXT("MAINQUEST");
+		case MQ_ContentsType::SUBQUEST: return TEXT("SUBQUEST");
+		case MQ_ContentsType::REPEATQUEST: return TEXT("REPEATQUEST");
+		case MQ_ContentsType::MULTILEVELRANK: return TEXT("MULTILEVELRANK");
+		case MQ_ContentsType::GUILDKNIGHT: return TEXT("GUILDKNIGHT");
+		case MQ_ContentsType::GUILD: return TEXT("GUILD");
+		case MQ_ContentsType::BOOKMARK: return TEXT("BOOKMARK");
+		case MQ_ContentsType::CRAFT: return TEXT("CRAFT");
+		case MQ_ContentsType::FAIRY: return TEXT("FAIRY");
+		case MQ_ContentsType::FAIRYCONFIRM: return TEXT("FAIRYCONFIRM");
+		case MQ_ContentsType::FAIRYCOLLECTION: return TEXT("FAIRYCOLLECTION");
+		case MQ_ContentsType::COSTUME: return TEXT("COSTUME");
+		case MQ_ContentsType::TIMETICKET: return TEXT("TIMETICKET");
+		case MQ_ContentsType::ATTENDANCE: return TEXT("ATTENDANCE");
+		case MQ_ContentsType::TITLE: return TEXT("TITLE");
+		case MQ_ContentsType::MONSTERKNOWLEDGE: return TEXT("MONSTERKNOWLEDGE");
+		case MQ_ContentsType::STATISTICS: return TEXT("STATISTICS");
+	}
+	return FString();
+}
+inline FString RoutingKeyTypeEnumToString(RoutingKeyType value)
+{
+	switch (value)
+	{
+		case RoutingKeyType::MQ_ROUTING_DEFAULT: return TEXT("MQ_ROUTING_DEFAULT");
+		case RoutingKeyType::MQ_ROUTING_RANK: return TEXT("MQ_ROUTING_RANK");
+		case RoutingKeyType::MQ_HIVE_ITEM: return TEXT("MQ_HIVE_ITEM");
+		case RoutingKeyType::MQ_BALANCE_SIMULATOR: return TEXT("MQ_BALANCE_SIMULATOR");
+		case RoutingKeyType::MQ_RECAST_SIMULATOR: return TEXT("MQ_RECAST_SIMULATOR");
+		case RoutingKeyType::MQ_ADMINISTRATOR: return TEXT("MQ_ADMINISTRATOR");
+		case RoutingKeyType::MQ_GATEWAY_SERVER: return TEXT("MQ_GATEWAY_SERVER");
+	}
+	return FString();
+}
+inline FString DBCrudTypeEnumToString(DBCrudType value)
+{
+	switch (value)
+	{
+		case DBCrudType::DB_NONE: return TEXT("DB_NONE");
+		case DBCrudType::DB_CREATE: return TEXT("DB_CREATE");
+		case DBCrudType::DB_UPDATE: return TEXT("DB_UPDATE");
+		case DBCrudType::DB_DELETE: return TEXT("DB_DELETE");
+	}
+	return FString();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Enum -> DisplayKey (클라이언트 로컬라이징 번역 키를 처리하기 위해 활용)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline FString MqMsgTypeEnumToDisplayKey(MqMsgType value)
+{
+	switch (value)
+	{
+		case MqMsgType::GM_NOTICE_REGISTER: return TEXT("");
+		case MqMsgType::GM_NOTICE_DELETE: return TEXT("");
+		case MqMsgType::GM_ADMIN_COMMAND: return TEXT("");
+		case MqMsgType::GM_KICK_USER: return TEXT("");
+		case MqMsgType::GM_USER_QA_STAT: return TEXT("");
+		case MqMsgType::GM_USER_SPAWN_NPC: return TEXT("");
+		case MqMsgType::GM_START_SERVER_MAINTENANCE: return TEXT("");
+		case MqMsgType::GM_END_SERVER_MAINTENANCE: return TEXT("");
+		case MqMsgType::GM_BLOCK_USER: return TEXT("");
+		case MqMsgType::GM_UNBLOCK_USER: return TEXT("");
+		case MqMsgType::GM_ACCOUNT_GRADE: return TEXT("");
+		case MqMsgType::GM_USER_BASIC_DATA_SAVE: return TEXT("");
+		case MqMsgType::GM_USER_DATA_INVENTORY_EXTENDED: return TEXT("");
+		case MqMsgType::GM_USER_DATA_FAIRY_INSERT: return TEXT("");
+		case MqMsgType::GM_USER_DATA_FAIRY_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_DATA_FAIRY_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_DATA_FAIRY_CONFIRM_ADD: return TEXT("");
+		case MqMsgType::GM_USER_DATA_FAIRY_COLLECTION: return TEXT("");
+		case MqMsgType::GM_USER_DATA_QUEST_INSERT: return TEXT("");
+		case MqMsgType::GM_USER_DATA_QUEST_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_DATA_QUEST_MAIN_UPDATE_INIT: return TEXT("");
+		case MqMsgType::GM_USER_DATA_QUEST_MAIN_UPDATE_LAST_COMPLETED: return TEXT("");
+		case MqMsgType::GM_USER_DATA_QUEST_MAIN_UPDATE_REWARED: return TEXT("");
+		case MqMsgType::GM_USER_DATA_NAME: return TEXT("");
+		case MqMsgType::GM_USER_DATA_STAT: return TEXT("");
+		case MqMsgType::GM_USER_DATA_CURRENCY: return TEXT("");
+		case MqMsgType::GM_USER_DATA_SKILL: return TEXT("");
+		case MqMsgType::GM_USER_DATA_SKILL_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_DATA_ITEM: return TEXT("");
+		case MqMsgType::GM_USER_DATA_EQUIP_ITEM: return TEXT("");
+		case MqMsgType::GM_USER_ADD_COSTUME: return TEXT("");
+		case MqMsgType::GM_USER_UPDATE_COSTUME: return TEXT("");
+		case MqMsgType::GM_USER_DATA_TITLE_INSERT: return TEXT("");
+		case MqMsgType::GM_USER_DATA_TITLE_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_RETURN_TOWN: return TEXT("");
+		case MqMsgType::GM_USER_DATA_NEW_MAIL: return TEXT("");
+		case MqMsgType::GM_USER_DATA_MONSTER_KNOWLEDGE: return TEXT("");
+		case MqMsgType::GM_GAME_EVENT_REGISTER: return TEXT("");
+		case MqMsgType::GM_GAME_EVENT_DELETE: return TEXT("");
+		case MqMsgType::GM_ADD_CHANNEL: return TEXT("");
+		case MqMsgType::GM_BM_DEPOT_ITEM_DELETE: return TEXT("");
+		case MqMsgType::GM_MAIL_DELETE: return TEXT("");
+		case MqMsgType::GM_CHANGE_PLAYING_LIMIT: return TEXT("");
+		case MqMsgType::GM_CHANGE_WATING_QUEUE_LIMIT: return TEXT("");
+		case MqMsgType::GM_MAX_CHANNEL: return TEXT("");
+		case MqMsgType::GM_USER_MAX_PER_CHANNEL: return TEXT("");
+		case MqMsgType::GM_SYSTEM_MAIL_REGISTER: return TEXT("");
+		case MqMsgType::GM_SYSTEM_MAIL_STRING_REGISTER: return TEXT("");
+		case MqMsgType::GM_GATEWAY_SEVER_CHANGE_STATUS: return TEXT("");
+		case MqMsgType::GM_DECREASE_INVENTORYT_ITEM: return TEXT("");
+		case MqMsgType::GM_DECREASE_DEPOT_ITEM: return TEXT("");
+		case MqMsgType::GM_GATEWAY_SEVER_ADD: return TEXT("");
+		case MqMsgType::GM_GATEWAY_SEVER_UPDATE: return TEXT("");
+		case MqMsgType::GM_CONTENTS_EVENT_ADD: return TEXT("");
+		case MqMsgType::GM_CONTENTS_EVENT_REMOVE: return TEXT("");
+		case MqMsgType::GM_ACCOUNT_PLAYABLE_EVENT: return TEXT("");
+		case MqMsgType::GM_USER_DATA_OFFLINE_PLAY: return TEXT("");
+		case MqMsgType::GM_USER_DATA_GET_STATUS: return TEXT("");
+		case MqMsgType::GM_SEND_GROUP_MAIL: return TEXT("");
+		case MqMsgType::GM_USER_TITLE_EQUIP: return TEXT("");
+		case MqMsgType::GM_USER_BATTLE_PASS_LEVEL_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_BATTLE_PASS_ACTIVATE: return TEXT("");
+		case MqMsgType::GM_ITEM_EXPIRED_TIME_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_BATTLE_PASS_EXP_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_ADD: return TEXT("");
+		case MqMsgType::GM_USER_BATTLE_PASS_MISSION_COMPLETE_POINT_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_ACHIEVEMENT_LEVEL_ADD: return TEXT("");
+		case MqMsgType::GM_USER_ACHIEVEMENT_LEVEL_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_ACHIEVEMENT_COMPLETE_POINT_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_MULTI_LEVEL_RANK_SLOT_STATE_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_PROFILE_COMMENT_DELETE: return TEXT("");
+		case MqMsgType::GM_ACCOUNT_CACHE_DELETE: return TEXT("");
+		case MqMsgType::GM_ITEM_REFINE_DELETE: return TEXT("");
+		case MqMsgType::GM_ITEM_REFINE_OPTION_INSERT: return TEXT("");
+		case MqMsgType::GM_ITEM_REFINE_BONUS_INSERT: return TEXT("");
+		case MqMsgType::GM_SYSTEM_MAIL_DELETE: return TEXT("");
+		case MqMsgType::GM_ACCOUNT_RANK_BLOCK: return TEXT("");
+		case MqMsgType::GM_USER_ITEM_COLLECTION_CLEAR: return TEXT("");
+		case MqMsgType::GM_USER_ITEM_COLLECTION_ADD: return TEXT("");
+		case MqMsgType::GM_USER_ITEM_COLLECTION_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_ATTENDANCE_ADD: return TEXT("");
+		case MqMsgType::GM_USER_ATTENDANCE_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_DATA_QUEST_REPEAT_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_DATA_QUEST_BOARD_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_MULTI_LEVEL_RANK_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_QUEST_MULTI_LEVEL_RANK_RESET: return TEXT("");
+		case MqMsgType::GM_USER_QUEST_MULTI_LEVEL_RANK_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_QUEST_MULTI_LEVEL_RANK_COMPLETE: return TEXT("");
+		case MqMsgType::GM_USER_ACHIEVEMENT_DELETE: return TEXT("");
+		case MqMsgType::GM_WORLD_ENTERING_LIMIT: return TEXT("");
+		case MqMsgType::GM_WORLD_MAP_MAX_USER_COUNT: return TEXT("");
+		case MqMsgType::GM_WORLD_MAP_NPC_RESPAWN_RATE: return TEXT("");
+		case MqMsgType::GM_WORLD_MAP_NPC_SOCIAL_MOTION_RATE: return TEXT("");
+		case MqMsgType::GM_GUILD_DUNGEON_TICKET: return TEXT("");
+		case MqMsgType::GM_VID_SYSTEM_MAIL_REGISTER: return TEXT("");
+		case MqMsgType::GM_VID_NEW_TO_DELETED: return TEXT("");
+		case MqMsgType::GM_SANCTUM_PAUSE: return TEXT("");
+		case MqMsgType::GM_SANCTUM_RESUME: return TEXT("");
+		case MqMsgType::GM_SANCTUM_NEXUS_DESTORY: return TEXT("");
+		case MqMsgType::GM_ACCOUNT_FORCE_CACHE: return TEXT("");
+		case MqMsgType::GR_RANK_LIST: return TEXT("");
+		case MqMsgType::RG_RANK_LIST: return TEXT("");
+		case MqMsgType::GR_RANK_LIST_COMMAND: return TEXT("");
+		case MqMsgType::GM_RANK_LIST: return TEXT("");
+		case MqMsgType::BALANCE_SIMULATOR: return TEXT("");
+		case MqMsgType::GM_USER_DATA_GET: return TEXT("");
+		case MqMsgType::CHANGE_NPC_STAT: return TEXT("");
+		case MqMsgType::ITEM_ACTIVATION: return TEXT("");
+		case MqMsgType::GM_NOTICE_SEND: return TEXT("");
+		case MqMsgType::HG_ITEM: return TEXT("");
+		case MqMsgType::GH_ITEM: return TEXT("");
+		case MqMsgType::GM_INTER_SERVER_UNLOCK_CONTENTS_ADD: return TEXT("");
+		case MqMsgType::GM_INTER_SERVER_UNLOCK_CONTENTS_DELETE: return TEXT("");
+		case MqMsgType::GM_UNLOCK_CONTENTS_ADD: return TEXT("");
+		case MqMsgType::GM_UNLOCK_CONTENTS_DELETE: return TEXT("");
+		case MqMsgType::GM_UNLOCK_MAP_ADD: return TEXT("");
+		case MqMsgType::GM_UNLOCK_MAP_DELETE: return TEXT("");
+		case MqMsgType::GM_UNLOCK_ITEM_ADD: return TEXT("");
+		case MqMsgType::GM_UNLOCK_ITEM_DELETE: return TEXT("");
+		case MqMsgType::GM_UNLOCK_CONTENTS_BY_USER_ADD: return TEXT("");
+		case MqMsgType::GM_UNLOCK_CONTENTS_BY_USER_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_ATTENDANCE_CHECK_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_DUNGEON_TIME_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_BM_SHOP_POPUP_UPDATE: return TEXT("");
+		case MqMsgType::GM_BM_SHOP_PURCHASED_LIMIT_ACCOUNT: return TEXT("");
+		case MqMsgType::GM_BM_SHOP_PURCHASED_LIMIT_SERVER: return TEXT("");
+		case MqMsgType::GM_BM_SHOP_PURCHASED_LIMIT_USER: return TEXT("");
+		case MqMsgType::GM_LOG_OUT_ACCOUNT_BY_VID: return TEXT("");
+		case MqMsgType::GM_SHOP_BLOCK_MARKET_PID_ADD: return TEXT("");
+		case MqMsgType::GM_SHOP_BLOCK_MARKET_PID_DELETE: return TEXT("");
+		case MqMsgType::GM_BM_DEPOT_ITEM_ADD: return TEXT("");
+		case MqMsgType::GM_UNLOCK_CRAFT_ID_ADD: return TEXT("");
+		case MqMsgType::GM_UNLOCK_CRAFT_ID_DELETE: return TEXT("");
+		case MqMsgType::GM_WORLD_USER: return TEXT("");
+		case MqMsgType::GM_USER_MONSTER_KNOWLEDGE_UPDATE: return TEXT("");
+		case MqMsgType::GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_ACTIVATE: return TEXT("");
+		case MqMsgType::GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_MONSTER_KNOWLEDGE_SLATE_SLOT_RESET: return TEXT("");
+		case MqMsgType::GM_USER_SLATE_SPECIAL_NODE_ACTIVATE: return TEXT("");
+		case MqMsgType::GM_USER_SLATE_SPECIAL_NODE_RESET: return TEXT("");
+		case MqMsgType::GM_USER_BUDDY_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_BUDDY_SEND_INVITATION_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_BUDDY_RECV_INVITATION_DELETE: return TEXT("");
+		case MqMsgType::GM_USER_CHAT_BAN: return TEXT("");
+		case MqMsgType::GM_USER_CHAT_UNBAN: return TEXT("");
+		case MqMsgType::GG_CHAT_INVADE_CHAT: return TEXT("");
+		case MqMsgType::GM_USE_BYPASS_CHAT: return TEXT("");
+		case MqMsgType::GM_MARKET_TRANSACTION_CANCEL: return TEXT("");
+		case MqMsgType::GG_USER_MIGRATE_SERVER_REQ: return TEXT("");
+		case MqMsgType::GG_USER_MIGRATE_SERVER_ACK: return TEXT("");
+		case MqMsgType::GM_GUILD_ASSET_UPDATE: return TEXT("");
+		case MqMsgType::GM_GUILD_MEMBER_EXPEL: return TEXT("");
+		case MqMsgType::GM_GUILD_NAME: return TEXT("");
+		case MqMsgType::GM_DEATH_ITEM_RESTORE: return TEXT("");
+		case MqMsgType::GM_DELETE_ITEM_RESTORE: return TEXT("");
+		case MqMsgType::GG_NOTIFY_DELETED_RECV_INVITATION_WORLD: return TEXT("");
+		case MqMsgType::GG_NOTIFY_DELETED_SEND_INVITATION_WORLD: return TEXT("");
+		case MqMsgType::GG_NOTIFY_DELETED_BUDDY_WORLD: return TEXT("");
+		case MqMsgType::GUILD_STORE_ITEM_REGISTER: return TEXT("");
+		case MqMsgType::GUILD_STORE_ITEM_DELETE: return TEXT("");
+		case MqMsgType::GUILD_AUCTION_REGISTER: return TEXT("");
+		case MqMsgType::GUILD_AUCTION_DELETE: return TEXT("");
+		case MqMsgType::GUILD_AUCTION_CHANGE_DATA: return TEXT("");
+		case MqMsgType::GG_INTER_CONTENTS_EVENT_REG: return TEXT("");
+		case MqMsgType::GM_GATEWAY_SERVER_ALIVE: return TEXT("");
+		case MqMsgType::BUDDY_USER_NICKNAME_CHANGE: return TEXT("");
+		case MqMsgType::SEND_BUDDY_USER_NICKNAME_CHANGE: return TEXT("");
+		case MqMsgType::RECV_BUDDY_USER_NICKNAME_CHANGE: return TEXT("");
+		case MqMsgType::MONITORING_USER_NICKNAME_CHANGE: return TEXT("");
+		case MqMsgType::GG_REQUEST_SERVER_EVENT: return TEXT("");
+		case MqMsgType::GM_PROBILITY_CORRECT: return TEXT("");
+		case MqMsgType::GG_WDMARKET_RESIGTERED: return TEXT("");
+		case MqMsgType::GG_WDMARKET_PURCHASED: return TEXT("");
+		case MqMsgType::GG_WDMARKET_CANCELED: return TEXT("");
+		case MqMsgType::GM_ITEM_MAGICAL_FORGE_INSERT: return TEXT("");
+		case MqMsgType::GM_ITEM_MAGICAL_FORGE_UPDATE: return TEXT("");
+		case MqMsgType::GM_ITEM_MAGICAL_FORGE_DELETE: return TEXT("");
+		case MqMsgType::GM_SPIRIT_SHOT_ENCHANT_INSERT: return TEXT("");
+		case MqMsgType::GM_SPIRIT_SHOT_ENCHANT_UPDATE: return TEXT("");
+		case MqMsgType::GM_SPIRIT_SHOT_ENCHANT_DELETE: return TEXT("");
+		case MqMsgType::GM_WDMARKET_TRANSACTION_CANCEL: return TEXT("");
+		case MqMsgType::GM_SERVER_RESPONSE_TIME: return TEXT("");
+		case MqMsgType::GM_SERVER_CHANNEL_JOB_TEST: return TEXT("");
+		case MqMsgType::GM_SERVER_MIGRATE: return TEXT("");
+		case MqMsgType::ALLY_CHAT_TRANSMIT: return TEXT("");
+		case MqMsgType::ALLY_CHAT_DELETE: return TEXT("");
+		case MqMsgType::GM_SERVER_MIGRATE_GROUP_INSERT: return TEXT("");
+		case MqMsgType::GM_SERVER_MIGRATE_GROUP_UPDATE: return TEXT("");
+		case MqMsgType::GM_SERVER_MIGRATE_GROUP_DELETE: return TEXT("");
+		case MqMsgType::GM_SERVER_MIGRATE_PERIOD_INSERT: return TEXT("");
+		case MqMsgType::GM_SERVER_MIGRATE_PERIOD_UPDATE: return TEXT("");
+		case MqMsgType::GM_SERVER_MIGRATE_PERIOD_DELETE: return TEXT("");
+		case MqMsgType::GM_SERVER_MIGRATE_DATA_ROLLBACK: return TEXT("");
+		case MqMsgType::GM_AGIT_DUNGEON_RAID_CLEAR_COUNT_UPDATE: return TEXT("");
+		case MqMsgType::GM_AGIT_DUNGEON_RAID_TICKET_COUNT_UPDATE: return TEXT("");
+		case MqMsgType::GET_GUILD_INFO_REQ: return TEXT("");
+		case MqMsgType::GET_GUILD_INFO_ACK: return TEXT("");
+		case MqMsgType::GROUP_CHAT_CHANGE: return TEXT("");
+		case MqMsgType::GROUP_CHAT: return TEXT("");
+		case MqMsgType::GROUP_CHAT_LEADER_CHANGE: return TEXT("");
+		case MqMsgType::GROUP_CHAT_GRADE_CHANGE: return TEXT("");
+	}
+	return FString();
+}
+inline FString MQ_ContentsTypeEnumToDisplayKey(MQ_ContentsType value)
+{
+	switch (value)
+	{
+		case MQ_ContentsType::ITEM: return TEXT("");
+		case MQ_ContentsType::CURRENCY: return TEXT("");
+		case MQ_ContentsType::DEPOT: return TEXT("");
+		case MQ_ContentsType::MAILBOX: return TEXT("");
+		case MQ_ContentsType::RESURRECT: return TEXT("");
+		case MQ_ContentsType::MAINQUEST: return TEXT("");
+		case MQ_ContentsType::SUBQUEST: return TEXT("");
+		case MQ_ContentsType::REPEATQUEST: return TEXT("");
+		case MQ_ContentsType::MULTILEVELRANK: return TEXT("");
+		case MQ_ContentsType::GUILDKNIGHT: return TEXT("");
+		case MQ_ContentsType::GUILD: return TEXT("");
+		case MQ_ContentsType::BOOKMARK: return TEXT("");
+		case MQ_ContentsType::CRAFT: return TEXT("");
+		case MQ_ContentsType::FAIRY: return TEXT("");
+		case MQ_ContentsType::FAIRYCONFIRM: return TEXT("");
+		case MQ_ContentsType::FAIRYCOLLECTION: return TEXT("");
+		case MQ_ContentsType::COSTUME: return TEXT("");
+		case MQ_ContentsType::TIMETICKET: return TEXT("");
+		case MQ_ContentsType::ATTENDANCE: return TEXT("");
+		case MQ_ContentsType::TITLE: return TEXT("");
+		case MQ_ContentsType::MONSTERKNOWLEDGE: return TEXT("");
+		case MQ_ContentsType::STATISTICS: return TEXT("");
+	}
+	return FString();
+}
+inline FString RoutingKeyTypeEnumToDisplayKey(RoutingKeyType value)
+{
+	switch (value)
+	{
+		case RoutingKeyType::MQ_ROUTING_DEFAULT: return TEXT("");
+		case RoutingKeyType::MQ_ROUTING_RANK: return TEXT("");
+		case RoutingKeyType::MQ_HIVE_ITEM: return TEXT("");
+		case RoutingKeyType::MQ_BALANCE_SIMULATOR: return TEXT("");
+		case RoutingKeyType::MQ_RECAST_SIMULATOR: return TEXT("");
+		case RoutingKeyType::MQ_ADMINISTRATOR: return TEXT("");
+		case RoutingKeyType::MQ_GATEWAY_SERVER: return TEXT("");
+	}
+	return FString();
+}
+inline FString DBCrudTypeEnumToDisplayKey(DBCrudType value)
+{
+	switch (value)
+	{
+		case DBCrudType::DB_NONE: return TEXT("");
+		case DBCrudType::DB_CREATE: return TEXT("");
+		case DBCrudType::DB_UPDATE: return TEXT("");
+		case DBCrudType::DB_DELETE: return TEXT("");
+	}
+	return FString();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Validators
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline bool IsValidMqMsgType(MqMsgType value) noexcept
+{
+	return (value >= MqMsgType::GM_NOTICE_REGISTER && value < MqMsgType::MAX);
+}
+
+inline bool IsValidMQ_ContentsType(MQ_ContentsType value) noexcept
+{
+	return (value >= MQ_ContentsType::ITEM && value < MQ_ContentsType::MAX);
+}
+
+inline bool IsValidRoutingKeyType(RoutingKeyType value) noexcept
+{
+	return (value >= RoutingKeyType::MQ_ROUTING_DEFAULT && value < RoutingKeyType::MQ_ROUTING_NONE);
+}
+
+inline bool IsValidDBCrudType(DBCrudType value) noexcept
+{
+	return (value >= DBCrudType::DB_NONE && value <= DBCrudType::DB_DELETE);
+}
+

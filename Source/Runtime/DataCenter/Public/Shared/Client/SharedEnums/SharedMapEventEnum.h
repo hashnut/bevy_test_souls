@@ -1,0 +1,926 @@
+﻿#pragma once
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Do not modify this file because it was generated automatically
+// SharedMapEventEnumClient.h
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Enums
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+UENUM(BlueprintType)
+// 맵 상태제어 시스템 컴포넌트 Type 이벤트 툴 에서 사용되는 Class 이름이라서 소문자로 사용 
+enum class MapEventComponentType : uint8
+{
+
+	// 없음
+	NONE = 0,
+
+	// 아이템 추가
+	AddItem = 1,
+
+	// 시작뭐지?
+	Start_Box = 2,
+
+	// 몬스터 스폰
+	SpawnNpc = 3,
+
+	// 프랍 스폰
+	SpawnProp = 4,
+
+	// 특정 지역 도착
+	Arrival_Box = 5,
+
+	// 이벤트 타이머 시작
+	TimerSubDialog = 6,
+
+	// 그룹 몬스터 모두 사냥 체크
+	KillAllGroupMonsters = 7,
+
+	// 이벤트 타이머 강제 종료
+	StopTimerSubDialog = 8,
+
+	// 아이템 삭제
+	DeleteItem = 9,
+
+	// 골드 증가
+	IncreaseGold = 10,
+
+	// 경험치 증가
+	IncreaseExp = 11,
+
+	// 회복
+	IncreaseHp = 12,
+
+	// 상태 이상 추가
+	AddAbnormality = 13,
+
+	// 상태 이상 삭제
+	RemoveAbnormality = 14,
+
+	// 패시브 추가
+	AddPassivity = 15,
+
+	// 마을로 귀환
+	WarpToTown = 16,
+
+	// 레벨 체크
+	GetUserLevel = 17,
+
+	// 반복 퀘스트
+	NewRepeatQuest = 18,
+
+	// 서브 퀘스트
+	NewSubQuest = 19,
+
+	// 스텟 포인트
+	IncreaseStatPoint = 20,
+
+	// 몬스터 사냥 체크
+	EnemyKill = 21,
+
+	// 특정지역 워프
+	Warp = 22,
+
+	// 메일 보내기
+	SendMail = 23,
+
+	// 타이머 체크
+	GetTimer = 24,
+
+	// 타이머 대기
+	WaitingTime = 25,
+
+	// 트리거 입장
+	EnterTerritory = 26,
+
+	// 트리거 퇴장
+	LeaveTerritory = 27,
+
+	// 재화 지급
+	IncreaseCurrency = 28,
+
+	// 이벤트 변수 체크
+	GetEventVariable = 29,
+
+	// 이벤트 변수 등록
+	EventVariable = 30,
+
+	// NPC 삭제
+	DeSpawnNpc = 31,
+
+	// 시스템 메시지
+	ScreenMessage = 32,
+
+	// 다른 이벤트 실행
+	EventRun = 33,
+
+	// 카운트 다운 이벤트 
+	CountDownTime = 34,
+
+	// UI 실행
+	OpenUI = 35,
+
+	// 주변 몬스터 체크
+	SummonsMonster = 36,
+
+	// 보상
+	SpaceCrackReward = 37,
+
+	// 시공의틈새 몬스터 체크
+	SpaceCrackMonsterKill = 38,
+
+	// 시공의틈새 상태
+	SpaceCrackState = 39,
+
+	// 채널 값 체크
+	ChannelVariableConditional = 40,
+
+	// 채널 값 셋팅
+	ChannelVariable = 41,
+
+	// 시공의 틈새 구슬 충돌
+	MarbleTouch = 42,
+
+	// 마지막 필드 위치
+	LastPublicField = 43,
+
+	// UI  활성 / 비활성 
+	UIActivity = 44,
+
+	// NPC 특수 상태 변경 
+	NpcSpecialStatus = 45,
+
+	//  오브젝트 활성 / 비활성
+	ObjectActive = 46,
+
+	// 미션 시작
+	MissionStart = 47,
+
+	// 그룹 몬스터 스폰
+	WaveSpawnNpc = 48,
+
+	// 오브젝트 파괴 체크 
+	DestroyObject = 49,
+
+	// 미션 내용 변경 
+	MissionText = 50,
+
+	// 오브젝트 소멸
+	DeSpawnObject = 51,
+
+	// 미션 카운트 다운 시작
+	MissionCountDownTime = 52,
+
+	// 미션 완료
+	MissionCompletion = 53,
+
+	// 미션 보스 스폰
+	MissionBossSpawn = 54,
+
+	// 미션 대기 시간
+	MissionCoolTime = 55,
+
+	// 대화 다이얼로그 
+	SubDialog = 56,
+
+	// SpaceTracerNPC사망후 Prop 스폰
+	SpawnPropAfterDeSpawnSpaceTracerNpc = 57,
+
+	// 이벤트 메시지 출력 (가변 인자) 
+	EventScreenMessage = 58,
+
+	// 몬스터 사냥 체크 
+	MonstersKill = 59,
+
+	// 시공의 틈새 웨이브 다음 조건 
+	ActivationSpaceCrack = 60,
+
+	// 시공의 틈새 웨이브 다음 조건 
+	SpawnGroup = 61,
+
+	// 몬스터 사망 체크
+	NpcState = 62,
+
+	// 이벤트 정지
+	EventStop = 63,
+
+	// 퀘스트 상태 변경
+	QuestComplete = 64,
+
+	// WayPoint이동 중지
+	StopWayPointMove = 65,
+
+	// WayPoint이동 시작
+	StartWayPointMove = 66,
+
+	// 맵번호 체크
+	MapIdConditional = 67,
+
+	// 그룹 몬스터 삭제
+	DeSpawnGroup = 68,
+
+	// 몬스터 사망 처리후 디스폰
+	DeathNpc = 69,
+
+	// 침공전용 팀별 이벤트메세지 전송
+	InvadeEventScreenMessage = 70,
+
+	// 침공전용 팀별 이상효과부여
+	InvadeApplyAbnormality = 71,
+
+	// 스폰 그룹 데이터를 변경
+	ChangeSpawnGroup = 72,
+
+	// 모든 몬스터 소멸
+	DeStroyAllMonsters = 73,
+
+	// 이벤트 완료
+	EventComplete = 74,
+
+	// 퀘스트 완료 체크
+	QuestConditional = 75,
+
+	// 팀별 이상효과부여
+	TeamApplyAbnormality = 76,
+
+	// 파티던전 워프
+	PartyDungeonZoneWarp = 77,
+
+	MAX = 78,
+};
+
+UENUM(BlueprintType)
+// 이벤트 시작 되는 정보 - 이벤트 툴 에서 사용되는 Class 이름이라서 소문자로 사용
+enum class MapEntryPointType : uint8
+{
+
+	// 없음
+	NONE = 0,
+
+	// 다른 이벤트 실행
+	OtherEventStart = 1,
+
+	// 이벤트타이머 완료
+	TimerEndEvent = 2,
+
+	// 시공의 틈새 시작
+	SpaceCrackEvent = 3,
+
+	// 던전 입장
+	DungeonEnterEvent = 4,
+
+	// 특정 몬스터 사냥 되는 경우
+	MonsterKillEvent = 5,
+
+	// 도착 지점 도착하는 경우 이벤트 발생
+	TerritoryEnter = 6,
+
+	// 침공전 시작
+	InvadeStartEvent = 7,
+
+	// Npc가 이동 경로 Waypoint를 통과하는 경우 이벤트 발생
+	NpcPassWaypoint = 8,
+
+	// 침공전 종료
+	InvadeEndEvent = 9,
+
+	// 몬스터 사냥 이벤트(타입)
+	MonsterKillbyFunctionTypeEvent = 10,
+
+	// 특정 SpawnGroup에 속한 특정몬스터가 사냥 되는 경우
+	SpawnGroupMonsterKillEvent = 11,
+
+	// 특정 이벤트가 완료 되면 이벤트 진행
+	EventCompletion = 12,
+
+	// 파티 던전 시작 이벤트
+	PartyDungeonPlayEvent = 13,
+
+	// 파티 던전 성공
+	PartyDungeonSuccess = 14,
+
+	// 파티 던전 종료
+	PartyDungeonFail = 15,
+
+	// 특정팀에서 특정 몬스터 사냥 한 경우
+	MonsterKillEventTeam = 16,
+
+	// 기사단 아레나 특정 상태 진입
+	GuildwarStateEvent = 17,
+
+	MAX = 18,
+};
+
+UENUM(BlueprintType)
+// 출력 UI 정보
+enum class UIType : uint8
+{
+
+	// 없음
+	NONE = 0,
+
+	// 소환 단계 시작 티커
+	SUMMONS = 1,
+
+	// 전투 단계 시작 티커
+	BATTLE = 2,
+
+	// 컨텐츠 실패 티커
+	CONTENT_FAILURE = 3,
+
+	// 컨텐츠 성공 티커
+	CONTENT_SUCCESS = 4,
+
+	// 보상 UI
+	REWARD = 5,
+
+	// 스킬 HUD 관련 - 단축키
+	SKILL_HUD = 6,
+
+	MAX = 7,
+};
+
+UENUM(BlueprintType)
+// 시공의틈새 - 상태
+enum class SpaceCrackState : uint8
+{
+
+	// 없음
+	NONE = 0,
+
+	// 소환
+	SUMMONS = 1,
+
+	// 전투
+	BATTLE = 2,
+
+	// 보상
+	REWARD = 3,
+
+	MAX = 4,
+};
+
+UENUM(BlueprintType)
+// 이벤트 메시지 종료
+enum class EventScreenType : uint8
+{
+
+	// 없음
+	NONE = 0,
+
+	// 몬스터 사냥 
+	MONSTER_KILL = 1,
+
+	MAX = 2,
+};
+
+UENUM(BlueprintType)
+// 시공의 틈새 웨이브 다음 조건
+enum class WaveConditionType : uint8
+{
+
+	// 없음
+	NONE = 0,
+
+	// 몬스터 사냥 수
+	KILL = 1,
+
+	MAX = 2,
+};
+
+UENUM(BlueprintType)
+// 시공의 틈새 패턴 종료
+enum class SpaceCrackActivatePatternType : uint8
+{
+
+	// 기본
+	DEFAULT = 0,
+
+	// 황금
+	GOLD = 1,
+
+	MAX = 2,
+};
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// String -> Enum
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline MapEventComponentType MapEventComponentTypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("NONE"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::NONE;
+	if (str.Compare(TEXT("AddItem"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::AddItem;
+	if (str.Compare(TEXT("Start_Box"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::Start_Box;
+	if (str.Compare(TEXT("SpawnNpc"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SpawnNpc;
+	if (str.Compare(TEXT("SpawnProp"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SpawnProp;
+	if (str.Compare(TEXT("Arrival_Box"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::Arrival_Box;
+	if (str.Compare(TEXT("TimerSubDialog"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::TimerSubDialog;
+	if (str.Compare(TEXT("KillAllGroupMonsters"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::KillAllGroupMonsters;
+	if (str.Compare(TEXT("StopTimerSubDialog"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::StopTimerSubDialog;
+	if (str.Compare(TEXT("DeleteItem"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::DeleteItem;
+	if (str.Compare(TEXT("IncreaseGold"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::IncreaseGold;
+	if (str.Compare(TEXT("IncreaseExp"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::IncreaseExp;
+	if (str.Compare(TEXT("IncreaseHp"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::IncreaseHp;
+	if (str.Compare(TEXT("AddAbnormality"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::AddAbnormality;
+	if (str.Compare(TEXT("RemoveAbnormality"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::RemoveAbnormality;
+	if (str.Compare(TEXT("AddPassivity"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::AddPassivity;
+	if (str.Compare(TEXT("WarpToTown"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::WarpToTown;
+	if (str.Compare(TEXT("GetUserLevel"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::GetUserLevel;
+	if (str.Compare(TEXT("NewRepeatQuest"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::NewRepeatQuest;
+	if (str.Compare(TEXT("NewSubQuest"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::NewSubQuest;
+	if (str.Compare(TEXT("IncreaseStatPoint"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::IncreaseStatPoint;
+	if (str.Compare(TEXT("EnemyKill"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::EnemyKill;
+	if (str.Compare(TEXT("Warp"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::Warp;
+	if (str.Compare(TEXT("SendMail"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SendMail;
+	if (str.Compare(TEXT("GetTimer"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::GetTimer;
+	if (str.Compare(TEXT("WaitingTime"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::WaitingTime;
+	if (str.Compare(TEXT("EnterTerritory"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::EnterTerritory;
+	if (str.Compare(TEXT("LeaveTerritory"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::LeaveTerritory;
+	if (str.Compare(TEXT("IncreaseCurrency"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::IncreaseCurrency;
+	if (str.Compare(TEXT("GetEventVariable"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::GetEventVariable;
+	if (str.Compare(TEXT("EventVariable"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::EventVariable;
+	if (str.Compare(TEXT("DeSpawnNpc"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::DeSpawnNpc;
+	if (str.Compare(TEXT("ScreenMessage"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::ScreenMessage;
+	if (str.Compare(TEXT("EventRun"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::EventRun;
+	if (str.Compare(TEXT("CountDownTime"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::CountDownTime;
+	if (str.Compare(TEXT("OpenUI"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::OpenUI;
+	if (str.Compare(TEXT("SummonsMonster"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SummonsMonster;
+	if (str.Compare(TEXT("SpaceCrackReward"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SpaceCrackReward;
+	if (str.Compare(TEXT("SpaceCrackMonsterKill"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SpaceCrackMonsterKill;
+	if (str.Compare(TEXT("SpaceCrackState"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SpaceCrackState;
+	if (str.Compare(TEXT("ChannelVariableConditional"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::ChannelVariableConditional;
+	if (str.Compare(TEXT("ChannelVariable"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::ChannelVariable;
+	if (str.Compare(TEXT("MarbleTouch"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::MarbleTouch;
+	if (str.Compare(TEXT("LastPublicField"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::LastPublicField;
+	if (str.Compare(TEXT("UIActivity"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::UIActivity;
+	if (str.Compare(TEXT("NpcSpecialStatus"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::NpcSpecialStatus;
+	if (str.Compare(TEXT("ObjectActive"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::ObjectActive;
+	if (str.Compare(TEXT("MissionStart"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::MissionStart;
+	if (str.Compare(TEXT("WaveSpawnNpc"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::WaveSpawnNpc;
+	if (str.Compare(TEXT("DestroyObject"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::DestroyObject;
+	if (str.Compare(TEXT("MissionText"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::MissionText;
+	if (str.Compare(TEXT("DeSpawnObject"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::DeSpawnObject;
+	if (str.Compare(TEXT("MissionCountDownTime"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::MissionCountDownTime;
+	if (str.Compare(TEXT("MissionCompletion"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::MissionCompletion;
+	if (str.Compare(TEXT("MissionBossSpawn"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::MissionBossSpawn;
+	if (str.Compare(TEXT("MissionCoolTime"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::MissionCoolTime;
+	if (str.Compare(TEXT("SubDialog"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SubDialog;
+	if (str.Compare(TEXT("SpawnPropAfterDeSpawnSpaceTracerNpc"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SpawnPropAfterDeSpawnSpaceTracerNpc;
+	if (str.Compare(TEXT("EventScreenMessage"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::EventScreenMessage;
+	if (str.Compare(TEXT("MonstersKill"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::MonstersKill;
+	if (str.Compare(TEXT("ActivationSpaceCrack"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::ActivationSpaceCrack;
+	if (str.Compare(TEXT("SpawnGroup"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::SpawnGroup;
+	if (str.Compare(TEXT("NpcState"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::NpcState;
+	if (str.Compare(TEXT("EventStop"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::EventStop;
+	if (str.Compare(TEXT("QuestComplete"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::QuestComplete;
+	if (str.Compare(TEXT("StopWayPointMove"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::StopWayPointMove;
+	if (str.Compare(TEXT("StartWayPointMove"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::StartWayPointMove;
+	if (str.Compare(TEXT("MapIdConditional"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::MapIdConditional;
+	if (str.Compare(TEXT("DeSpawnGroup"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::DeSpawnGroup;
+	if (str.Compare(TEXT("DeathNpc"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::DeathNpc;
+	if (str.Compare(TEXT("InvadeEventScreenMessage"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::InvadeEventScreenMessage;
+	if (str.Compare(TEXT("InvadeApplyAbnormality"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::InvadeApplyAbnormality;
+	if (str.Compare(TEXT("ChangeSpawnGroup"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::ChangeSpawnGroup;
+	if (str.Compare(TEXT("DeStroyAllMonsters"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::DeStroyAllMonsters;
+	if (str.Compare(TEXT("EventComplete"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::EventComplete;
+	if (str.Compare(TEXT("QuestConditional"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::QuestConditional;
+	if (str.Compare(TEXT("TeamApplyAbnormality"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::TeamApplyAbnormality;
+	if (str.Compare(TEXT("PartyDungeonZoneWarp"), ESearchCase::IgnoreCase) == 0)	return MapEventComponentType::PartyDungeonZoneWarp;
+	return MapEventComponentType::MAX;
+}
+inline MapEntryPointType MapEntryPointTypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("NONE"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::NONE;
+	if (str.Compare(TEXT("OtherEventStart"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::OtherEventStart;
+	if (str.Compare(TEXT("TimerEndEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::TimerEndEvent;
+	if (str.Compare(TEXT("SpaceCrackEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::SpaceCrackEvent;
+	if (str.Compare(TEXT("DungeonEnterEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::DungeonEnterEvent;
+	if (str.Compare(TEXT("MonsterKillEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::MonsterKillEvent;
+	if (str.Compare(TEXT("TerritoryEnter"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::TerritoryEnter;
+	if (str.Compare(TEXT("InvadeStartEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::InvadeStartEvent;
+	if (str.Compare(TEXT("NpcPassWaypoint"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::NpcPassWaypoint;
+	if (str.Compare(TEXT("InvadeEndEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::InvadeEndEvent;
+	if (str.Compare(TEXT("MonsterKillbyFunctionTypeEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::MonsterKillbyFunctionTypeEvent;
+	if (str.Compare(TEXT("SpawnGroupMonsterKillEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::SpawnGroupMonsterKillEvent;
+	if (str.Compare(TEXT("EventCompletion"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::EventCompletion;
+	if (str.Compare(TEXT("PartyDungeonPlayEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::PartyDungeonPlayEvent;
+	if (str.Compare(TEXT("PartyDungeonSuccess"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::PartyDungeonSuccess;
+	if (str.Compare(TEXT("PartyDungeonFail"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::PartyDungeonFail;
+	if (str.Compare(TEXT("MonsterKillEventTeam"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::MonsterKillEventTeam;
+	if (str.Compare(TEXT("GuildwarStateEvent"), ESearchCase::IgnoreCase) == 0)	return MapEntryPointType::GuildwarStateEvent;
+	return MapEntryPointType::MAX;
+}
+inline UIType UITypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("NONE"), ESearchCase::IgnoreCase) == 0)	return UIType::NONE;
+	if (str.Compare(TEXT("SUMMONS"), ESearchCase::IgnoreCase) == 0)	return UIType::SUMMONS;
+	if (str.Compare(TEXT("BATTLE"), ESearchCase::IgnoreCase) == 0)	return UIType::BATTLE;
+	if (str.Compare(TEXT("CONTENT_FAILURE"), ESearchCase::IgnoreCase) == 0)	return UIType::CONTENT_FAILURE;
+	if (str.Compare(TEXT("CONTENT_SUCCESS"), ESearchCase::IgnoreCase) == 0)	return UIType::CONTENT_SUCCESS;
+	if (str.Compare(TEXT("REWARD"), ESearchCase::IgnoreCase) == 0)	return UIType::REWARD;
+	if (str.Compare(TEXT("SKILL_HUD"), ESearchCase::IgnoreCase) == 0)	return UIType::SKILL_HUD;
+	return UIType::MAX;
+}
+inline SpaceCrackState SpaceCrackStateStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("NONE"), ESearchCase::IgnoreCase) == 0)	return SpaceCrackState::NONE;
+	if (str.Compare(TEXT("SUMMONS"), ESearchCase::IgnoreCase) == 0)	return SpaceCrackState::SUMMONS;
+	if (str.Compare(TEXT("BATTLE"), ESearchCase::IgnoreCase) == 0)	return SpaceCrackState::BATTLE;
+	if (str.Compare(TEXT("REWARD"), ESearchCase::IgnoreCase) == 0)	return SpaceCrackState::REWARD;
+	return SpaceCrackState::MAX;
+}
+inline EventScreenType EventScreenTypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("NONE"), ESearchCase::IgnoreCase) == 0)	return EventScreenType::NONE;
+	if (str.Compare(TEXT("MONSTER_KILL"), ESearchCase::IgnoreCase) == 0)	return EventScreenType::MONSTER_KILL;
+	return EventScreenType::MAX;
+}
+inline WaveConditionType WaveConditionTypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("NONE"), ESearchCase::IgnoreCase) == 0)	return WaveConditionType::NONE;
+	if (str.Compare(TEXT("KILL"), ESearchCase::IgnoreCase) == 0)	return WaveConditionType::KILL;
+	return WaveConditionType::MAX;
+}
+inline SpaceCrackActivatePatternType SpaceCrackActivatePatternTypeStringToEnum(const FString& str)
+{
+	if (str.Compare(TEXT("DEFAULT"), ESearchCase::IgnoreCase) == 0)	return SpaceCrackActivatePatternType::DEFAULT;
+	if (str.Compare(TEXT("GOLD"), ESearchCase::IgnoreCase) == 0)	return SpaceCrackActivatePatternType::GOLD;
+	return SpaceCrackActivatePatternType::MAX;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Enum -> String
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline FString MapEventComponentTypeEnumToString(MapEventComponentType value)
+{
+	switch (value)
+	{
+		case MapEventComponentType::NONE: return TEXT("NONE");
+		case MapEventComponentType::AddItem: return TEXT("AddItem");
+		case MapEventComponentType::Start_Box: return TEXT("Start_Box");
+		case MapEventComponentType::SpawnNpc: return TEXT("SpawnNpc");
+		case MapEventComponentType::SpawnProp: return TEXT("SpawnProp");
+		case MapEventComponentType::Arrival_Box: return TEXT("Arrival_Box");
+		case MapEventComponentType::TimerSubDialog: return TEXT("TimerSubDialog");
+		case MapEventComponentType::KillAllGroupMonsters: return TEXT("KillAllGroupMonsters");
+		case MapEventComponentType::StopTimerSubDialog: return TEXT("StopTimerSubDialog");
+		case MapEventComponentType::DeleteItem: return TEXT("DeleteItem");
+		case MapEventComponentType::IncreaseGold: return TEXT("IncreaseGold");
+		case MapEventComponentType::IncreaseExp: return TEXT("IncreaseExp");
+		case MapEventComponentType::IncreaseHp: return TEXT("IncreaseHp");
+		case MapEventComponentType::AddAbnormality: return TEXT("AddAbnormality");
+		case MapEventComponentType::RemoveAbnormality: return TEXT("RemoveAbnormality");
+		case MapEventComponentType::AddPassivity: return TEXT("AddPassivity");
+		case MapEventComponentType::WarpToTown: return TEXT("WarpToTown");
+		case MapEventComponentType::GetUserLevel: return TEXT("GetUserLevel");
+		case MapEventComponentType::NewRepeatQuest: return TEXT("NewRepeatQuest");
+		case MapEventComponentType::NewSubQuest: return TEXT("NewSubQuest");
+		case MapEventComponentType::IncreaseStatPoint: return TEXT("IncreaseStatPoint");
+		case MapEventComponentType::EnemyKill: return TEXT("EnemyKill");
+		case MapEventComponentType::Warp: return TEXT("Warp");
+		case MapEventComponentType::SendMail: return TEXT("SendMail");
+		case MapEventComponentType::GetTimer: return TEXT("GetTimer");
+		case MapEventComponentType::WaitingTime: return TEXT("WaitingTime");
+		case MapEventComponentType::EnterTerritory: return TEXT("EnterTerritory");
+		case MapEventComponentType::LeaveTerritory: return TEXT("LeaveTerritory");
+		case MapEventComponentType::IncreaseCurrency: return TEXT("IncreaseCurrency");
+		case MapEventComponentType::GetEventVariable: return TEXT("GetEventVariable");
+		case MapEventComponentType::EventVariable: return TEXT("EventVariable");
+		case MapEventComponentType::DeSpawnNpc: return TEXT("DeSpawnNpc");
+		case MapEventComponentType::ScreenMessage: return TEXT("ScreenMessage");
+		case MapEventComponentType::EventRun: return TEXT("EventRun");
+		case MapEventComponentType::CountDownTime: return TEXT("CountDownTime");
+		case MapEventComponentType::OpenUI: return TEXT("OpenUI");
+		case MapEventComponentType::SummonsMonster: return TEXT("SummonsMonster");
+		case MapEventComponentType::SpaceCrackReward: return TEXT("SpaceCrackReward");
+		case MapEventComponentType::SpaceCrackMonsterKill: return TEXT("SpaceCrackMonsterKill");
+		case MapEventComponentType::SpaceCrackState: return TEXT("SpaceCrackState");
+		case MapEventComponentType::ChannelVariableConditional: return TEXT("ChannelVariableConditional");
+		case MapEventComponentType::ChannelVariable: return TEXT("ChannelVariable");
+		case MapEventComponentType::MarbleTouch: return TEXT("MarbleTouch");
+		case MapEventComponentType::LastPublicField: return TEXT("LastPublicField");
+		case MapEventComponentType::UIActivity: return TEXT("UIActivity");
+		case MapEventComponentType::NpcSpecialStatus: return TEXT("NpcSpecialStatus");
+		case MapEventComponentType::ObjectActive: return TEXT("ObjectActive");
+		case MapEventComponentType::MissionStart: return TEXT("MissionStart");
+		case MapEventComponentType::WaveSpawnNpc: return TEXT("WaveSpawnNpc");
+		case MapEventComponentType::DestroyObject: return TEXT("DestroyObject");
+		case MapEventComponentType::MissionText: return TEXT("MissionText");
+		case MapEventComponentType::DeSpawnObject: return TEXT("DeSpawnObject");
+		case MapEventComponentType::MissionCountDownTime: return TEXT("MissionCountDownTime");
+		case MapEventComponentType::MissionCompletion: return TEXT("MissionCompletion");
+		case MapEventComponentType::MissionBossSpawn: return TEXT("MissionBossSpawn");
+		case MapEventComponentType::MissionCoolTime: return TEXT("MissionCoolTime");
+		case MapEventComponentType::SubDialog: return TEXT("SubDialog");
+		case MapEventComponentType::SpawnPropAfterDeSpawnSpaceTracerNpc: return TEXT("SpawnPropAfterDeSpawnSpaceTracerNpc");
+		case MapEventComponentType::EventScreenMessage: return TEXT("EventScreenMessage");
+		case MapEventComponentType::MonstersKill: return TEXT("MonstersKill");
+		case MapEventComponentType::ActivationSpaceCrack: return TEXT("ActivationSpaceCrack");
+		case MapEventComponentType::SpawnGroup: return TEXT("SpawnGroup");
+		case MapEventComponentType::NpcState: return TEXT("NpcState");
+		case MapEventComponentType::EventStop: return TEXT("EventStop");
+		case MapEventComponentType::QuestComplete: return TEXT("QuestComplete");
+		case MapEventComponentType::StopWayPointMove: return TEXT("StopWayPointMove");
+		case MapEventComponentType::StartWayPointMove: return TEXT("StartWayPointMove");
+		case MapEventComponentType::MapIdConditional: return TEXT("MapIdConditional");
+		case MapEventComponentType::DeSpawnGroup: return TEXT("DeSpawnGroup");
+		case MapEventComponentType::DeathNpc: return TEXT("DeathNpc");
+		case MapEventComponentType::InvadeEventScreenMessage: return TEXT("InvadeEventScreenMessage");
+		case MapEventComponentType::InvadeApplyAbnormality: return TEXT("InvadeApplyAbnormality");
+		case MapEventComponentType::ChangeSpawnGroup: return TEXT("ChangeSpawnGroup");
+		case MapEventComponentType::DeStroyAllMonsters: return TEXT("DeStroyAllMonsters");
+		case MapEventComponentType::EventComplete: return TEXT("EventComplete");
+		case MapEventComponentType::QuestConditional: return TEXT("QuestConditional");
+		case MapEventComponentType::TeamApplyAbnormality: return TEXT("TeamApplyAbnormality");
+		case MapEventComponentType::PartyDungeonZoneWarp: return TEXT("PartyDungeonZoneWarp");
+	}
+	return FString();
+}
+inline FString MapEntryPointTypeEnumToString(MapEntryPointType value)
+{
+	switch (value)
+	{
+		case MapEntryPointType::NONE: return TEXT("NONE");
+		case MapEntryPointType::OtherEventStart: return TEXT("OtherEventStart");
+		case MapEntryPointType::TimerEndEvent: return TEXT("TimerEndEvent");
+		case MapEntryPointType::SpaceCrackEvent: return TEXT("SpaceCrackEvent");
+		case MapEntryPointType::DungeonEnterEvent: return TEXT("DungeonEnterEvent");
+		case MapEntryPointType::MonsterKillEvent: return TEXT("MonsterKillEvent");
+		case MapEntryPointType::TerritoryEnter: return TEXT("TerritoryEnter");
+		case MapEntryPointType::InvadeStartEvent: return TEXT("InvadeStartEvent");
+		case MapEntryPointType::NpcPassWaypoint: return TEXT("NpcPassWaypoint");
+		case MapEntryPointType::InvadeEndEvent: return TEXT("InvadeEndEvent");
+		case MapEntryPointType::MonsterKillbyFunctionTypeEvent: return TEXT("MonsterKillbyFunctionTypeEvent");
+		case MapEntryPointType::SpawnGroupMonsterKillEvent: return TEXT("SpawnGroupMonsterKillEvent");
+		case MapEntryPointType::EventCompletion: return TEXT("EventCompletion");
+		case MapEntryPointType::PartyDungeonPlayEvent: return TEXT("PartyDungeonPlayEvent");
+		case MapEntryPointType::PartyDungeonSuccess: return TEXT("PartyDungeonSuccess");
+		case MapEntryPointType::PartyDungeonFail: return TEXT("PartyDungeonFail");
+		case MapEntryPointType::MonsterKillEventTeam: return TEXT("MonsterKillEventTeam");
+		case MapEntryPointType::GuildwarStateEvent: return TEXT("GuildwarStateEvent");
+	}
+	return FString();
+}
+inline FString UITypeEnumToString(UIType value)
+{
+	switch (value)
+	{
+		case UIType::NONE: return TEXT("NONE");
+		case UIType::SUMMONS: return TEXT("SUMMONS");
+		case UIType::BATTLE: return TEXT("BATTLE");
+		case UIType::CONTENT_FAILURE: return TEXT("CONTENT_FAILURE");
+		case UIType::CONTENT_SUCCESS: return TEXT("CONTENT_SUCCESS");
+		case UIType::REWARD: return TEXT("REWARD");
+		case UIType::SKILL_HUD: return TEXT("SKILL_HUD");
+	}
+	return FString();
+}
+inline FString SpaceCrackStateEnumToString(SpaceCrackState value)
+{
+	switch (value)
+	{
+		case SpaceCrackState::NONE: return TEXT("NONE");
+		case SpaceCrackState::SUMMONS: return TEXT("SUMMONS");
+		case SpaceCrackState::BATTLE: return TEXT("BATTLE");
+		case SpaceCrackState::REWARD: return TEXT("REWARD");
+	}
+	return FString();
+}
+inline FString EventScreenTypeEnumToString(EventScreenType value)
+{
+	switch (value)
+	{
+		case EventScreenType::NONE: return TEXT("NONE");
+		case EventScreenType::MONSTER_KILL: return TEXT("MONSTER_KILL");
+	}
+	return FString();
+}
+inline FString WaveConditionTypeEnumToString(WaveConditionType value)
+{
+	switch (value)
+	{
+		case WaveConditionType::NONE: return TEXT("NONE");
+		case WaveConditionType::KILL: return TEXT("KILL");
+	}
+	return FString();
+}
+inline FString SpaceCrackActivatePatternTypeEnumToString(SpaceCrackActivatePatternType value)
+{
+	switch (value)
+	{
+		case SpaceCrackActivatePatternType::DEFAULT: return TEXT("DEFAULT");
+		case SpaceCrackActivatePatternType::GOLD: return TEXT("GOLD");
+	}
+	return FString();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Enum -> DisplayKey (클라이언트 로컬라이징 번역 키를 처리하기 위해 활용)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline FString MapEventComponentTypeEnumToDisplayKey(MapEventComponentType value)
+{
+	switch (value)
+	{
+		case MapEventComponentType::NONE: return TEXT("");
+		case MapEventComponentType::AddItem: return TEXT("");
+		case MapEventComponentType::Start_Box: return TEXT("");
+		case MapEventComponentType::SpawnNpc: return TEXT("");
+		case MapEventComponentType::SpawnProp: return TEXT("");
+		case MapEventComponentType::Arrival_Box: return TEXT("");
+		case MapEventComponentType::TimerSubDialog: return TEXT("");
+		case MapEventComponentType::KillAllGroupMonsters: return TEXT("");
+		case MapEventComponentType::StopTimerSubDialog: return TEXT("");
+		case MapEventComponentType::DeleteItem: return TEXT("");
+		case MapEventComponentType::IncreaseGold: return TEXT("");
+		case MapEventComponentType::IncreaseExp: return TEXT("");
+		case MapEventComponentType::IncreaseHp: return TEXT("");
+		case MapEventComponentType::AddAbnormality: return TEXT("");
+		case MapEventComponentType::RemoveAbnormality: return TEXT("");
+		case MapEventComponentType::AddPassivity: return TEXT("");
+		case MapEventComponentType::WarpToTown: return TEXT("");
+		case MapEventComponentType::GetUserLevel: return TEXT("");
+		case MapEventComponentType::NewRepeatQuest: return TEXT("");
+		case MapEventComponentType::NewSubQuest: return TEXT("");
+		case MapEventComponentType::IncreaseStatPoint: return TEXT("");
+		case MapEventComponentType::EnemyKill: return TEXT("");
+		case MapEventComponentType::Warp: return TEXT("");
+		case MapEventComponentType::SendMail: return TEXT("");
+		case MapEventComponentType::GetTimer: return TEXT("");
+		case MapEventComponentType::WaitingTime: return TEXT("");
+		case MapEventComponentType::EnterTerritory: return TEXT("");
+		case MapEventComponentType::LeaveTerritory: return TEXT("");
+		case MapEventComponentType::IncreaseCurrency: return TEXT("");
+		case MapEventComponentType::GetEventVariable: return TEXT("");
+		case MapEventComponentType::EventVariable: return TEXT("");
+		case MapEventComponentType::DeSpawnNpc: return TEXT("");
+		case MapEventComponentType::ScreenMessage: return TEXT("");
+		case MapEventComponentType::EventRun: return TEXT("");
+		case MapEventComponentType::CountDownTime: return TEXT("");
+		case MapEventComponentType::OpenUI: return TEXT("");
+		case MapEventComponentType::SummonsMonster: return TEXT("");
+		case MapEventComponentType::SpaceCrackReward: return TEXT("");
+		case MapEventComponentType::SpaceCrackMonsterKill: return TEXT("");
+		case MapEventComponentType::SpaceCrackState: return TEXT("");
+		case MapEventComponentType::ChannelVariableConditional: return TEXT("");
+		case MapEventComponentType::ChannelVariable: return TEXT("");
+		case MapEventComponentType::MarbleTouch: return TEXT("");
+		case MapEventComponentType::LastPublicField: return TEXT("");
+		case MapEventComponentType::UIActivity: return TEXT("");
+		case MapEventComponentType::NpcSpecialStatus: return TEXT("");
+		case MapEventComponentType::ObjectActive: return TEXT("");
+		case MapEventComponentType::MissionStart: return TEXT("");
+		case MapEventComponentType::WaveSpawnNpc: return TEXT("");
+		case MapEventComponentType::DestroyObject: return TEXT("");
+		case MapEventComponentType::MissionText: return TEXT("");
+		case MapEventComponentType::DeSpawnObject: return TEXT("");
+		case MapEventComponentType::MissionCountDownTime: return TEXT("");
+		case MapEventComponentType::MissionCompletion: return TEXT("");
+		case MapEventComponentType::MissionBossSpawn: return TEXT("");
+		case MapEventComponentType::MissionCoolTime: return TEXT("");
+		case MapEventComponentType::SubDialog: return TEXT("");
+		case MapEventComponentType::SpawnPropAfterDeSpawnSpaceTracerNpc: return TEXT("");
+		case MapEventComponentType::EventScreenMessage: return TEXT("");
+		case MapEventComponentType::MonstersKill: return TEXT("");
+		case MapEventComponentType::ActivationSpaceCrack: return TEXT("");
+		case MapEventComponentType::SpawnGroup: return TEXT("");
+		case MapEventComponentType::NpcState: return TEXT("");
+		case MapEventComponentType::EventStop: return TEXT("");
+		case MapEventComponentType::QuestComplete: return TEXT("");
+		case MapEventComponentType::StopWayPointMove: return TEXT("");
+		case MapEventComponentType::StartWayPointMove: return TEXT("");
+		case MapEventComponentType::MapIdConditional: return TEXT("");
+		case MapEventComponentType::DeSpawnGroup: return TEXT("");
+		case MapEventComponentType::DeathNpc: return TEXT("");
+		case MapEventComponentType::InvadeEventScreenMessage: return TEXT("");
+		case MapEventComponentType::InvadeApplyAbnormality: return TEXT("");
+		case MapEventComponentType::ChangeSpawnGroup: return TEXT("");
+		case MapEventComponentType::DeStroyAllMonsters: return TEXT("");
+		case MapEventComponentType::EventComplete: return TEXT("");
+		case MapEventComponentType::QuestConditional: return TEXT("");
+		case MapEventComponentType::TeamApplyAbnormality: return TEXT("");
+		case MapEventComponentType::PartyDungeonZoneWarp: return TEXT("");
+	}
+	return FString();
+}
+inline FString MapEntryPointTypeEnumToDisplayKey(MapEntryPointType value)
+{
+	switch (value)
+	{
+		case MapEntryPointType::NONE: return TEXT("");
+		case MapEntryPointType::OtherEventStart: return TEXT("");
+		case MapEntryPointType::TimerEndEvent: return TEXT("");
+		case MapEntryPointType::SpaceCrackEvent: return TEXT("");
+		case MapEntryPointType::DungeonEnterEvent: return TEXT("");
+		case MapEntryPointType::MonsterKillEvent: return TEXT("");
+		case MapEntryPointType::TerritoryEnter: return TEXT("");
+		case MapEntryPointType::InvadeStartEvent: return TEXT("");
+		case MapEntryPointType::NpcPassWaypoint: return TEXT("");
+		case MapEntryPointType::InvadeEndEvent: return TEXT("");
+		case MapEntryPointType::MonsterKillbyFunctionTypeEvent: return TEXT("");
+		case MapEntryPointType::SpawnGroupMonsterKillEvent: return TEXT("");
+		case MapEntryPointType::EventCompletion: return TEXT("");
+		case MapEntryPointType::PartyDungeonPlayEvent: return TEXT("");
+		case MapEntryPointType::PartyDungeonSuccess: return TEXT("");
+		case MapEntryPointType::PartyDungeonFail: return TEXT("");
+		case MapEntryPointType::MonsterKillEventTeam: return TEXT("");
+		case MapEntryPointType::GuildwarStateEvent: return TEXT("");
+	}
+	return FString();
+}
+inline FString UITypeEnumToDisplayKey(UIType value)
+{
+	switch (value)
+	{
+		case UIType::NONE: return TEXT("");
+		case UIType::SUMMONS: return TEXT("");
+		case UIType::BATTLE: return TEXT("");
+		case UIType::CONTENT_FAILURE: return TEXT("");
+		case UIType::CONTENT_SUCCESS: return TEXT("");
+		case UIType::REWARD: return TEXT("");
+		case UIType::SKILL_HUD: return TEXT("");
+	}
+	return FString();
+}
+inline FString SpaceCrackStateEnumToDisplayKey(SpaceCrackState value)
+{
+	switch (value)
+	{
+		case SpaceCrackState::NONE: return TEXT("");
+		case SpaceCrackState::SUMMONS: return TEXT("");
+		case SpaceCrackState::BATTLE: return TEXT("");
+		case SpaceCrackState::REWARD: return TEXT("");
+	}
+	return FString();
+}
+inline FString EventScreenTypeEnumToDisplayKey(EventScreenType value)
+{
+	switch (value)
+	{
+		case EventScreenType::NONE: return TEXT("");
+		case EventScreenType::MONSTER_KILL: return TEXT("");
+	}
+	return FString();
+}
+inline FString WaveConditionTypeEnumToDisplayKey(WaveConditionType value)
+{
+	switch (value)
+	{
+		case WaveConditionType::NONE: return TEXT("");
+		case WaveConditionType::KILL: return TEXT("");
+	}
+	return FString();
+}
+inline FString SpaceCrackActivatePatternTypeEnumToDisplayKey(SpaceCrackActivatePatternType value)
+{
+	switch (value)
+	{
+		case SpaceCrackActivatePatternType::DEFAULT: return TEXT("");
+		case SpaceCrackActivatePatternType::GOLD: return TEXT("");
+	}
+	return FString();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Validators
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline bool IsValidMapEventComponentType(MapEventComponentType value) noexcept
+{
+	return (value >= MapEventComponentType::NONE && value < MapEventComponentType::MAX);
+}
+
+inline bool IsValidMapEntryPointType(MapEntryPointType value) noexcept
+{
+	return (value >= MapEntryPointType::NONE && value < MapEntryPointType::MAX);
+}
+
+inline bool IsValidUIType(UIType value) noexcept
+{
+	return (value >= UIType::NONE && value < UIType::MAX);
+}
+
+inline bool IsValidSpaceCrackState(SpaceCrackState value) noexcept
+{
+	return (value >= SpaceCrackState::NONE && value < SpaceCrackState::MAX);
+}
+
+inline bool IsValidEventScreenType(EventScreenType value) noexcept
+{
+	return (value >= EventScreenType::NONE && value < EventScreenType::MAX);
+}
+
+inline bool IsValidWaveConditionType(WaveConditionType value) noexcept
+{
+	return (value >= WaveConditionType::NONE && value < WaveConditionType::MAX);
+}
+
+inline bool IsValidSpaceCrackActivatePatternType(SpaceCrackActivatePatternType value) noexcept
+{
+	return (value >= SpaceCrackActivatePatternType::DEFAULT && value < SpaceCrackActivatePatternType::MAX);
+}
+

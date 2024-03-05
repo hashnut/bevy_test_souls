@@ -1,0 +1,15 @@
+--- PacketDefinition/MD5.xml
++++ PacketDefinition/MD5.xml
+@@ -1,10 +1,10 @@
+ <?xml version="1.0" encoding="utf-8" ?>
+ <typelist SPacketHeaderNameList="0" SPacketIdNameList="0">
+-    <type File="PD_Auth_Client.xml" MD5="mwMBmj4jrj4qSwVcTf4X9A==" />
++    <type File="PD_Auth_Client.xml" MD5="gLEzRHqrXqh74B0p5uakYw==" />
+     <type File="PD_Auth_Directory.xml" MD5="7iE0uWRffZlIOF/g60PDKw==" />
+     <type File="PD_Client_Auth.xml" MD5="4ZzAi10M+r0/IDWEISwoEQ==" />
+     <type File="PD_Client_Gateway.xml" MD5="127FZ1AZAKb1avx/5ev3/g==" />
+-    <type File="PD_Client_World_Bypass.xml" MD5="dOfMOWBPrxuITydeDe+5mA==" />
++    <type File="PD_Client_World_Bypass.xml" MD5="1fkQjkxy7ccJKgoaHF19zQ==" />
+     <type File="PD_Directory_Auth.xml" MD5="ZonEJCt3Srr7R1M0U8xNug==" />
+     <type File="PD_Directory_Gateway.xml" MD5="7V/YsANcTQcvNuAHh0U1+w==" />
+     <type File="PD_Gateway_Client.xml" MD5="cs2o2Yhy4vvcjFIBiwSpEg==" />

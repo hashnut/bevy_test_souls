@@ -1,0 +1,2480 @@
+#pragma once
+#ifdef _SERVER
+#include "ServerCommon/WZPacketDef.h"
+#include "TechShared/Shared/SharedInclude/PacketWriter.h"
+#include "TechShared/Shared/SharedInclude/SharedTypes.h"
+#else
+#include "../SharedInclude/PacketWriter.h"
+#include "../SharedInclude/SharedTypes.h"
+#endif
+namespace PD
+{
+namespace DG
+{
+
+#pragma warning(push)
+#pragma warning(disable:4315)
+#pragma warning(disable:5038)
+#pragma pack(push, 1)
+
+#ifndef _SERVER
+enum class DGPacketId : uint16
+#else
+enum
+#endif
+{
+	DG_PONG = 6000,
+	DG_ACK_REGISTER = 6001,
+	DG_ACK_WORLDTIME = 6002,
+	DG_NOTIFY_WORLDTIME_UPDATED = 6003,
+	DG_ACK_LOGIN = 6004,
+	DG_NOTIFY_ACCOUNT_NAME_UPDATED = 6005,
+	DG_NOTIFY_REDUNDANT_LOGIN = 6006,
+	DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN = 6007,
+	DG_GATEWAY_SEVER_UPDATE = 6008,
+	DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING = 6009,
+	DG_BM_SHOP_BLOCK_MARKET_PID_LIST = 6010,
+	DG_NOTIFY_SERVER_MIGRATE_ACCOUNT = 6011,
+	DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION = 6012,
+	DG_ACK_SERVER_MIGRATE_CHECK_CONDITION = 6013,
+	DG_QA_SANCTUM_BATTLE_COMMAND = 6014,
+	PacketIdMax  = 6999
+};
+
+#ifdef _SERVER
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// String -> Enum
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline uint16 DGPacketIdStringToEnum(const wchar_t* str) noexcept
+{
+	if (_wcsicmp(L"DG_PONG", str) == 0)	return DG_PONG;
+	if (_wcsicmp(L"DG_ACK_REGISTER", str) == 0)	return DG_ACK_REGISTER;
+	if (_wcsicmp(L"DG_ACK_WORLDTIME", str) == 0)	return DG_ACK_WORLDTIME;
+	if (_wcsicmp(L"DG_NOTIFY_WORLDTIME_UPDATED", str) == 0)	return DG_NOTIFY_WORLDTIME_UPDATED;
+	if (_wcsicmp(L"DG_ACK_LOGIN", str) == 0)	return DG_ACK_LOGIN;
+	if (_wcsicmp(L"DG_NOTIFY_ACCOUNT_NAME_UPDATED", str) == 0)	return DG_NOTIFY_ACCOUNT_NAME_UPDATED;
+	if (_wcsicmp(L"DG_NOTIFY_REDUNDANT_LOGIN", str) == 0)	return DG_NOTIFY_REDUNDANT_LOGIN;
+	if (_wcsicmp(L"DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN", str) == 0)	return DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN;
+	if (_wcsicmp(L"DG_GATEWAY_SEVER_UPDATE", str) == 0)	return DG_GATEWAY_SEVER_UPDATE;
+	if (_wcsicmp(L"DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING", str) == 0)	return DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING;
+	if (_wcsicmp(L"DG_BM_SHOP_BLOCK_MARKET_PID_LIST", str) == 0)	return DG_BM_SHOP_BLOCK_MARKET_PID_LIST;
+	if (_wcsicmp(L"DG_NOTIFY_SERVER_MIGRATE_ACCOUNT", str) == 0)	return DG_NOTIFY_SERVER_MIGRATE_ACCOUNT;
+	if (_wcsicmp(L"DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION", str) == 0)	return DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION;
+	if (_wcsicmp(L"DG_ACK_SERVER_MIGRATE_CHECK_CONDITION", str) == 0)	return DG_ACK_SERVER_MIGRATE_CHECK_CONDITION;
+	if (_wcsicmp(L"DG_QA_SANCTUM_BATTLE_COMMAND", str) == 0)	return DG_QA_SANCTUM_BATTLE_COMMAND;
+	return PacketIdMax;
+}
+#endif
+#ifdef _SERVER
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Enum -> String
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline const wchar_t* DGPacketIdEnumToString(uint16 value) noexcept
+{
+	switch (value)
+	{
+		case DG_PONG: return L"DG_PONG";
+		case DG_ACK_REGISTER: return L"DG_ACK_REGISTER";
+		case DG_ACK_WORLDTIME: return L"DG_ACK_WORLDTIME";
+		case DG_NOTIFY_WORLDTIME_UPDATED: return L"DG_NOTIFY_WORLDTIME_UPDATED";
+		case DG_ACK_LOGIN: return L"DG_ACK_LOGIN";
+		case DG_NOTIFY_ACCOUNT_NAME_UPDATED: return L"DG_NOTIFY_ACCOUNT_NAME_UPDATED";
+		case DG_NOTIFY_REDUNDANT_LOGIN: return L"DG_NOTIFY_REDUNDANT_LOGIN";
+		case DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN: return L"DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN";
+		case DG_GATEWAY_SEVER_UPDATE: return L"DG_GATEWAY_SEVER_UPDATE";
+		case DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING: return L"DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING";
+		case DG_BM_SHOP_BLOCK_MARKET_PID_LIST: return L"DG_BM_SHOP_BLOCK_MARKET_PID_LIST";
+		case DG_NOTIFY_SERVER_MIGRATE_ACCOUNT: return L"DG_NOTIFY_SERVER_MIGRATE_ACCOUNT";
+		case DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION: return L"DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION";
+		case DG_ACK_SERVER_MIGRATE_CHECK_CONDITION: return L"DG_ACK_SERVER_MIGRATE_CHECK_CONDITION";
+		case DG_QA_SANCTUM_BATTLE_COMMAND: return L"DG_QA_SANCTUM_BATTLE_COMMAND";
+	}
+	return nullptr;
+}
+#endif
+// type = DG
+struct PKT_DG_PONG_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	uint64 mPong;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_PONG"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_PONG"; }
+#endif
+
+	uint64 Pong() { return mPong; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_PONG] Pong: {}"
+			, mPong
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_PONG_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_PONG_READ
+
+// type = DG
+#ifdef _SERVER
+struct PKT_DG_PONG_WRITE : public Disposable
+#else
+struct PKT_DG_PONG_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_PONG_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_PONG"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_PONG"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_PONG_WRITE(uchar* buf, int bufSize, uint64 pong)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_PONG);
+		mPktWriter << pong;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_PONG_WRITE(SendBufferHelper& sendBuffer, uint64 pong)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_PONG;
+		mPktWriter << pong;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_PONG_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_PONG_WRITE
+
+// type = DG
+// related packet = PKT_GD_REQ_REGISTER_WRITE
+struct PKT_DG_ACK_REGISTER_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	uint16 mServerNameOffset;
+	uint16 mHiveAnalyticsServerIdOffset;
+	uint16 mHiveCurrentUserGameIdOffset;
+	uint16 mServerVersionOffset;
+	bool mCharacterCreatable;
+	bool mRecommended;
+	bool mNewOpened;
+	time_t mTimeNow;
+	float mTimeDilation;
+	uint64 mReqTickCount;
+	bool mCharCreatable;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_ACK_REGISTER"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_REQ_REGISTER"; }
+#endif
+
+	bool CharacterCreatable() { return mCharacterCreatable; }
+	bool Recommended() { return mRecommended; }
+	bool NewOpened() { return mNewOpened; }
+	time_t TimeNow() { return mTimeNow; }
+	float TimeDilation() { return mTimeDilation; }
+	uint64 ReqTickCount() { return mReqTickCount; }
+	bool CharCreatable() { return mCharCreatable; }
+#ifdef _SERVER
+	const wchar_t* ServerName() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mServerNameOffset && pktSize > mServerNameOffset)
+			return (const wchar_t*)(pktStart + mServerNameOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString ServerName()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mServerNameOffset && pktSize > mServerNameOffset)
+			strWchar = (const wchar_t*)(pktStart + mServerNameOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+#ifdef _SERVER
+	const wchar_t* HiveAnalyticsServerId() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mHiveAnalyticsServerIdOffset && pktSize > mHiveAnalyticsServerIdOffset)
+			return (const wchar_t*)(pktStart + mHiveAnalyticsServerIdOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString HiveAnalyticsServerId()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mHiveAnalyticsServerIdOffset && pktSize > mHiveAnalyticsServerIdOffset)
+			strWchar = (const wchar_t*)(pktStart + mHiveAnalyticsServerIdOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+#ifdef _SERVER
+	const wchar_t* HiveCurrentUserGameId() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mHiveCurrentUserGameIdOffset && pktSize > mHiveCurrentUserGameIdOffset)
+			return (const wchar_t*)(pktStart + mHiveCurrentUserGameIdOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString HiveCurrentUserGameId()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mHiveCurrentUserGameIdOffset && pktSize > mHiveCurrentUserGameIdOffset)
+			strWchar = (const wchar_t*)(pktStart + mHiveCurrentUserGameIdOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+#ifdef _SERVER
+	const wchar_t* ServerVersion() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mServerVersionOffset && pktSize > mServerVersionOffset)
+			return (const wchar_t*)(pktStart + mServerVersionOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString ServerVersion()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mServerVersionOffset && pktSize > mServerVersionOffset)
+			strWchar = (const wchar_t*)(pktStart + mServerVersionOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_ACK_REGISTER] ServerName: {}, CharacterCreatable: {}, Recommended: {}, NewOpened: {}, HiveAnalyticsServerId: {}, HiveCurrentUserGameId: {}, TimeNow: {}, TimeDilation: {}, ReqTickCount: {}, ServerVersion: {}, CharCreatable: {}"
+			, ServerName(), mCharacterCreatable, mRecommended, mNewOpened, HiveAnalyticsServerId(), HiveCurrentUserGameId(), mTimeNow, mTimeDilation, mReqTickCount, ServerVersion(), mCharCreatable
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_ACK_REGISTER_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		if (false == ValidateString(mServerNameOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		if (false == ValidateString(mHiveAnalyticsServerIdOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		if (false == ValidateString(mHiveCurrentUserGameIdOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		if (false == ValidateString(mServerVersionOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_ACK_REGISTER_READ
+
+// type = DG
+// related packet = PKT_GD_REQ_REGISTER_READ
+#ifdef _SERVER
+struct PKT_DG_ACK_REGISTER_WRITE : public Disposable
+#else
+struct PKT_DG_ACK_REGISTER_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+	uint16* mServerNameOffset;
+	uint16* mHiveAnalyticsServerIdOffset;
+	uint16* mHiveCurrentUserGameIdOffset;
+	uint16* mServerVersionOffset;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_ACK_REGISTER_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_ACK_REGISTER"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_REQ_REGISTER"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_ACK_REGISTER_WRITE(uchar* buf, int bufSize, const FString& serverName, bool characterCreatable, bool recommended, bool newOpened, const FString& hiveAnalyticsServerId, const FString& hiveCurrentUserGameId, time_t timeNow, float timeDilation, uint64 reqTickCount, const FString& serverVersion, bool charCreatable)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_ACK_REGISTER);
+		mServerNameOffset = (uint16*)mPktWriter.GetBuffer();
+		*mServerNameOffset = 0;
+		mPktWriter << (*mServerNameOffset);
+		mHiveAnalyticsServerIdOffset = (uint16*)mPktWriter.GetBuffer();
+		*mHiveAnalyticsServerIdOffset = 0;
+		mPktWriter << (*mHiveAnalyticsServerIdOffset);
+		mHiveCurrentUserGameIdOffset = (uint16*)mPktWriter.GetBuffer();
+		*mHiveCurrentUserGameIdOffset = 0;
+		mPktWriter << (*mHiveCurrentUserGameIdOffset);
+		mServerVersionOffset = (uint16*)mPktWriter.GetBuffer();
+		*mServerVersionOffset = 0;
+		mPktWriter << (*mServerVersionOffset);
+		mPktWriter << characterCreatable;
+		mPktWriter << recommended;
+		mPktWriter << newOpened;
+		mPktWriter << timeNow;
+		mPktWriter << timeDilation;
+		mPktWriter << reqTickCount;
+		mPktWriter << charCreatable;
+		*mServerNameOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(serverName);
+		*mHiveAnalyticsServerIdOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(hiveAnalyticsServerId);
+		*mHiveCurrentUserGameIdOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(hiveCurrentUserGameId);
+		*mServerVersionOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(serverVersion);
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_ACK_REGISTER_WRITE(SendBufferHelper& sendBuffer, const wchar* serverName, bool characterCreatable, bool recommended, bool newOpened, const wchar* hiveAnalyticsServerId, const wchar* hiveCurrentUserGameId, time_t timeNow, float timeDilation, uint64 reqTickCount, const wchar* serverVersion, bool charCreatable)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_ACK_REGISTER;
+		mServerNameOffset = (uint16*)mPktWriter.GetBuffer();
+		*mServerNameOffset = 0;
+		mPktWriter << (*mServerNameOffset);
+		mHiveAnalyticsServerIdOffset = (uint16*)mPktWriter.GetBuffer();
+		*mHiveAnalyticsServerIdOffset = 0;
+		mPktWriter << (*mHiveAnalyticsServerIdOffset);
+		mHiveCurrentUserGameIdOffset = (uint16*)mPktWriter.GetBuffer();
+		*mHiveCurrentUserGameIdOffset = 0;
+		mPktWriter << (*mHiveCurrentUserGameIdOffset);
+		mServerVersionOffset = (uint16*)mPktWriter.GetBuffer();
+		*mServerVersionOffset = 0;
+		mPktWriter << (*mServerVersionOffset);
+		mPktWriter << characterCreatable;
+		mPktWriter << recommended;
+		mPktWriter << newOpened;
+		mPktWriter << timeNow;
+		mPktWriter << timeDilation;
+		mPktWriter << reqTickCount;
+		mPktWriter << charCreatable;
+		*mServerNameOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(serverName);
+		*mHiveAnalyticsServerIdOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(hiveAnalyticsServerId);
+		*mHiveCurrentUserGameIdOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(hiveCurrentUserGameId);
+		*mServerVersionOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(serverVersion);
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_ACK_REGISTER_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_ACK_REGISTER_WRITE
+
+// type = DG
+// related packet = PKT_GD_REQ_WORLDTIME_WRITE
+struct PKT_DG_ACK_WORLDTIME_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	time_t mTimeNow;
+	float mTimeDilation;
+	uint64 mReqTickCount;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_ACK_WORLDTIME"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_REQ_WORLDTIME"; }
+#endif
+
+	time_t TimeNow() { return mTimeNow; }
+	float TimeDilation() { return mTimeDilation; }
+	uint64 ReqTickCount() { return mReqTickCount; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_ACK_WORLDTIME] TimeNow: {}, TimeDilation: {}, ReqTickCount: {}"
+			, mTimeNow, mTimeDilation, mReqTickCount
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_ACK_WORLDTIME_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_ACK_WORLDTIME_READ
+
+// type = DG
+// related packet = PKT_GD_REQ_WORLDTIME_READ
+#ifdef _SERVER
+struct PKT_DG_ACK_WORLDTIME_WRITE : public Disposable
+#else
+struct PKT_DG_ACK_WORLDTIME_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_ACK_WORLDTIME_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_ACK_WORLDTIME"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_REQ_WORLDTIME"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_ACK_WORLDTIME_WRITE(uchar* buf, int bufSize, time_t timeNow, float timeDilation, uint64 reqTickCount)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_ACK_WORLDTIME);
+		mPktWriter << timeNow;
+		mPktWriter << timeDilation;
+		mPktWriter << reqTickCount;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_ACK_WORLDTIME_WRITE(SendBufferHelper& sendBuffer, time_t timeNow, float timeDilation, uint64 reqTickCount)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_ACK_WORLDTIME;
+		mPktWriter << timeNow;
+		mPktWriter << timeDilation;
+		mPktWriter << reqTickCount;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_ACK_WORLDTIME_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_ACK_WORLDTIME_WRITE
+
+// type = DG
+struct PKT_DG_NOTIFY_WORLDTIME_UPDATED_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	time_t mTimeNow;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_WORLDTIME_UPDATED"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_WORLDTIME_UPDATED"; }
+#endif
+
+	time_t TimeNow() { return mTimeNow; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_NOTIFY_WORLDTIME_UPDATED] TimeNow: {}"
+			, mTimeNow
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_NOTIFY_WORLDTIME_UPDATED_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_NOTIFY_WORLDTIME_UPDATED_READ
+
+// type = DG
+#ifdef _SERVER
+struct PKT_DG_NOTIFY_WORLDTIME_UPDATED_WRITE : public Disposable
+#else
+struct PKT_DG_NOTIFY_WORLDTIME_UPDATED_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_NOTIFY_WORLDTIME_UPDATED_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_WORLDTIME_UPDATED"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_WORLDTIME_UPDATED"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_NOTIFY_WORLDTIME_UPDATED_WRITE(uchar* buf, int bufSize, time_t timeNow)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_NOTIFY_WORLDTIME_UPDATED);
+		mPktWriter << timeNow;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_NOTIFY_WORLDTIME_UPDATED_WRITE(SendBufferHelper& sendBuffer, time_t timeNow)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_NOTIFY_WORLDTIME_UPDATED;
+		mPktWriter << timeNow;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_NOTIFY_WORLDTIME_UPDATED_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_NOTIFY_WORLDTIME_UPDATED_WRITE
+
+// type = DG
+// related packet = PKT_GD_REQ_LOGIN_WRITE
+struct PKT_DG_ACK_LOGIN_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	int mResult;
+	AccountDBId mAccountId;
+	uint64 mClientSession;
+	time_t mLastLoginTime;
+	bool mRegisterDevice;
+	Vid mVid;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_ACK_LOGIN"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_REQ_LOGIN"; }
+#endif
+
+	int Result() { return mResult; }
+	AccountDBId AccountId() { return mAccountId; }
+	uint64 ClientSession() { return mClientSession; }
+	time_t LastLoginTime() { return mLastLoginTime; }
+	bool RegisterDevice() { return mRegisterDevice; }
+	Vid Vid() { return mVid; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_ACK_LOGIN] Result: {}, AccountId: {}, ClientSession: {}, LastLoginTime: {}, RegisterDevice: {}, Vid: {}"
+			, mResult, mAccountId, mClientSession, mLastLoginTime, mRegisterDevice, mVid
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_ACK_LOGIN_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_ACK_LOGIN_READ
+
+// type = DG
+// related packet = PKT_GD_REQ_LOGIN_READ
+#ifdef _SERVER
+struct PKT_DG_ACK_LOGIN_WRITE : public Disposable
+#else
+struct PKT_DG_ACK_LOGIN_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_ACK_LOGIN_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_ACK_LOGIN"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_REQ_LOGIN"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_ACK_LOGIN_WRITE(uchar* buf, int bufSize, int result, AccountDBId accountId, uint64 clientSession, time_t lastLoginTime, bool registerDevice, Vid vid)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_ACK_LOGIN);
+		mPktWriter << result;
+		mPktWriter << accountId;
+		mPktWriter << clientSession;
+		mPktWriter << lastLoginTime;
+		mPktWriter << registerDevice;
+		mPktWriter << vid;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_ACK_LOGIN_WRITE(SendBufferHelper& sendBuffer, int result, AccountDBId accountId, uint64 clientSession, time_t lastLoginTime, bool registerDevice, Vid vid)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_ACK_LOGIN;
+		mPktWriter << result;
+		mPktWriter << accountId;
+		mPktWriter << clientSession;
+		mPktWriter << lastLoginTime;
+		mPktWriter << registerDevice;
+		mPktWriter << vid;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_ACK_LOGIN_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_ACK_LOGIN_WRITE
+
+// type = DG
+struct PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	uint16 mAccountNameOffset;
+	AccountDBId mAccountId;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_ACCOUNT_NAME_UPDATED"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_ACCOUNT_NAME_UPDATED"; }
+#endif
+
+	AccountDBId AccountId() { return mAccountId; }
+#ifdef _SERVER
+	const wchar_t* AccountName() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mAccountNameOffset && pktSize > mAccountNameOffset)
+			return (const wchar_t*)(pktStart + mAccountNameOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString AccountName()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mAccountNameOffset && pktSize > mAccountNameOffset)
+			strWchar = (const wchar_t*)(pktStart + mAccountNameOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_NOTIFY_ACCOUNT_NAME_UPDATED] AccountId: {}, AccountName: {}"
+			, mAccountId, AccountName()
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		if (false == ValidateString(mAccountNameOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_READ
+
+// type = DG
+#ifdef _SERVER
+struct PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_WRITE : public Disposable
+#else
+struct PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+	uint16* mAccountNameOffset;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_ACCOUNT_NAME_UPDATED"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_ACCOUNT_NAME_UPDATED"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_WRITE(uchar* buf, int bufSize, AccountDBId accountId, const FString& accountName)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_NOTIFY_ACCOUNT_NAME_UPDATED);
+		mAccountNameOffset = (uint16*)mPktWriter.GetBuffer();
+		*mAccountNameOffset = 0;
+		mPktWriter << (*mAccountNameOffset);
+		mPktWriter << accountId;
+		*mAccountNameOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(accountName);
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_WRITE(SendBufferHelper& sendBuffer, AccountDBId accountId, const wchar* accountName)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_NOTIFY_ACCOUNT_NAME_UPDATED;
+		mAccountNameOffset = (uint16*)mPktWriter.GetBuffer();
+		*mAccountNameOffset = 0;
+		mPktWriter << (*mAccountNameOffset);
+		mPktWriter << accountId;
+		*mAccountNameOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(accountName);
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_NOTIFY_ACCOUNT_NAME_UPDATED_WRITE
+
+// type = DG
+struct PKT_DG_NOTIFY_REDUNDANT_LOGIN_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	AccountDBId mAccountId;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_REDUNDANT_LOGIN"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_REDUNDANT_LOGIN"; }
+#endif
+
+	AccountDBId AccountId() { return mAccountId; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_NOTIFY_REDUNDANT_LOGIN] AccountId: {}"
+			, mAccountId
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_NOTIFY_REDUNDANT_LOGIN_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_NOTIFY_REDUNDANT_LOGIN_READ
+
+// type = DG
+#ifdef _SERVER
+struct PKT_DG_NOTIFY_REDUNDANT_LOGIN_WRITE : public Disposable
+#else
+struct PKT_DG_NOTIFY_REDUNDANT_LOGIN_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_NOTIFY_REDUNDANT_LOGIN_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_REDUNDANT_LOGIN"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_REDUNDANT_LOGIN"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_NOTIFY_REDUNDANT_LOGIN_WRITE(uchar* buf, int bufSize, AccountDBId accountId)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_NOTIFY_REDUNDANT_LOGIN);
+		mPktWriter << accountId;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_NOTIFY_REDUNDANT_LOGIN_WRITE(SendBufferHelper& sendBuffer, AccountDBId accountId)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_NOTIFY_REDUNDANT_LOGIN;
+		mPktWriter << accountId;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_NOTIFY_REDUNDANT_LOGIN_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_NOTIFY_REDUNDANT_LOGIN_WRITE
+
+// type = DG
+struct PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	AccountDBId mAccountId;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_REDUNDANT_Z_PAY_LOGIN"; }
+#endif
+
+	AccountDBId AccountId() { return mAccountId; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN] AccountId: {}"
+			, mAccountId
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_READ
+
+// type = DG
+#ifdef _SERVER
+struct PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_WRITE : public Disposable
+#else
+struct PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_REDUNDANT_Z_PAY_LOGIN"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_WRITE(uchar* buf, int bufSize, AccountDBId accountId)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN);
+		mPktWriter << accountId;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_WRITE(SendBufferHelper& sendBuffer, AccountDBId accountId)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN;
+		mPktWriter << accountId;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_NOTIFY_REDUNDANT_Z_PAY_LOGIN_WRITE
+
+// type = DG
+struct PKT_DG_GATEWAY_SEVER_UPDATE_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	uint16 mServerNameOffset;
+	uint16 mPublicIPOffset;
+	uint16 mBestPlanetWorldId;
+	uint16 mPlanetWorldId;
+	ServerCongestion mServerCongestion;
+	bool mCharCreatable;
+	bool mRecommended;
+	bool mNewOpened;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_GATEWAY_SEVER_UPDATE"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_GATEWAY_SEVER_UPDATE"; }
+#endif
+
+	uint16 BestPlanetWorldId() { return mBestPlanetWorldId; }
+	uint16 PlanetWorldId() { return mPlanetWorldId; }
+	ServerCongestion ServerCongestion() { return mServerCongestion; }
+	bool CharCreatable() { return mCharCreatable; }
+	bool Recommended() { return mRecommended; }
+	bool NewOpened() { return mNewOpened; }
+#ifdef _SERVER
+	const wchar_t* ServerName() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mServerNameOffset && pktSize > mServerNameOffset)
+			return (const wchar_t*)(pktStart + mServerNameOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString ServerName()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mServerNameOffset && pktSize > mServerNameOffset)
+			strWchar = (const wchar_t*)(pktStart + mServerNameOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+#ifdef _SERVER
+	const wchar_t* PublicIP() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mPublicIPOffset && pktSize > mPublicIPOffset)
+			return (const wchar_t*)(pktStart + mPublicIPOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString PublicIP()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mPublicIPOffset && pktSize > mPublicIPOffset)
+			strWchar = (const wchar_t*)(pktStart + mPublicIPOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_GATEWAY_SEVER_UPDATE] BestPlanetWorldId: {}, PlanetWorldId: {}, ServerName: {}, PublicIP: {}, ServerCongestion: {}, CharCreatable: {}, Recommended: {}, NewOpened: {}"
+			, mBestPlanetWorldId, mPlanetWorldId, ServerName(), PublicIP(), mServerCongestion, mCharCreatable, mRecommended, mNewOpened
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_GATEWAY_SEVER_UPDATE_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		if (false == ValidateString(mServerNameOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		if (false == ValidateString(mPublicIPOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_GATEWAY_SEVER_UPDATE_READ
+
+// type = DG
+#ifdef _SERVER
+struct PKT_DG_GATEWAY_SEVER_UPDATE_WRITE : public Disposable
+#else
+struct PKT_DG_GATEWAY_SEVER_UPDATE_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+	uint16* mServerNameOffset;
+	uint16* mPublicIPOffset;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_GATEWAY_SEVER_UPDATE_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_GATEWAY_SEVER_UPDATE"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_GATEWAY_SEVER_UPDATE"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_GATEWAY_SEVER_UPDATE_WRITE(uchar* buf, int bufSize, uint16 bestPlanetWorldId, uint16 planetWorldId, const FString& serverName, const FString& publicIP, ServerCongestion serverCongestion, bool charCreatable, bool recommended, bool newOpened)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_GATEWAY_SEVER_UPDATE);
+		mServerNameOffset = (uint16*)mPktWriter.GetBuffer();
+		*mServerNameOffset = 0;
+		mPktWriter << (*mServerNameOffset);
+		mPublicIPOffset = (uint16*)mPktWriter.GetBuffer();
+		*mPublicIPOffset = 0;
+		mPktWriter << (*mPublicIPOffset);
+		mPktWriter << bestPlanetWorldId;
+		mPktWriter << planetWorldId;
+		mPktWriter << serverCongestion;
+		mPktWriter << charCreatable;
+		mPktWriter << recommended;
+		mPktWriter << newOpened;
+		*mServerNameOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(serverName);
+		*mPublicIPOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(publicIP);
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_GATEWAY_SEVER_UPDATE_WRITE(SendBufferHelper& sendBuffer, uint16 bestPlanetWorldId, uint16 planetWorldId, const wchar* serverName, const wchar* publicIP, ServerCongestion serverCongestion, bool charCreatable, bool recommended, bool newOpened)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_GATEWAY_SEVER_UPDATE;
+		mServerNameOffset = (uint16*)mPktWriter.GetBuffer();
+		*mServerNameOffset = 0;
+		mPktWriter << (*mServerNameOffset);
+		mPublicIPOffset = (uint16*)mPktWriter.GetBuffer();
+		*mPublicIPOffset = 0;
+		mPktWriter << (*mPublicIPOffset);
+		mPktWriter << bestPlanetWorldId;
+		mPktWriter << planetWorldId;
+		mPktWriter << serverCongestion;
+		mPktWriter << charCreatable;
+		mPktWriter << recommended;
+		mPktWriter << newOpened;
+		*mServerNameOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(serverName);
+		*mPublicIPOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(publicIP);
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_GATEWAY_SEVER_UPDATE_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_GATEWAY_SEVER_UPDATE_WRITE
+
+// type = DG
+struct PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	uint16 mTitleOffset;
+	uint16 mMailStringJsonOffset;
+	SystemMailStringId mSystemMailStringId;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_GATEWAY_REGISTER_SYSTEM_MAIL_STRING"; }
+#endif
+
+	SystemMailStringId SystemMailStringId() { return mSystemMailStringId; }
+#ifdef _SERVER
+	const wchar_t* Title() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mTitleOffset && pktSize > mTitleOffset)
+			return (const wchar_t*)(pktStart + mTitleOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString Title()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mTitleOffset && pktSize > mTitleOffset)
+			strWchar = (const wchar_t*)(pktStart + mTitleOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+#ifdef _SERVER
+	const wchar_t* MailStringJson() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mMailStringJsonOffset && pktSize > mMailStringJsonOffset)
+			return (const wchar_t*)(pktStart + mMailStringJsonOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString MailStringJson()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mMailStringJsonOffset && pktSize > mMailStringJsonOffset)
+			strWchar = (const wchar_t*)(pktStart + mMailStringJsonOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING] Title: {}, MailStringJson: {}, SystemMailStringId: {}"
+			, Title(), MailStringJson(), mSystemMailStringId
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		if (false == ValidateString(mTitleOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		if (false == ValidateString(mMailStringJsonOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_READ
+
+// type = DG
+#ifdef _SERVER
+struct PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_WRITE : public Disposable
+#else
+struct PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+	uint16* mTitleOffset;
+	uint16* mMailStringJsonOffset;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_GATEWAY_REGISTER_SYSTEM_MAIL_STRING"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_WRITE(uchar* buf, int bufSize, const FString& title, const FString& mailStringJson, SystemMailStringId SystemMailStringId)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING);
+		mTitleOffset = (uint16*)mPktWriter.GetBuffer();
+		*mTitleOffset = 0;
+		mPktWriter << (*mTitleOffset);
+		mMailStringJsonOffset = (uint16*)mPktWriter.GetBuffer();
+		*mMailStringJsonOffset = 0;
+		mPktWriter << (*mMailStringJsonOffset);
+		mPktWriter << SystemMailStringId;
+		*mTitleOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(title);
+		*mMailStringJsonOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(mailStringJson);
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_WRITE(SendBufferHelper& sendBuffer, const wchar* title, const wchar* mailStringJson, SystemMailStringId SystemMailStringId)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING;
+		mTitleOffset = (uint16*)mPktWriter.GetBuffer();
+		*mTitleOffset = 0;
+		mPktWriter << (*mTitleOffset);
+		mMailStringJsonOffset = (uint16*)mPktWriter.GetBuffer();
+		*mMailStringJsonOffset = 0;
+		mPktWriter << (*mMailStringJsonOffset);
+		mPktWriter << SystemMailStringId;
+		*mTitleOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(title);
+		*mMailStringJsonOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(mailStringJson);
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_GATEWAY_REGISTER_SYSTEM_MAIL_STRING_WRITE
+
+// type = DG
+struct PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_READ
+{
+	struct BlockList
+	{
+	protected:
+		uint16 mThisOffset;
+		uint16 mNextOffset;
+		uint16 mMarketPIdOffset;
+
+	public:
+
+#ifdef _SERVER
+		const wchar_t* MarketPId()
+		{
+			uchar* pktStart = (uchar*)this - mThisOffset;
+			uint16 pktSize = *((uint16*)pktStart);
+			if (mMarketPIdOffset && pktSize > mMarketPIdOffset)
+				return (const wchar_t*)(pktStart + mMarketPIdOffset);
+			else
+				return L"";
+		}
+#else // _SERVER
+		const FString MarketPId()
+		{
+			const wchar_t* strWchar = L"";
+			uchar* pktStart = (uchar*)this - mThisOffset;
+			uint16 pktSize = *((uint16*)pktStart);
+			if (mMarketPIdOffset && pktSize > mMarketPIdOffset)
+				strWchar = (const wchar_t*)(pktStart + mMarketPIdOffset);
+			return PktWriter::ConvertToFString(strWchar);
+		}
+#endif // _SERVER
+		friend PktIterator<BlockList>;
+		friend PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_READ;
+
+		bool Validate(uint16 offset, uchar * pktStart, uint16 pktSize, uint16& dataSize)
+		{
+			if (static_cast<size_t>(pktSize) < static_cast<size_t>(offset) + sizeof(BlockList))
+				return false;
+
+			BlockList * node = (BlockList*)(pktStart + offset);
+
+			// 자기 자신의 포인터 검증
+			if (offset != node->mThisOffset)
+				return false;
+
+			// Value 검증
+			uchar* pktCurrentNodeStart = (uchar*)this - mThisOffset;
+			uint16 pktCurrentNodeSize = *((uint16*)pktStart);
+			dataSize += sizeof(BlockList);	// skip
+			if (false == ValidateValue(pktCurrentNodeStart, pktCurrentNodeSize, dataSize))
+				return false;
+
+			return true;
+		}
+
+		bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+		{
+			if (false == ValidateString(mMarketPIdOffset, 0, pktStart, pktSize, dataSize))
+				return false;
+
+			return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+		}
+
+	}; // BlockList
+
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	uint16 mBlockListCount;
+	uint16 mFirstBlockListOffset;
+	uint16 mReqMarketPIdOffset;
+	bool mIsDeleted;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_BM_SHOP_BLOCK_MARKET_PID_LIST"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_BM_SHOP_BLOCK_MARKET_PID_LIST"; }
+#endif
+
+	bool IsDeleted() { return mIsDeleted; }
+#ifdef _SERVER
+	const wchar_t* ReqMarketPId() const
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mReqMarketPIdOffset && pktSize > mReqMarketPIdOffset)
+			return (const wchar_t*)(pktStart + mReqMarketPIdOffset);
+		else
+			return L"";
+	}
+#else // _SERVER
+	const FString ReqMarketPId()
+	{
+		const wchar_t* strWchar = L"";
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = *((uint16*)pktStart);
+		if (mReqMarketPIdOffset && pktSize > mReqMarketPIdOffset)
+			strWchar = (const wchar_t*)(pktStart + mReqMarketPIdOffset);
+
+		return PktWriter::ConvertToFString(strWchar);
+	}
+#endif // _SERVER
+
+	using BlockListIterator = PktIterator<BlockList>;
+	const BlockListIterator GetLastBlockListIterator() const
+	{
+		return BlockListIterator(0);
+	}
+	BlockListIterator GetFirstBlockListIterator() const
+	{
+		if (mFirstBlockListOffset && mPktSize >= mFirstBlockListOffset + sizeof(BlockList))
+		{
+			BlockList* blockList = (BlockList*)((uchar*)this + mFirstBlockListOffset);
+			if (mFirstBlockListOffset == blockList->mThisOffset)
+				return BlockListIterator(blockList);
+			else
+				return BlockListIterator(0);
+		}
+		else
+			return BlockListIterator(0);
+	}
+	const int GetBlockListCount()
+	{
+		return mBlockListCount;
+	}
+#ifdef _SERVER
+	template<typename TFunc>
+	void ForEachBlockList(TFunc&& func)
+	{
+		for (auto it = GetFirstBlockListIterator(); it != GetLastBlockListIterator(); ++it)
+			func(it);
+	}
+#endif
+
+
+#ifdef _SERVER 
+	std::xwstring FuncCreateBlockListStr( [[maybe_unused]] BlockListIterator& iter) const
+	{
+		return Log::format(
+			L"MarketPId: {}", 
+			iter->MarketPId()
+		).c_str();
+	}
+
+	std::xwstring GetLogWString() const
+	{
+		std::xwstring str1;
+		str1.append(L"\n");
+		for (BlockListIterator iter = this->GetFirstBlockListIterator();
+			iter != GetLastBlockListIterator(); ++iter)
+		{
+			str1.append(L"[");
+			str1.append(FuncCreateBlockListStr(iter).c_str());
+
+			str1.append(L"]\n");
+		}
+
+		return Log::format(
+			L"[DG_BM_SHOP_BLOCK_MARKET_PID_LIST] IsDeleted: {}, ReqMarketPId: {}, BlockList : {}"
+			, mIsDeleted, ReqMarketPId(), str1.c_str()
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (false == BlockListValidateListNode(mFirstBlockListOffset, pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool BlockListValidateListNode(uint16 offset, uchar * pktStart, uint16 pktSize, uint16& dataSize)
+	{		for (BlockListIterator iter = this->GetFirstBlockListIterator();
+			iter != GetLastBlockListIterator(); ++iter)
+		{
+			if (false == (*iter).Validate(offset, pktStart, pktSize, dataSize))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		if (false == ValidateString(mReqMarketPIdOffset, 0, pktStart, pktSize, dataSize))
+			return false;
+
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_READ
+
+// type = DG
+#ifdef _SERVER
+struct PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_WRITE : public Disposable
+#else
+struct PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_WRITE
+#endif
+{
+	struct BlockList
+	{
+		BlockList(uint16 offset)
+			:
+			mThisOffset(offset)
+			, mNextOffset(0), mMarketPIdOffset(0)
+		{
+		}
+		void SetMarketPIdOffset(uint16 offset)
+		{
+			mMarketPIdOffset = offset;
+		}
+
+		uint16 mThisOffset;
+		uint16 mNextOffset;
+		uint16 mMarketPIdOffset;
+
+	}; // BlockList
+
+	struct BlockListHandle
+	{
+		BlockListHandle(PktWriter& pktWriter, BlockList* blockList)
+			:
+			mPktWriter(pktWriter)
+			, mBlockList(blockList)
+		{
+		}
+
+		PktWriter& mPktWriter;
+		BlockList* mBlockList;
+
+	}; // BlockListHandle
+
+	PktWriter mPktWriter;
+	uint16* mBlockListCount;
+	uint16* mFirstBlockListOffset;
+	BlockList* mNowBlockList;
+	uint16* mReqMarketPIdOffset;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_BM_SHOP_BLOCK_MARKET_PID_LIST"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_BM_SHOP_BLOCK_MARKET_PID_LIST"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_WRITE(uchar* buf, int bufSize, bool isDeleted, const FString& reqMarketPId)
+		:
+		mPktWriter(buf, bufSize)
+		, mNowBlockList(0)
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_BM_SHOP_BLOCK_MARKET_PID_LIST);
+		mBlockListCount = (uint16*)mPktWriter.GetBuffer();
+		*mBlockListCount = 0;
+		mPktWriter << (*mBlockListCount);
+		mFirstBlockListOffset = (uint16*)mPktWriter.GetBuffer();
+		*mFirstBlockListOffset = 0;
+		mPktWriter << (*mFirstBlockListOffset);
+		mReqMarketPIdOffset = (uint16*)mPktWriter.GetBuffer();
+		*mReqMarketPIdOffset = 0;
+		mPktWriter << (*mReqMarketPIdOffset);
+		mPktWriter << isDeleted;
+		*mReqMarketPIdOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(reqMarketPId);
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_WRITE(SendBufferHelper& sendBuffer, bool isDeleted, const wchar* reqMarketPId)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+		, mNowBlockList(0)
+	{
+		mPktWriter << (uint16)DG_BM_SHOP_BLOCK_MARKET_PID_LIST;
+		mBlockListCount = (uint16*)mPktWriter.GetBuffer();
+		*mBlockListCount = 0;
+		mPktWriter << (*mBlockListCount);
+		mFirstBlockListOffset = (uint16*)mPktWriter.GetBuffer();
+		*mFirstBlockListOffset = 0;
+		mPktWriter << (*mFirstBlockListOffset);
+		mReqMarketPIdOffset = (uint16*)mPktWriter.GetBuffer();
+		*mReqMarketPIdOffset = 0;
+		mPktWriter << (*mReqMarketPIdOffset);
+		mPktWriter << isDeleted;
+		*mReqMarketPIdOffset = (uint16)mPktWriter.GetPktSize();
+		mPktWriter.WriteString(reqMarketPId);
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+	BlockListHandle CreateBlockList(const FString& marketPId)
+	{
+		uchar* nowBuffer = mPktWriter.GetBuffer();
+		uint16 nowWritten = (uint16)mPktWriter.GetPktSize();
+		BlockList* newBlockList = new ((BlockList*)nowBuffer) BlockList(nowWritten);
+		++(*mBlockListCount);
+		if (mNowBlockList == 0)
+			*mFirstBlockListOffset = nowWritten;
+		else
+			mNowBlockList->mNextOffset = nowWritten;
+		mNowBlockList = newBlockList;
+		mPktWriter.Skip(sizeof(BlockList));
+		mNowBlockList->SetMarketPIdOffset((uint16)mPktWriter.GetPktSize());
+		mPktWriter.WriteString(marketPId);
+		return BlockListHandle(mPktWriter, newBlockList);
+	}
+
+#else
+	BlockListHandle CreateBlockList(const wchar* marketPId)
+	{
+		uchar* nowBuffer = mPktWriter.GetBuffer();
+		uint16 nowWritten = (uint16)mPktWriter.GetPktSize();
+		BlockList* newBlockList = new ((BlockList*)nowBuffer) BlockList(nowWritten);
+		++(*mBlockListCount);
+		if (mNowBlockList == 0)
+			*mFirstBlockListOffset = nowWritten;
+		else
+			mNowBlockList->mNextOffset = nowWritten;
+		mNowBlockList = newBlockList;
+		mPktWriter.Skip(sizeof(BlockList));
+		mNowBlockList->SetMarketPIdOffset((uint16)mPktWriter.GetPktSize());
+		mPktWriter.WriteString(marketPId);
+		return BlockListHandle(mPktWriter, newBlockList);
+	}
+
+#endif
+}; // PKT_DG_BM_SHOP_BLOCK_MARKET_PID_LIST_WRITE
+
+// type = DG
+// related packet = PKT_GD_NOTIFY_SERVER_MIGRATE_ACCOUNT_WRITE
+struct PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	AccountDBId mAccountDBId;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_SERVER_MIGRATE_ACCOUNT"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_SERVER_MIGRATE_ACCOUNT"; }
+#endif
+
+	AccountDBId AccountDBId() { return mAccountDBId; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_NOTIFY_SERVER_MIGRATE_ACCOUNT] AccountDBId: {}"
+			, mAccountDBId
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_READ
+
+// type = DG
+// related packet = PKT_GD_NOTIFY_SERVER_MIGRATE_ACCOUNT_READ
+#ifdef _SERVER
+struct PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_WRITE : public Disposable
+#else
+struct PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_NOTIFY_SERVER_MIGRATE_ACCOUNT"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_NOTIFY_SERVER_MIGRATE_ACCOUNT"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_WRITE(uchar* buf, int bufSize, AccountDBId accountDBId)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_NOTIFY_SERVER_MIGRATE_ACCOUNT);
+		mPktWriter << accountDBId;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_WRITE(SendBufferHelper& sendBuffer, AccountDBId accountDBId)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_NOTIFY_SERVER_MIGRATE_ACCOUNT;
+		mPktWriter << accountDBId;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_NOTIFY_SERVER_MIGRATE_ACCOUNT_WRITE
+
+// type = DG
+// related packet = PKT_GD_ACK_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_WRITE
+struct PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	ServerMigrateType mMigrateType;
+	PlanetWorldId mSourcePlanetWorldId;
+	PlanetWorldId mTargetPlanetWorldId;
+	AccountDBId mAccountDBId;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_ACK_BYPASS_SERVER_MIGRATE_CHECK_CONDITION"; }
+#endif
+
+	const ServerMigrateType& ConstRefMigrateType() { return mMigrateType; }
+	ServerMigrateType MigrateType() { return mMigrateType; }
+	const PlanetWorldId& ConstRefSourcePlanetWorldId() { return mSourcePlanetWorldId; }
+	PlanetWorldId SourcePlanetWorldId() { return mSourcePlanetWorldId; }
+	const PlanetWorldId& ConstRefTargetPlanetWorldId() { return mTargetPlanetWorldId; }
+	PlanetWorldId TargetPlanetWorldId() { return mTargetPlanetWorldId; }
+	AccountDBId AccountDBId() { return mAccountDBId; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION] MigrateType: {}, SourcePlanetWorldId: {}, TargetPlanetWorldId: {}, AccountDBId: {}"
+			, mMigrateType, mSourcePlanetWorldId, mTargetPlanetWorldId, mAccountDBId
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_READ
+
+// type = DG
+// related packet = PKT_GD_ACK_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_READ
+#ifdef _SERVER
+struct PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_WRITE : public Disposable
+#else
+struct PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_ACK_BYPASS_SERVER_MIGRATE_CHECK_CONDITION"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_WRITE(uchar* buf, int bufSize, ServerMigrateType migrateType, PlanetWorldId sourcePlanetWorldId, PlanetWorldId targetPlanetWorldId, AccountDBId accountDBId)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION);
+		mPktWriter << migrateType;
+		mPktWriter << sourcePlanetWorldId;
+		mPktWriter << targetPlanetWorldId;
+		mPktWriter << accountDBId;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_WRITE(SendBufferHelper& sendBuffer, const ServerMigrateType& migrateType, const PlanetWorldId& sourcePlanetWorldId, const PlanetWorldId& targetPlanetWorldId, AccountDBId accountDBId)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION;
+		mPktWriter << migrateType;
+		mPktWriter << sourcePlanetWorldId;
+		mPktWriter << targetPlanetWorldId;
+		mPktWriter << accountDBId;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_REQ_BYPASS_SERVER_MIGRATE_CHECK_CONDITION_WRITE
+
+// type = DG
+// related packet = PKT_GD_REQ_SERVER_MIGRATE_CHECK_CONDITION_WRITE
+struct PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	int mResult;
+	ServerMigrateType mMigrateType;
+	PlanetWorldId mTargetPlanetWorldId;
+	AccountDBId mAccountDBId;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_ACK_SERVER_MIGRATE_CHECK_CONDITION"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_REQ_SERVER_MIGRATE_CHECK_CONDITION"; }
+#endif
+
+	int Result() { return mResult; }
+	const ServerMigrateType& ConstRefMigrateType() { return mMigrateType; }
+	ServerMigrateType MigrateType() { return mMigrateType; }
+	const PlanetWorldId& ConstRefTargetPlanetWorldId() { return mTargetPlanetWorldId; }
+	PlanetWorldId TargetPlanetWorldId() { return mTargetPlanetWorldId; }
+	AccountDBId AccountDBId() { return mAccountDBId; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_ACK_SERVER_MIGRATE_CHECK_CONDITION] Result: {}, MigrateType: {}, TargetPlanetWorldId: {}, AccountDBId: {}"
+			, mResult, mMigrateType, mTargetPlanetWorldId, mAccountDBId
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_READ
+
+// type = DG
+// related packet = PKT_GD_REQ_SERVER_MIGRATE_CHECK_CONDITION_READ
+#ifdef _SERVER
+struct PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_WRITE : public Disposable
+#else
+struct PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_ACK_SERVER_MIGRATE_CHECK_CONDITION"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_REQ_SERVER_MIGRATE_CHECK_CONDITION"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_WRITE(uchar* buf, int bufSize, int result, ServerMigrateType migrateType, PlanetWorldId targetPlanetWorldId, AccountDBId accountDBId)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_ACK_SERVER_MIGRATE_CHECK_CONDITION);
+		mPktWriter << result;
+		mPktWriter << migrateType;
+		mPktWriter << targetPlanetWorldId;
+		mPktWriter << accountDBId;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_WRITE(SendBufferHelper& sendBuffer, int result, const ServerMigrateType& migrateType, const PlanetWorldId& targetPlanetWorldId, AccountDBId accountDBId)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_ACK_SERVER_MIGRATE_CHECK_CONDITION;
+		mPktWriter << result;
+		mPktWriter << migrateType;
+		mPktWriter << targetPlanetWorldId;
+		mPktWriter << accountDBId;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_ACK_SERVER_MIGRATE_CHECK_CONDITION_WRITE
+
+// type = DG
+// related packet = PKT_GD_QA_SANCTUM_BATTLE_COMMAND_WRITE
+struct PKT_DG_QA_SANCTUM_BATTLE_COMMAND_READ
+{
+public:
+	uint16 mPktSize;
+	uint16 mPktId;
+	SanctumBattleCmd mSanctumBattleCmd;
+
+public:
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT [[maybe_unused]] int& serverTaskId) const { return false; }
+	const wchar_t* GetPacketName() const { return L"DG_QA_SANCTUM_BATTLE_COMMAND"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_QA_SANCTUM_BATTLE_COMMAND"; }
+#endif
+
+	const SanctumBattleCmd& ConstRefSanctumBattleCmd() { return mSanctumBattleCmd; }
+	SanctumBattleCmd SanctumBattleCmd() { return mSanctumBattleCmd; }
+
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+
+		return Log::format(
+			L"[DG_QA_SANCTUM_BATTLE_COMMAND] SanctumBattleCmd: {}"
+			, mSanctumBattleCmd
+		).c_str();
+	}
+#endif
+
+	bool Validate()
+	{
+		uchar* pktStart = (uchar*)this;
+		uint16 pktSize = mPktSize;
+
+		uint16 dataSize = sizeof(PKT_DG_QA_SANCTUM_BATTLE_COMMAND_READ);
+		if (dataSize > mPktSize)
+			return false;
+
+		if (false == ValidateValue(pktStart, pktSize, dataSize))
+			return false;
+
+		if (dataSize != mPktSize)
+			return false;
+
+		return true;
+	}
+
+	bool ValidateValue(const uchar* pktStart, uint16 pktSize, uint16& dataSize)
+	{
+		return (nullptr != pktStart && 0 < pktSize && 0 < dataSize) ? true : false;
+	}
+
+}; // PKT_DG_QA_SANCTUM_BATTLE_COMMAND_READ
+
+// type = DG
+// related packet = PKT_GD_QA_SANCTUM_BATTLE_COMMAND_READ
+#ifdef _SERVER
+struct PKT_DG_QA_SANCTUM_BATTLE_COMMAND_WRITE : public Disposable
+#else
+struct PKT_DG_QA_SANCTUM_BATTLE_COMMAND_WRITE
+#endif
+{
+	PktWriter mPktWriter;
+
+#ifdef _SERVER 
+	bool GetServerTaskIdRealTime(OUT int& serverTaskId) const { return reinterpret_cast<PKT_DG_QA_SANCTUM_BATTLE_COMMAND_READ*>(mPktWriter.mBuf)->GetServerTaskIdRealTime(serverTaskId); }
+	const wchar_t* GetPacketName() const { return L"DG_QA_SANCTUM_BATTLE_COMMAND"; }
+	const wchar_t* GetRelatedPacketName() const { return L"GD_QA_SANCTUM_BATTLE_COMMAND"; }
+#endif
+
+#ifndef _SERVER
+	PKT_DG_QA_SANCTUM_BATTLE_COMMAND_WRITE(uchar* buf, int bufSize, SanctumBattleCmd sanctumBattleCmd)
+		:
+		mPktWriter(buf, bufSize)
+
+	{
+		mPktWriter << static_cast<uint16>(PD::DG::DGPacketId::DG_QA_SANCTUM_BATTLE_COMMAND);
+		mPktWriter << sanctumBattleCmd;
+	}
+
+#endif // _SERVER
+#ifdef _SERVER
+	PKT_DG_QA_SANCTUM_BATTLE_COMMAND_WRITE(SendBufferHelper& sendBuffer, const SanctumBattleCmd& sanctumBattleCmd)
+		:
+		mPktWriter(sendBuffer->GetCharBuffer(), (SEND_BUFFER_SIZE - 1))
+
+	{
+		mPktWriter << (uint16)DG_QA_SANCTUM_BATTLE_COMMAND;
+		mPktWriter << sanctumBattleCmd;
+	}
+#endif
+
+#ifdef _SERVER 
+	void send(IocpObjectSession* session, SendBufferRef sendBuffer, bool autoCloseSendBuffer)
+	{
+		if (session) 
+			session->Send(sendBuffer, mPktWriter.GetPktSize(), autoCloseSendBuffer);
+	}
+#endif
+
+#ifdef _SERVER 
+	std::xwstring GetLogWString() const
+	{
+		auto readPacket = reinterpret_cast<PKT_DG_QA_SANCTUM_BATTLE_COMMAND_READ*>(mPktWriter.mBuf);
+		return readPacket->GetLogWString();
+	}
+#endif
+
+#ifndef _SERVER
+#else
+#endif
+}; // PKT_DG_QA_SANCTUM_BATTLE_COMMAND_WRITE
+
+#pragma pack(pop)
+#pragma warning(pop)
+} // namespace DG
+} // namespace PD

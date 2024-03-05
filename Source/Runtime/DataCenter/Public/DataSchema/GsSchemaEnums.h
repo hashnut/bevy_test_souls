@@ -1,0 +1,2234 @@
+﻿/// DO NOT EDIT THIS. This file is an auto generated file. Just use header generator.
+#pragma once
+
+#include "GsSchemaEnums.generated.h"
+
+#define GS_ENUM_LEXTOSTRING_START(Enum) inline FString LexToString(Enum InValue) { switch (InValue) {
+#define GS_ENUM_LEXTOSTRING_CASE(Enum, Element) case Enum::Element: return TEXT(#Element);
+#define GS_ENUM_LEXTOSTRING_END(Enum) default: return TEXT("<Unknown " #Enum ">"); } }
+#define GS_ENUM_LEXFROMSTRING_START(Enum) inline void LexFromString(Enum& OutValue, const TCHAR* Buffer) {
+#define GS_ENUM_LEXFROMSTRING_CASE(Enum, Element) if (FCString::Stricmp(Buffer, TEXT(#Element)) == 0) { OutValue = Enum::Element; return; }
+#define GS_ENUM_LEXFROMSTRING_END() }
+
+UENUM(BlueprintType)
+enum class EGsAbnormalityAnimProcessType : uint8
+{
+	NONE = 0 UMETA(Tooltip="animation 처리 없음"),
+	STUNACT = 1 UMETA(Tooltip="기절 타입 액션"),
+	FEARACT = 2 UMETA(Tooltip="공포 타입 액션"),
+	KNOCKBACK = 3 UMETA(Tooltip="넉백"),
+	KNOCKDOWN = 4 UMETA(Tooltip="넉다운"),
+	FRAMESTOP = 5 UMETA(Tooltip="그대로 멈춤"),
+	POLYMORPH = 6 UMETA(Tooltip="변이"),
+	TAUNT = 7 UMETA(Tooltip="도발"),
+	Max = 8,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsAbnormalityAnimProcessType)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityAnimProcessType, NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityAnimProcessType, STUNACT)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityAnimProcessType, FEARACT)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityAnimProcessType, KNOCKBACK)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityAnimProcessType, KNOCKDOWN)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityAnimProcessType, FRAMESTOP)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityAnimProcessType, POLYMORPH)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityAnimProcessType, TAUNT)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityAnimProcessType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsAbnormalityAnimProcessType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsAbnormalityAnimProcessType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityAnimProcessType, NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityAnimProcessType, STUNACT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityAnimProcessType, FEARACT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityAnimProcessType, KNOCKBACK)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityAnimProcessType, KNOCKDOWN)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityAnimProcessType, FRAMESTOP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityAnimProcessType, POLYMORPH)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityAnimProcessType, TAUNT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityAnimProcessType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsAbnormalityEffectConvertParamType : uint8
+{
+	OVERTIME = 0,
+	CC = 1,
+	STAT = 2,
+	UTIL = 3,
+	UTIL_ON_REMOVE_EXE_SKILL_NOTIFY = 4,
+	UTIL_IMMORTAL = 5,
+	UTIL_FINAL_HOWL = 6,
+	UTIL_BERSERKER_RAGE = 7,
+	UTIL_HIDING = 8,
+	UTIL_POINTED_ARROW = 9,
+	UTIL_BONUS_DAMAGE = 10,
+	UTIL_COUNTER = 11,
+	UTIL_HP_ABSORPTION = 12,
+	UTIL_DAMAGE_SHARE = 13,
+	Max = 14,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsAbnormalityEffectConvertParamType)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, OVERTIME)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, CC)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, STAT)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_ON_REMOVE_EXE_SKILL_NOTIFY)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_IMMORTAL)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_FINAL_HOWL)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_BERSERKER_RAGE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_HIDING)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_POINTED_ARROW)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_BONUS_DAMAGE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_COUNTER)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_HP_ABSORPTION)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_DAMAGE_SHARE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectConvertParamType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsAbnormalityEffectConvertParamType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsAbnormalityEffectConvertParamType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, OVERTIME)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, CC)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, STAT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_ON_REMOVE_EXE_SKILL_NOTIFY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_IMMORTAL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_FINAL_HOWL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_BERSERKER_RAGE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_HIDING)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_POINTED_ARROW)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_BONUS_DAMAGE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_COUNTER)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_HP_ABSORPTION)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, UTIL_DAMAGE_SHARE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectConvertParamType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsAbnormalityEffectParticleSpawnType : uint8
+{
+	LoopSpawn = 0 UMETA(Tooltip="발동후 해제시 메뉴얼 삭제"),
+	ActiveSpawn = 1 UMETA(Tooltip="발동시점에 출력(자동 삭제)"),
+	DeactiveSpawn = 2 UMETA(Tooltip="해제시점에 출력(자동 삭제)"),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsAbnormalityEffectParticleSpawnType)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectParticleSpawnType, LoopSpawn)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectParticleSpawnType, ActiveSpawn)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectParticleSpawnType, DeactiveSpawn)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectParticleSpawnType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsAbnormalityEffectParticleSpawnType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsAbnormalityEffectParticleSpawnType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectParticleSpawnType, LoopSpawn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectParticleSpawnType, ActiveSpawn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectParticleSpawnType, DeactiveSpawn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectParticleSpawnType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="EmitterAtLocation",Tooltip="EmitterAtLocation"))
+enum class EGsAbnormalityEffectParticleType : uint8
+{
+	EmitterAtLocation = 0 UMETA(Tooltip="특정 위치에 스폰되어 스폰자의 위치 변경에 영향받지 않습니다."),
+	EmitterAttached = 1 UMETA(Tooltip="스폰자의 위치/회전 정보를 반영 합니다."),
+	EmitterAttachedOnlyLocation = 2 UMETA(Tooltip="스폰자의 위치 정보만 반영 됩니다."),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsAbnormalityEffectParticleType)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectParticleType, EmitterAtLocation)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectParticleType, EmitterAttached)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectParticleType, EmitterAttachedOnlyLocation)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityEffectParticleType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsAbnormalityEffectParticleType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsAbnormalityEffectParticleType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectParticleType, EmitterAtLocation)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectParticleType, EmitterAttached)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectParticleType, EmitterAttachedOnlyLocation)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityEffectParticleType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsAbnormalityProcessType : uint8
+{
+	None = 0,
+	Post = 1 UMETA(Tooltip="선입처리후,후입처리"),
+	Insert = 2 UMETA(Tooltip="후입우선 처리"),
+	Remove = 3 UMETA(Tooltip="선입제거"),
+	Ignore = 4 UMETA(Tooltip="후입무시"),
+	Replay = 5 UMETA(Tooltip="변이중 동작은 재실행"),
+	Retry = 6 UMETA(Tooltip="재진입"),
+	Max = 7,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsAbnormalityProcessType)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityProcessType, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityProcessType, Post)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityProcessType, Insert)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityProcessType, Remove)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityProcessType, Ignore)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityProcessType, Replay)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityProcessType, Retry)
+GS_ENUM_LEXTOSTRING_CASE(EGsAbnormalityProcessType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsAbnormalityProcessType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsAbnormalityProcessType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityProcessType, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityProcessType, Post)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityProcessType, Insert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityProcessType, Remove)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityProcessType, Ignore)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityProcessType, Replay)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityProcessType, Retry)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAbnormalityProcessType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsAIActionType : uint8
+{
+	WAIT = 0 UMETA(Tooltip="대기, 조건 체크"),
+	MOVE_TO_AUTO_START_POS = 1 UMETA(Tooltip="자동 시작점으로 이동"),
+	ATTACK_ANYONE = 2 UMETA(Tooltip="아무나 공겨(찾기, 이동, 공격 한번에 처리)"),
+	LOOT_ITEM = 3 UMETA(Tooltip="루팅"),
+	INTERACTION = 4 UMETA(Tooltip="채집"),
+	AUTO_MOVE_STOP = 5 UMETA(Tooltip="자동 이동 중지"),
+	AUTO_MOVE_STOP_WITH_RESERVE_RETRY = 6 UMETA(Tooltip="자동 이동 중지 및 reserve 재시도"),
+	AUTO_MOVE_STOP_WITH_CLEAR_RESERVE_SKILL = 7 UMETA(Tooltip="자동 이동 중지 및 예약된 skill clear"),
+	WAIT_SECOND = 8 UMETA(Tooltip="특정시간동안 기다림"),
+	LOOT_ITEM_AUTO_OFF = 9 UMETA(Tooltip="AUTO OFF 중(자동 이동중) 루팅(퀘스트 이동중 드롭한 아이템 획득)"),
+	Max = 10,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsAIActionType)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, WAIT)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, MOVE_TO_AUTO_START_POS)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, ATTACK_ANYONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, LOOT_ITEM)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, INTERACTION)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, AUTO_MOVE_STOP)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, AUTO_MOVE_STOP_WITH_RESERVE_RETRY)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, AUTO_MOVE_STOP_WITH_CLEAR_RESERVE_SKILL)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, WAIT_SECOND)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, LOOT_ITEM_AUTO_OFF)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIActionType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsAIActionType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsAIActionType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, WAIT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, MOVE_TO_AUTO_START_POS)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, ATTACK_ANYONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, LOOT_ITEM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, INTERACTION)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, AUTO_MOVE_STOP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, AUTO_MOVE_STOP_WITH_RESERVE_RETRY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, AUTO_MOVE_STOP_WITH_CLEAR_RESERVE_SKILL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, WAIT_SECOND)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, LOOT_ITEM_AUTO_OFF)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIActionType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsAIConditionType : uint8
+{
+	TARGET_EXIST = 0 UMETA(Tooltip="타겟이 있는지"),
+	HAS_AUTO_RETURN_MODE = 1 UMETA(Tooltip="자동 복귀 상태인지"),
+	IS_TOO_FAR_FROM_AUTO_START_POS = 2 UMETA(Tooltip="자동 시작점에서 너무 멀어졌는지"),
+	IS_GAMEOBJ_FSM_IDLE = 3 UMETA(Tooltip="GameObj fsm 상태가 idle인지"),
+	IS_IN_SEARCH_RANGE_ANYONE_ENEMY = 4 UMETA(Tooltip="시야내에 적이 있는지"),
+	IS_IN_SEARCH_RANGE_ITEM = 5 UMETA(Tooltip="시야내에 아이템이 있는지"),
+	IS_IN_SEARCH_RANGE_PROP = 6 UMETA(Tooltip="시야내에 채집 가능한 오브젝트가 있는지"),
+	IS_QUEST_LAST_DROP_ITEM = 7 UMETA(Tooltip="퀘스트 진행 마지막 드롭 아이템이 있는지"),
+	IS_GAMEOBJ_SKILL_USEABLE_STATE = 8 UMETA(Tooltip="스킬 사용가능한 상태인가(캔슬구간 or idle)"),
+	IS_QUEST_AUTO_PLAY = 9 UMETA(Tooltip="퀘스트 오토 플레이중인가"),
+	IS_COUNTER_ATTACK_ON = 10 UMETA(Tooltip="반격 옵션 ON 인가"),
+	IS_COUNTER_ATTACK_TARGET_EXIST = 11 UMETA(Tooltip="반격 대상 있는가"),
+	IS_AUTO_LOOT_COOL_TIME = 12 UMETA(Tooltip="오토 루팅 쿨타임(특정 행동에 의한 발동 ex)루팅 이동중에 1차 타게팅 or 땅찍고 이동)"),
+	IS_QUEST_AUTO_LOOT = 13 UMETA(Tooltip="퀘스트 오토 채집인가"),
+	IS_LOOT_SERVER_RESPONSE_WAIT = 14 UMETA(Tooltip="루팅 서버 응답 대기중인가"),
+	IS_LOOT_IMPOSSIBLE = 15 UMETA(Tooltip="루팅 불가능한지( 무게 넘거나 인벤 슬롯 다차거나)"),
+	IS_DIALOG_PLAY = 16 UMETA(Tooltip="대화 연출 중인지"),
+	IS_INPUT_BLOCK = 17 UMETA(Tooltip="인풋이 막혀있는지"),
+	IS_RESERVE_LOOTING = 18 UMETA(Tooltip="루팅 예약된 진행 정보가 있는지(진행중)"),
+	IS_AUTO_RETURN_MOVE = 19 UMETA(Tooltip="사냥 거리 안으로 되돌아가기 이동인가"),
+	IS_GAMEOBJ_FSM_AUTO_MOVE = 20 UMETA(Tooltip="자동 이동 상태인가"),
+	IS_QUEST_CENTER_MOVE = 21 UMETA(Tooltip="퀘스트 중앙 이동중인가"),
+	IS_STAY_LONG_TIME = 22 UMETA(Tooltip="한자리에서 오래 대기했는지"),
+	IS_FIRST_JOB_RETRY = 23 UMETA(Tooltip="처음 JOB이 RETRY인지"),
+	IS_SERVER_MOVE_LOCK = 24 UMETA(Tooltip="서버 이동 제한에 걸렸는지"),
+	IS_ATTACKABLE = 25 UMETA(Tooltip="공격 가능한지"),
+	IS_AUTO_RETURN_POSSIBLE_MAP = 26 UMETA(Tooltip="자동 회귀 가능한 맵인지"),
+	IS_RESERVED_ACTION_AUTO_MOVE_STOP_WITH_CRS = 27 UMETA(Tooltip="자동 이동 중지 및 skill clear 액션 등록 되어있는지"),
+	Max = 28,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsAIConditionType)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, TARGET_EXIST)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, HAS_AUTO_RETURN_MODE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_TOO_FAR_FROM_AUTO_START_POS)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_GAMEOBJ_FSM_IDLE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_IN_SEARCH_RANGE_ANYONE_ENEMY)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_IN_SEARCH_RANGE_ITEM)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_IN_SEARCH_RANGE_PROP)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_QUEST_LAST_DROP_ITEM)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_GAMEOBJ_SKILL_USEABLE_STATE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_QUEST_AUTO_PLAY)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_COUNTER_ATTACK_ON)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_COUNTER_ATTACK_TARGET_EXIST)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_AUTO_LOOT_COOL_TIME)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_QUEST_AUTO_LOOT)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_LOOT_SERVER_RESPONSE_WAIT)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_LOOT_IMPOSSIBLE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_DIALOG_PLAY)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_INPUT_BLOCK)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_RESERVE_LOOTING)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_AUTO_RETURN_MOVE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_GAMEOBJ_FSM_AUTO_MOVE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_QUEST_CENTER_MOVE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_STAY_LONG_TIME)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_FIRST_JOB_RETRY)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_SERVER_MOVE_LOCK)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_ATTACKABLE)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_AUTO_RETURN_POSSIBLE_MAP)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, IS_RESERVED_ACTION_AUTO_MOVE_STOP_WITH_CRS)
+GS_ENUM_LEXTOSTRING_CASE(EGsAIConditionType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsAIConditionType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsAIConditionType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, TARGET_EXIST)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, HAS_AUTO_RETURN_MODE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_TOO_FAR_FROM_AUTO_START_POS)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_GAMEOBJ_FSM_IDLE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_IN_SEARCH_RANGE_ANYONE_ENEMY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_IN_SEARCH_RANGE_ITEM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_IN_SEARCH_RANGE_PROP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_QUEST_LAST_DROP_ITEM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_GAMEOBJ_SKILL_USEABLE_STATE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_QUEST_AUTO_PLAY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_COUNTER_ATTACK_ON)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_COUNTER_ATTACK_TARGET_EXIST)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_AUTO_LOOT_COOL_TIME)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_QUEST_AUTO_LOOT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_LOOT_SERVER_RESPONSE_WAIT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_LOOT_IMPOSSIBLE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_DIALOG_PLAY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_INPUT_BLOCK)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_RESERVE_LOOTING)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_AUTO_RETURN_MOVE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_GAMEOBJ_FSM_AUTO_MOVE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_QUEST_CENTER_MOVE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_STAY_LONG_TIME)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_FIRST_JOB_RETRY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_SERVER_MOVE_LOCK)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_ATTACKABLE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_AUTO_RETURN_POSSIBLE_MAP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, IS_RESERVED_ACTION_AUTO_MOVE_STOP_WITH_CRS)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAIConditionType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsAnimSlotType : uint8
+{
+	DefaultSlot = 0,
+	SecondSlot = 1,
+	ThirdSlot = 2,
+	FourthSlot = 3,
+	FifthSlot = 4,
+	Max = 5,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsAnimSlotType)
+GS_ENUM_LEXTOSTRING_CASE(EGsAnimSlotType, DefaultSlot)
+GS_ENUM_LEXTOSTRING_CASE(EGsAnimSlotType, SecondSlot)
+GS_ENUM_LEXTOSTRING_CASE(EGsAnimSlotType, ThirdSlot)
+GS_ENUM_LEXTOSTRING_CASE(EGsAnimSlotType, FourthSlot)
+GS_ENUM_LEXTOSTRING_CASE(EGsAnimSlotType, FifthSlot)
+GS_ENUM_LEXTOSTRING_CASE(EGsAnimSlotType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsAnimSlotType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsAnimSlotType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAnimSlotType, DefaultSlot)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAnimSlotType, SecondSlot)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAnimSlotType, ThirdSlot)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAnimSlotType, FourthSlot)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAnimSlotType, FifthSlot)
+GS_ENUM_LEXFROMSTRING_CASE(EGsAnimSlotType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="통화 코드(ISO 4217)",Tooltip="통화 코드(ISO 4217)"))
+enum class EGsBMShopCashCurrency : uint8
+{
+	XXX = 0 UMETA(Tooltip="No currency"),
+	KRW = 1 UMETA(Tooltip="South Korean won"),
+	TWD = 2 UMETA(Tooltip="New Taiwan dollar"),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsBMShopCashCurrency)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopCashCurrency, XXX)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopCashCurrency, KRW)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopCashCurrency, TWD)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopCashCurrency, Max)
+GS_ENUM_LEXTOSTRING_END(EGsBMShopCashCurrency)
+
+GS_ENUM_LEXFROMSTRING_START(EGsBMShopCashCurrency)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopCashCurrency, XXX)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopCashCurrency, KRW)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopCashCurrency, TWD)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopCashCurrency, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsBMShopDisPlayType : uint8
+{
+	None = 0,
+	DefaultType = 1 UMETA(Tooltip="기본형 DP"),
+	DetailType = 2 UMETA(Tooltip="상품 상세정보 노출형 DP"),
+	SmallBannerType = 3 UMETA(Tooltip="소배너 포함형 DP"),
+	LargeBannerType = 4 UMETA(Tooltip="단일 대배너 DP"),
+	StepUpType = 5 UMETA(Tooltip="스탭업 상품 DP"),
+	ServerMigrate = 6 UMETA(Tooltip="서버 이주 DP"),
+	Max = 7,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsBMShopDisPlayType)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopDisPlayType, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopDisPlayType, DefaultType)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopDisPlayType, DetailType)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopDisPlayType, SmallBannerType)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopDisPlayType, LargeBannerType)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopDisPlayType, StepUpType)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopDisPlayType, ServerMigrate)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopDisPlayType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsBMShopDisPlayType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsBMShopDisPlayType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopDisPlayType, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopDisPlayType, DefaultType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopDisPlayType, DetailType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopDisPlayType, SmallBannerType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopDisPlayType, LargeBannerType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopDisPlayType, StepUpType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopDisPlayType, ServerMigrate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopDisPlayType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsBMShopSpecialSubTab : uint8
+{
+	None = 0,
+	CurrencySubTab = 1 UMETA(Tooltip="재화 서브탭"),
+	DefaultSubTab = 2 UMETA(Tooltip="기본 서브탭"),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsBMShopSpecialSubTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialSubTab, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialSubTab, CurrencySubTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialSubTab, DefaultSubTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialSubTab, Max)
+GS_ENUM_LEXTOSTRING_END(EGsBMShopSpecialSubTab)
+
+GS_ENUM_LEXFROMSTRING_START(EGsBMShopSpecialSubTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialSubTab, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialSubTab, CurrencySubTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialSubTab, DefaultSubTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialSubTab, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsBMShopSpecialTab : uint8
+{
+	None = 0,
+	CurrencyTab = 1 UMETA(Tooltip="재화탭"),
+	DefaultTab = 2 UMETA(Tooltip="기본탭"),
+	CouponUsableTab = 3 UMETA(Tooltip="쿠폰탭"),
+	EventItemTab = 4 UMETA(Tooltip="이벤트아이템재화탭"),
+	Max = 5,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsBMShopSpecialTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialTab, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialTab, CurrencyTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialTab, DefaultTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialTab, CouponUsableTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialTab, EventItemTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsBMShopSpecialTab, Max)
+GS_ENUM_LEXTOSTRING_END(EGsBMShopSpecialTab)
+
+GS_ENUM_LEXFROMSTRING_START(EGsBMShopSpecialTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialTab, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialTab, CurrencyTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialTab, DefaultTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialTab, CouponUsableTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialTab, EventItemTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsBMShopSpecialTab, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsCameraMode : uint8
+{
+	BackView = 0 UMETA(Tooltip="자동시 따라다니는 카메라"),
+	Quarter = 1 UMETA(Tooltip="쿼터뷰"),
+	Boss = 2 UMETA(Tooltip="보스모드"),
+	Dialog = 3 UMETA(Tooltip="대사 연출"),
+	WarpStart = 4 UMETA(Tooltip="워프 연출 시작"),
+	None = 5 UMETA(Tooltip="기본 값"),
+	SpaceCrack = 6 UMETA(Tooltip="시공의 틈새 전용 카메라 모드"),
+	FixedQuarter = 7 UMETA(Tooltip="고정형 쿼터"),
+	PlayableEvent = 8 UMETA(Tooltip="플레이어블 이벤트 전용 카메라 모드"),
+	EquipView = 9 UMETA(Tooltip="장비 뷰(hp 클릭시 나오는 것)"),
+	Max = 10,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsCameraMode)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, BackView)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, Quarter)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, Boss)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, Dialog)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, WarpStart)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, SpaceCrack)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, FixedQuarter)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, PlayableEvent)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, EquipView)
+GS_ENUM_LEXTOSTRING_CASE(EGsCameraMode, Max)
+GS_ENUM_LEXTOSTRING_END(EGsCameraMode)
+
+GS_ENUM_LEXFROMSTRING_START(EGsCameraMode)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, BackView)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, Quarter)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, Boss)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, Dialog)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, WarpStart)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, SpaceCrack)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, FixedQuarter)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, PlayableEvent)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, EquipView)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCameraMode, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsChatViewType : uint8
+{
+	ALL = 0,
+	SYSTEM = 1,
+	INVASION = 2,
+	SERVER = 3,
+	NORMAL = 4,
+	GUILD = 5,
+	PARTY = 6,
+	WHISPER = 7,
+	GROUP = 8,
+	Max = 9,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsChatViewType)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, ALL)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, SYSTEM)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, INVASION)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, SERVER)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, NORMAL)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, GUILD)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, PARTY)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, WHISPER)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, GROUP)
+GS_ENUM_LEXTOSTRING_CASE(EGsChatViewType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsChatViewType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsChatViewType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, ALL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, SYSTEM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, INVASION)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, SERVER)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, NORMAL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, GUILD)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, PARTY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, WHISPER)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, GROUP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsChatViewType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsCheatArguType : uint8
+{
+	int32 = 0 UMETA(Tooltip="수자형 인자"),
+	float32 = 1 UMETA(Tooltip="정수형 인자"),
+	String = 2 UMETA(Tooltip="문자형 인자"),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsCheatArguType)
+GS_ENUM_LEXTOSTRING_CASE(EGsCheatArguType, int32)
+GS_ENUM_LEXTOSTRING_CASE(EGsCheatArguType, float32)
+GS_ENUM_LEXTOSTRING_CASE(EGsCheatArguType, String)
+GS_ENUM_LEXTOSTRING_CASE(EGsCheatArguType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsCheatArguType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsCheatArguType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCheatArguType, int32)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCheatArguType, float32)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCheatArguType, String)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCheatArguType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsCheatTargetType : uint8
+{
+	Client = 0 UMETA(Tooltip="클라이언트에서 수행하는 명령어"),
+	Server = 1 UMETA(Tooltip="서버에서 수행하는 명령어"),
+	Max = 2,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsCheatTargetType)
+GS_ENUM_LEXTOSTRING_CASE(EGsCheatTargetType, Client)
+GS_ENUM_LEXTOSTRING_CASE(EGsCheatTargetType, Server)
+GS_ENUM_LEXTOSTRING_CASE(EGsCheatTargetType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsCheatTargetType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsCheatTargetType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCheatTargetType, Client)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCheatTargetType, Server)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCheatTargetType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsContentsCameraType : uint8
+{
+	LobbyCustomizing = 0 UMETA(Tooltip="로비 커스터마이징"),
+	LobbyCharacterSelect = 1 UMETA(Tooltip="로비 캐릭터 선택"),
+	LobbyCharacterCreate = 2 UMETA(Tooltip="로비 캐릭터 생성"),
+	GameFairyRoom = 3 UMETA(Tooltip="게임 페어리 룸"),
+	GameCostumeRoom = 4 UMETA(Tooltip="게임 코스튬 룸"),
+	NONE = 5,
+	Max = 6,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsContentsCameraType)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsCameraType, LobbyCustomizing)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsCameraType, LobbyCharacterSelect)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsCameraType, LobbyCharacterCreate)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsCameraType, GameFairyRoom)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsCameraType, GameCostumeRoom)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsCameraType, NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsCameraType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsContentsCameraType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsContentsCameraType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsCameraType, LobbyCustomizing)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsCameraType, LobbyCharacterSelect)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsCameraType, LobbyCharacterCreate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsCameraType, GameFairyRoom)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsCameraType, GameCostumeRoom)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsCameraType, NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsCameraType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="컨텐츠 바로가기 목록의 처리 방법",Tooltip="컨텐츠 바로가기 목록의 처리 방법"))
+enum class EGsContentsShortcutMethod : uint8
+{
+	Inclusive = 0 UMETA(Tooltip="포괄적 사용. 리스트 요소들은 항상 유효하고, 추기로 첨부되는 요소도 유효함."),
+	Exclusive = 1 UMETA(Tooltip="배타적 사용. 리스트 요소들만 유효하고, 추가로 첨부되는 요소는 무시함."),
+	Max = 2,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsContentsShortcutMethod)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsShortcutMethod, Inclusive)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsShortcutMethod, Exclusive)
+GS_ENUM_LEXTOSTRING_CASE(EGsContentsShortcutMethod, Max)
+GS_ENUM_LEXTOSTRING_END(EGsContentsShortcutMethod)
+
+GS_ENUM_LEXFROMSTRING_START(EGsContentsShortcutMethod)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsShortcutMethod, Inclusive)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsShortcutMethod, Exclusive)
+GS_ENUM_LEXFROMSTRING_CASE(EGsContentsShortcutMethod, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="코스춤 statpassivity stat list의 index",Tooltip="코스춤 statpassivity stat list의 index"))
+enum class EGsCostumePassivityIndex : uint8
+{
+	MainStat0 = 0 UMETA(Tooltip="6개의 고정된 main stat 1번"),
+	MainStat1 = 1 UMETA(Tooltip="6개의 고정된 main stat 2번"),
+	MainStat2 = 2 UMETA(Tooltip="6개의 고정된 main stat 3번"),
+	MainStat3 = 3 UMETA(Tooltip="6개의 고정된 main stat 4번"),
+	MainStat4 = 4 UMETA(Tooltip="6개의 고정된 main stat 5번"),
+	MainStat5 = 5 UMETA(Tooltip="6개의 고정된 main stat 6번"),
+	IdentityStat = 6 UMETA(Tooltip="costume의 고유한 능력치 표시"),
+	SubStat = 7 UMETA(Tooltip="added 되는 stat index 시작"),
+	Max = 8,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsCostumePassivityIndex)
+GS_ENUM_LEXTOSTRING_CASE(EGsCostumePassivityIndex, MainStat0)
+GS_ENUM_LEXTOSTRING_CASE(EGsCostumePassivityIndex, MainStat1)
+GS_ENUM_LEXTOSTRING_CASE(EGsCostumePassivityIndex, MainStat2)
+GS_ENUM_LEXTOSTRING_CASE(EGsCostumePassivityIndex, MainStat3)
+GS_ENUM_LEXTOSTRING_CASE(EGsCostumePassivityIndex, MainStat4)
+GS_ENUM_LEXTOSTRING_CASE(EGsCostumePassivityIndex, MainStat5)
+GS_ENUM_LEXTOSTRING_CASE(EGsCostumePassivityIndex, IdentityStat)
+GS_ENUM_LEXTOSTRING_CASE(EGsCostumePassivityIndex, SubStat)
+GS_ENUM_LEXTOSTRING_CASE(EGsCostumePassivityIndex, Max)
+GS_ENUM_LEXTOSTRING_END(EGsCostumePassivityIndex)
+
+GS_ENUM_LEXFROMSTRING_START(EGsCostumePassivityIndex)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCostumePassivityIndex, MainStat0)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCostumePassivityIndex, MainStat1)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCostumePassivityIndex, MainStat2)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCostumePassivityIndex, MainStat3)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCostumePassivityIndex, MainStat4)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCostumePassivityIndex, MainStat5)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCostumePassivityIndex, IdentityStat)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCostumePassivityIndex, SubStat)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCostumePassivityIndex, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="스페셜 탭 enum (전체, 즐겨찾기 등)",Tooltip="스페셜 탭 enum (전체, 즐겨찾기 등)"))
+enum class EGsCraftSpecialTab : uint8
+{
+	None = 0,
+	All = 1 UMETA(Tooltip="부모와 형재에 속한 모든 요소를 포함함"),
+	Favorite = 2 UMETA(Tooltip="즐겨찾기탭. 탭정보 테이블에서 유일해야 함"),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsCraftSpecialTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsCraftSpecialTab, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsCraftSpecialTab, All)
+GS_ENUM_LEXTOSTRING_CASE(EGsCraftSpecialTab, Favorite)
+GS_ENUM_LEXTOSTRING_CASE(EGsCraftSpecialTab, Max)
+GS_ENUM_LEXTOSTRING_END(EGsCraftSpecialTab)
+
+GS_ENUM_LEXFROMSTRING_START(EGsCraftSpecialTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCraftSpecialTab, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCraftSpecialTab, All)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCraftSpecialTab, Favorite)
+GS_ENUM_LEXFROMSTRING_CASE(EGsCraftSpecialTab, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="던전 그룹 타입",Tooltip="던전 그룹 타입"))
+enum class EGsDungeonGroupType : uint8
+{
+	Level = 0 UMETA(Tooltip="레벨"),
+	Floor = 1 UMETA(Tooltip="층"),
+	Max = 2,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsDungeonGroupType)
+GS_ENUM_LEXTOSTRING_CASE(EGsDungeonGroupType, Level)
+GS_ENUM_LEXTOSTRING_CASE(EGsDungeonGroupType, Floor)
+GS_ENUM_LEXTOSTRING_CASE(EGsDungeonGroupType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsDungeonGroupType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsDungeonGroupType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsDungeonGroupType, Level)
+GS_ENUM_LEXFROMSTRING_CASE(EGsDungeonGroupType, Floor)
+GS_ENUM_LEXFROMSTRING_CASE(EGsDungeonGroupType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsEmoticonType : uint8
+{
+	EMOTICON_EMPTY = 0 UMETA(Tooltip="이모티콘 없음"),
+	EMOTICON_NONE = 1 UMETA(Tooltip="기본"),
+	EMOTICON_NORMAL = 2 UMETA(Tooltip="노말"),
+	EMOTICON_ANGRY = 3 UMETA(Tooltip="분노"),
+	EMOTICON_SMILE = 4 UMETA(Tooltip="웃음"),
+	EMOTICON_SAD = 5 UMETA(Tooltip="슬픔"),
+	EMOTICON_FIND = 6 UMETA(Tooltip="발견"),
+	EMOTICON_HEART = 7 UMETA(Tooltip="하트"),
+	EMOTICON_HAPPY = 8 UMETA(Tooltip="즐거움"),
+	EMOTICON_SURPRIS = 9 UMETA(Tooltip="놀람"),
+	Max = 10,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsEmoticonType)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_EMPTY)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_NORMAL)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_ANGRY)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_SMILE)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_SAD)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_FIND)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_HEART)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_HAPPY)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, EMOTICON_SURPRIS)
+GS_ENUM_LEXTOSTRING_CASE(EGsEmoticonType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsEmoticonType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsEmoticonType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_EMPTY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_NORMAL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_ANGRY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_SMILE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_SAD)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_FIND)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_HEART)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_HAPPY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, EMOTICON_SURPRIS)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEmoticonType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="Env설정을 바꿔야 할 상황에 이벤트 전송",Tooltip="Env설정을 바꿔야 할 상황에 이벤트 전송"))
+enum class EGsEnvEvent : uint8
+{
+	NONE = 0,
+	FAIRY_ROOM = 1 UMETA(Tooltip="페어리 화면"),
+	WORLD_EVENT1 = 2 UMETA(Tooltip="WORLD_EVENT1"),
+	WORLD_EVENT2 = 3 UMETA(Tooltip="WORLD_EVENT2"),
+	WORLD_EVENT3 = 4 UMETA(Tooltip="WORLD_EVENT3"),
+	GACHA_ROOM = 5 UMETA(Tooltip="가챠 화면"),
+	SPECIAL_DUNGEON = 6 UMETA(Tooltip="특수 던전"),
+	PLAYABLE_EVENT = 7 UMETA(Tooltip="플레이어블 이벤트"),
+	QUEST_EVENT1 = 8 UMETA(Tooltip="퀘스트 연동 이벤트1"),
+	QUEST_EVENT2 = 9 UMETA(Tooltip="퀘스트 연동 이벤트2"),
+	QUEST_EVENT3 = 10 UMETA(Tooltip="퀘스트 연동 이벤트3"),
+	SPACECRACK = 11 UMETA(Tooltip="시공의 틈새"),
+	INVASION = 12 UMETA(Tooltip="침공전"),
+	Max = 13,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsEnvEvent)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, FAIRY_ROOM)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, WORLD_EVENT1)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, WORLD_EVENT2)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, WORLD_EVENT3)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, GACHA_ROOM)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, SPECIAL_DUNGEON)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, PLAYABLE_EVENT)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, QUEST_EVENT1)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, QUEST_EVENT2)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, QUEST_EVENT3)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, SPACECRACK)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, INVASION)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvEvent, Max)
+GS_ENUM_LEXTOSTRING_END(EGsEnvEvent)
+
+GS_ENUM_LEXFROMSTRING_START(EGsEnvEvent)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, FAIRY_ROOM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, WORLD_EVENT1)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, WORLD_EVENT2)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, WORLD_EVENT3)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, GACHA_ROOM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, SPECIAL_DUNGEON)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, PLAYABLE_EVENT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, QUEST_EVENT1)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, QUEST_EVENT2)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, QUEST_EVENT3)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, SPACECRACK)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, INVASION)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvEvent, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="EGsEnvTimeline",Tooltip="EGsEnvTimeline"))
+enum class EGsEnvTimeline : uint8
+{
+	DAY = 0 UMETA(Tooltip="0"),
+	NIGHT = 1 UMETA(Tooltip="1"),
+	Max = 2,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsEnvTimeline)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvTimeline, DAY)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvTimeline, NIGHT)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvTimeline, Max)
+GS_ENUM_LEXTOSTRING_END(EGsEnvTimeline)
+
+GS_ENUM_LEXFROMSTRING_START(EGsEnvTimeline)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvTimeline, DAY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvTimeline, NIGHT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvTimeline, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="EGsEnvWeather",Tooltip="EGsEnvWeather"))
+enum class EGsEnvWeather : uint8
+{
+	NONE = 0 UMETA(Tooltip="0"),
+	RAIN = 1 UMETA(Tooltip="1"),
+	SNOW = 2 UMETA(Tooltip="2"),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsEnvWeather)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvWeather, NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvWeather, RAIN)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvWeather, SNOW)
+GS_ENUM_LEXTOSTRING_CASE(EGsEnvWeather, Max)
+GS_ENUM_LEXTOSTRING_END(EGsEnvWeather)
+
+GS_ENUM_LEXFROMSTRING_START(EGsEnvWeather)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvWeather, NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvWeather, RAIN)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvWeather, SNOW)
+GS_ENUM_LEXFROMSTRING_CASE(EGsEnvWeather, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsExChatType : uint8
+{
+	NONE = 0,
+	WORLD = 1,
+	MAP = 2,
+	NORMAL = 3,
+	PARTY = 4,
+	EMOTICON = 5,
+	GUILD = 6,
+	INVADE = 7,
+	WHISPER = 8,
+	INTERSERVER = 9,
+	GROUP = 10,
+	SYSTEM = 11,
+	OPERATOR = 12,
+	GROUPSYSTEM = 13,
+	Max = 14,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsExChatType)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, WORLD)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, MAP)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, NORMAL)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, PARTY)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, EMOTICON)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, GUILD)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, INVADE)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, WHISPER)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, INTERSERVER)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, GROUP)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, SYSTEM)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, OPERATOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, GROUPSYSTEM)
+GS_ENUM_LEXTOSTRING_CASE(EGsExChatType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsExChatType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsExChatType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, WORLD)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, MAP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, NORMAL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, PARTY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, EMOTICON)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, GUILD)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, INVADE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, WHISPER)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, INTERSERVER)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, GROUP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, SYSTEM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, OPERATOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, GROUPSYSTEM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsExChatType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsFairyTalkType : uint8
+{
+	SkillOn = 0 UMETA(Tooltip="스킬 시전"),
+	SkillOff = 1 UMETA(Tooltip="스킬 끝남"),
+	SpeedOn = 2 UMETA(Tooltip="탈것 스킬 시작"),
+	SpeedOff = 3 UMETA(Tooltip="탈것 스킬 끝"),
+	Max = 4,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsFairyTalkType)
+GS_ENUM_LEXTOSTRING_CASE(EGsFairyTalkType, SkillOn)
+GS_ENUM_LEXTOSTRING_CASE(EGsFairyTalkType, SkillOff)
+GS_ENUM_LEXTOSTRING_CASE(EGsFairyTalkType, SpeedOn)
+GS_ENUM_LEXTOSTRING_CASE(EGsFairyTalkType, SpeedOff)
+GS_ENUM_LEXTOSTRING_CASE(EGsFairyTalkType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsFairyTalkType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsFairyTalkType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsFairyTalkType, SkillOn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsFairyTalkType, SkillOff)
+GS_ENUM_LEXFROMSTRING_CASE(EGsFairyTalkType, SpeedOn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsFairyTalkType, SpeedOff)
+GS_ENUM_LEXFROMSTRING_CASE(EGsFairyTalkType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsFootSoundType : uint8
+{
+	Dirt = 0 UMETA(Tooltip="일반 지형"),
+	Water = 1 UMETA(Tooltip="물 지형"),
+	Max = 2,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsFootSoundType)
+GS_ENUM_LEXTOSTRING_CASE(EGsFootSoundType, Dirt)
+GS_ENUM_LEXTOSTRING_CASE(EGsFootSoundType, Water)
+GS_ENUM_LEXTOSTRING_CASE(EGsFootSoundType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsFootSoundType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsFootSoundType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsFootSoundType, Dirt)
+GS_ENUM_LEXFROMSTRING_CASE(EGsFootSoundType, Water)
+GS_ENUM_LEXFROMSTRING_CASE(EGsFootSoundType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsGirlAnimState : uint8
+{
+	Spawn = 0,
+	Idle = 1,
+	IdleBreak = 2,
+	SelectTab = 3,
+	Touch = 4,
+	Max = 5,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsGirlAnimState)
+GS_ENUM_LEXTOSTRING_CASE(EGsGirlAnimState, Spawn)
+GS_ENUM_LEXTOSTRING_CASE(EGsGirlAnimState, Idle)
+GS_ENUM_LEXTOSTRING_CASE(EGsGirlAnimState, IdleBreak)
+GS_ENUM_LEXTOSTRING_CASE(EGsGirlAnimState, SelectTab)
+GS_ENUM_LEXTOSTRING_CASE(EGsGirlAnimState, Touch)
+GS_ENUM_LEXTOSTRING_CASE(EGsGirlAnimState, Max)
+GS_ENUM_LEXTOSTRING_END(EGsGirlAnimState)
+
+GS_ENUM_LEXFROMSTRING_START(EGsGirlAnimState)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGirlAnimState, Spawn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGirlAnimState, Idle)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGirlAnimState, IdleBreak)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGirlAnimState, SelectTab)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGirlAnimState, Touch)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGirlAnimState, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsGuildSnsShortcutAction : uint8
+{
+	None = 0,
+	CopyToClipboard = 1,
+	OpenWebBrowser = 2,
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsGuildSnsShortcutAction)
+GS_ENUM_LEXTOSTRING_CASE(EGsGuildSnsShortcutAction, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsGuildSnsShortcutAction, CopyToClipboard)
+GS_ENUM_LEXTOSTRING_CASE(EGsGuildSnsShortcutAction, OpenWebBrowser)
+GS_ENUM_LEXTOSTRING_CASE(EGsGuildSnsShortcutAction, Max)
+GS_ENUM_LEXTOSTRING_END(EGsGuildSnsShortcutAction)
+
+GS_ENUM_LEXFROMSTRING_START(EGsGuildSnsShortcutAction)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGuildSnsShortcutAction, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGuildSnsShortcutAction, CopyToClipboard)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGuildSnsShortcutAction, OpenWebBrowser)
+GS_ENUM_LEXFROMSTRING_CASE(EGsGuildSnsShortcutAction, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsHelpContents : uint8
+{
+	None = 0,
+	BaseSystem = 1,
+	Event = 2 UMETA(Tooltip="이벤트"),
+	Achievement = 3 UMETA(Tooltip="업적"),
+	KnowledgeCollection = 4 UMETA(Tooltip="도감"),
+	CharacterSelect = 5 UMETA(Tooltip="캐릭터 선택"),
+	Skill = 6 UMETA(Tooltip="스킬"),
+	Fairy = 7 UMETA(Tooltip="페어리"),
+	Costume = 8 UMETA(Tooltip="코스튬"),
+	Collection = 9 UMETA(Tooltip="아이템 콜렉션"),
+	Craft = 10 UMETA(Tooltip="제작"),
+	Dungeon = 11 UMETA(Tooltip="던전"),
+	Guild = 12 UMETA(Tooltip="길드메인"),
+	Ranking = 13 UMETA(Tooltip="랭크"),
+	Quest = 14 UMETA(Tooltip="퀘스트"),
+	CharacterCreate = 15 UMETA(Tooltip="캐릭터 만들기"),
+	WorldMap = 16 UMETA(Tooltip="월드맵"),
+	Statistics = 17 UMETA(Tooltip="통계"),
+	KeyMapping = 18 UMETA(Tooltip="키매핑"),
+	Mail = 19 UMETA(Tooltip="우편함"),
+	Market = 20 UMETA(Tooltip="거래소"),
+	PKBook = 21 UMETA(Tooltip="PK Book"),
+	RegionMap = 22 UMETA(Tooltip="지역맵"),
+	RankPromotion = 23 UMETA(Tooltip="승급"),
+	BMShop = 24 UMETA(Tooltip="BM 샵"),
+	Title = 25 UMETA(Tooltip="칭호"),
+	Boss = 26 UMETA(Tooltip="보스"),
+	Invasion = 27 UMETA(Tooltip="침공전"),
+	Seal = 28 UMETA(Tooltip="봉인"),
+	Profile = 29 UMETA(Tooltip="프로필"),
+	BattlePass = 30 UMETA(Tooltip="배틀패스"),
+	OfflinePlay = 31 UMETA(Tooltip="오프라인 플레이"),
+	Setting = 32 UMETA(Tooltip="환경설정"),
+	SiegeWarfare = 33 UMETA(Tooltip="공성전"),
+	Reserve1 = 34,
+	Reserve2 = 35,
+	BMShopPurchaseWarn = 36 UMETA(Tooltip="상점 청약철회 경고문"),
+	BMShopProbability = 37 UMETA(Tooltip="상점 확률표"),
+	SpiritShot = 38 UMETA(Tooltip="천마석"),
+	AccountServerMigrate = 39 UMETA(Tooltip="계정 서버 이전"),
+	IncludeGuildServerMigrate = 40 UMETA(Tooltip="길드 포함 서버 이전"),
+	AgitDungeon = 41 UMETA(Tooltip="기사단 영지 던전"),
+	Max = 42,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsHelpContents)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, BaseSystem)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Event)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Achievement)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, KnowledgeCollection)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, CharacterSelect)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Skill)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Fairy)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Costume)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Collection)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Craft)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Dungeon)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Guild)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Ranking)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Quest)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, CharacterCreate)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, WorldMap)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Statistics)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, KeyMapping)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Mail)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Market)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, PKBook)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, RegionMap)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, RankPromotion)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, BMShop)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Title)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Boss)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Invasion)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Seal)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Profile)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, BattlePass)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, OfflinePlay)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Setting)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, SiegeWarfare)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Reserve1)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Reserve2)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, BMShopPurchaseWarn)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, BMShopProbability)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, SpiritShot)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, AccountServerMigrate)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, IncludeGuildServerMigrate)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, AgitDungeon)
+GS_ENUM_LEXTOSTRING_CASE(EGsHelpContents, Max)
+GS_ENUM_LEXTOSTRING_END(EGsHelpContents)
+
+GS_ENUM_LEXFROMSTRING_START(EGsHelpContents)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, BaseSystem)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Event)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Achievement)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, KnowledgeCollection)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, CharacterSelect)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Skill)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Fairy)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Costume)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Collection)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Craft)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Dungeon)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Guild)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Ranking)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Quest)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, CharacterCreate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, WorldMap)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Statistics)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, KeyMapping)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Mail)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Market)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, PKBook)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, RegionMap)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, RankPromotion)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, BMShop)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Title)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Boss)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Invasion)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Seal)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Profile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, BattlePass)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, OfflinePlay)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Setting)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, SiegeWarfare)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Reserve1)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Reserve2)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, BMShopPurchaseWarn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, BMShopProbability)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, SpiritShot)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, AccountServerMigrate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, IncludeGuildServerMigrate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, AgitDungeon)
+GS_ENUM_LEXFROMSTRING_CASE(EGsHelpContents, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsItemEnchantBonusType : uint8
+{
+	NONE = 0 UMETA(Tooltip="없음"),
+	FURY = 1 UMETA(Tooltip="격노"),
+	DESTROY = 2 UMETA(Tooltip="파괴"),
+	FLAME = 3 UMETA(Tooltip="화염"),
+	FROST = 4 UMETA(Tooltip="냉기"),
+	HOLY = 5 UMETA(Tooltip="신성"),
+	DARK = 6 UMETA(Tooltip="암흑"),
+	GUARD = 7 UMETA(Tooltip="수호"),
+	AGILE = 8 UMETA(Tooltip="기민함"),
+	ENERGY = 9 UMETA(Tooltip="기력"),
+	RESIST = 10 UMETA(Tooltip="저항"),
+	SOLID = 11 UMETA(Tooltip="견고"),
+	RECOVERY = 12 UMETA(Tooltip="회복"),
+	CONCENTRATE = 13 UMETA(Tooltip="집중"),
+	SWIFT = 14 UMETA(Tooltip="신속"),
+	CRITICAL = 15 UMETA(Tooltip="치명"),
+	ENTHUSIASTIC = 16 UMETA(Tooltip="열광"),
+	MOVE = 17 UMETA(Tooltip="기동"),
+	ENDURE = 18 UMETA(Tooltip="인내"),
+	FIGHT = 19 UMETA(Tooltip="투지"),
+	Max = 20,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsItemEnchantBonusType)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, FURY)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, DESTROY)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, FLAME)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, FROST)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, HOLY)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, DARK)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, GUARD)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, AGILE)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, ENERGY)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, RESIST)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, SOLID)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, RECOVERY)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, CONCENTRATE)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, SWIFT)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, CRITICAL)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, ENTHUSIASTIC)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, MOVE)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, ENDURE)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, FIGHT)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemEnchantBonusType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsItemEnchantBonusType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsItemEnchantBonusType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, FURY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, DESTROY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, FLAME)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, FROST)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, HOLY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, DARK)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, GUARD)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, AGILE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, ENERGY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, RESIST)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, SOLID)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, RECOVERY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, CONCENTRATE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, SWIFT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, CRITICAL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, ENTHUSIASTIC)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, MOVE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, ENDURE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, FIGHT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemEnchantBonusType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="아이템 아이콘에서 사용될 이펙트",Tooltip="아이템 아이콘에서 사용될 이펙트"))
+enum class EGsItemIconSlotEffectType : uint8
+{
+	None = 0,
+	SlotEffectType01 = 1,
+	SlotEffectType02 = 2,
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsItemIconSlotEffectType)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemIconSlotEffectType, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemIconSlotEffectType, SlotEffectType01)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemIconSlotEffectType, SlotEffectType02)
+GS_ENUM_LEXTOSTRING_CASE(EGsItemIconSlotEffectType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsItemIconSlotEffectType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsItemIconSlotEffectType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemIconSlotEffectType, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemIconSlotEffectType, SlotEffectType01)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemIconSlotEffectType, SlotEffectType02)
+GS_ENUM_LEXFROMSTRING_CASE(EGsItemIconSlotEffectType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsLoadingScreenGroupType : uint8
+{
+	DEFAULT = 0 UMETA(Tooltip="에러상황 발생 시 사용"),
+	COMMON = 1 UMETA(Tooltip="일반 맵"),
+	INVADE = 2 UMETA(Tooltip="침공전 맵"),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsLoadingScreenGroupType)
+GS_ENUM_LEXTOSTRING_CASE(EGsLoadingScreenGroupType, DEFAULT)
+GS_ENUM_LEXTOSTRING_CASE(EGsLoadingScreenGroupType, COMMON)
+GS_ENUM_LEXTOSTRING_CASE(EGsLoadingScreenGroupType, INVADE)
+GS_ENUM_LEXTOSTRING_CASE(EGsLoadingScreenGroupType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsLoadingScreenGroupType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsLoadingScreenGroupType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsLoadingScreenGroupType, DEFAULT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsLoadingScreenGroupType, COMMON)
+GS_ENUM_LEXFROMSTRING_CASE(EGsLoadingScreenGroupType, INVADE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsLoadingScreenGroupType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsMarketUICategory : uint8
+{
+	NONE = 0 UMETA(Tooltip="기본값"),
+	BOOKMARK = 1 UMETA(Tooltip="즐겨찾기"),
+	ALL = 2 UMETA(Tooltip="전체"),
+	WEAPON = 3 UMETA(Tooltip="무기"),
+	ARMOR = 4 UMETA(Tooltip="방어구"),
+	ACCESSORY = 5 UMETA(Tooltip="장신구"),
+	SKILL_BOOK = 6 UMETA(Tooltip="스킬북"),
+	CONSUME = 7 UMETA(Tooltip="소모품"),
+	ETC = 8 UMETA(Tooltip="기타"),
+	Max = 9,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsMarketUICategory)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, BOOKMARK)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, ALL)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, WEAPON)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, ARMOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, ACCESSORY)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, SKILL_BOOK)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, CONSUME)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, ETC)
+GS_ENUM_LEXTOSTRING_CASE(EGsMarketUICategory, Max)
+GS_ENUM_LEXTOSTRING_END(EGsMarketUICategory)
+
+GS_ENUM_LEXFROMSTRING_START(EGsMarketUICategory)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, BOOKMARK)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, ALL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, WEAPON)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, ARMOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, ACCESSORY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, SKILL_BOOK)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, CONSUME)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, ETC)
+GS_ENUM_LEXFROMSTRING_CASE(EGsMarketUICategory, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsNetErrorProcType : uint8
+{
+	None = 0,
+	Process = 1 UMETA(Tooltip="Packet을 넘겨 주기 전 ui처리"),
+	NoUI = 2 UMETA(Tooltip="ui 처리 안하고 패킷 넘김"),
+	NoProc = 3 UMETA(Tooltip="error일때는 패킷 처리하지 않고 UI만 처리"),
+	DefaultProc = 4 UMETA(Tooltip="default msg popup 처리됨"),
+	Max = 5,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsNetErrorProcType)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcType, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcType, Process)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcType, NoUI)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcType, NoProc)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcType, DefaultProc)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsNetErrorProcType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsNetErrorProcType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcType, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcType, Process)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcType, NoUI)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcType, NoProc)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcType, DefaultProc)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsNetErrorProcUIType : uint8
+{
+	None = 0,
+	SystemPopup = 1 UMETA(Tooltip="Confirm 만 있는 기본 popup으로 알림"),
+	CodeSystemPopup = 2 UMETA(Tooltip="Confirm 만 있는 기본 popup으로 알림 Code를 표시"),
+	SystemTicker = 3 UMETA(Tooltip="Priority 적용되지 않는 기본 Ticker"),
+	SectionTicker = 4 UMETA(Tooltip="Priority 적용되는 Section 정의 Ticker"),
+	CustomPopup = 5 UMETA(Tooltip="Custom Popup 적용"),
+	Max = 6,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsNetErrorProcUIType)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcUIType, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcUIType, SystemPopup)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcUIType, CodeSystemPopup)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcUIType, SystemTicker)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcUIType, SectionTicker)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcUIType, CustomPopup)
+GS_ENUM_LEXTOSTRING_CASE(EGsNetErrorProcUIType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsNetErrorProcUIType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsNetErrorProcUIType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcUIType, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcUIType, SystemPopup)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcUIType, CodeSystemPopup)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcUIType, SystemTicker)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcUIType, SectionTicker)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcUIType, CustomPopup)
+GS_ENUM_LEXFROMSTRING_CASE(EGsNetErrorProcUIType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="TerrainNormalDistance",Tooltip="TerrainNormalDistance"))
+enum class EGsOptionItemType : uint8
+{
+	None = 0 UMETA(Tooltip="없음"),
+	Resolution = 1 UMETA(Tooltip="해상도 품질 (0~3)"),
+	FrameRate = 2 UMETA(Tooltip="프레임제한 (20, 30, 45, 60)"),
+	AutoTuning = 3 UMETA(Tooltip="성능 자동조절 여부 ON/OFF"),
+	ViewDistance = 4 UMETA(Tooltip="시야거리 품질 (0~3)"),
+	PostProcess = 5 UMETA(Tooltip="포스트프로세스 품질 (0~3)"),
+	Shadow = 6 UMETA(Tooltip="그림자 품질 (0~3)"),
+	Effect = 7 UMETA(Tooltip="비주얼효과 품질 (0~3)"),
+	Texture = 8 UMETA(Tooltip="텍스쳐 품질 (0~3)"),
+	Foliage = 9 UMETA(Tooltip="수풀밀도 품질 (0~3)"),
+	SSAO = 10 UMETA(Tooltip="특수효과 - SSAO (0~2)"),
+	Outline = 11 UMETA(Tooltip="특수효과 - 캐릭터 아웃라인 ON/OFF"),
+	MasterOn = 12 UMETA(Tooltip="전체 ON/OFF"),
+	MasterVolume = 13 UMETA(Tooltip="전체 볼륨 (0~100)"),
+	BgmOn = 14 UMETA(Tooltip="bgm ON/OFF"),
+	BgmVolume = 15 UMETA(Tooltip="bgm 볼륨 (0~100)"),
+	EffectOn = 16 UMETA(Tooltip="효과음 ON/OFF"),
+	EffectVolume = 17 UMETA(Tooltip="효과음 볼륨 (0~100)"),
+	HpPotionAotoRate = 18 UMETA(Tooltip="HP 포션 자동사용 HP/MAX HP 비율"),
+	MpPotionAotoRate = 19 UMETA(Tooltip="MP 포션 자동사용 MP/MAX MP 비율"),
+	PotionPriority = 20 UMETA(Tooltip="0 : 낮은 등급부터, 1 : 높은 등급부터"),
+	AutoCombatGrade = 21 UMETA(Tooltip="자동사냥시 전투복귀 거리 타입 (0~3)"),
+	MannerMode = 22 UMETA(Tooltip="ON/OFF"),
+	ItemLootGrade = 23 UMETA(Tooltip="0 : 모든, 1 : 고급이상, 2 : 희귀 이상"),
+	HpRateAlertLevel = 24 UMETA(Tooltip="HP 낮을 때 경고 레벨, 0 : 안함, 1 : 10%, 2 : 25%, 3 : 50%"),
+	PvpAttackedAlert = 25 UMETA(Tooltip="PVP 공격받을 때 경고 여부 ON/OFF"),
+	AutoLogin = 26 UMETA(Tooltip="자동로그인"),
+	DisableDistortion = 27 UMETA(Tooltip="굴절 ON/OFF"),
+	TerrainNormalDistance = 28 UMETA(Tooltip="Terrain Normal Distance"),
+	AutoBattleRange = 29 UMETA(Tooltip="자동 전투 범위"),
+	AutoHPPortionUseRate = 30 UMETA(Tooltip="체력 물약 자동 사용"),
+	AutoDropItemRootMinimalGrade = 31 UMETA(Tooltip="장비 자동 줍기 최소 등급"),
+	EmptySpace = 32 UMETA(Tooltip="공백"),
+	DevideLine = 33 UMETA(Tooltip="라인"),
+	AutoSearchMainDesc = 34 UMETA(Tooltip="대상 탐색 탭 자동 사냥 설명"),
+	AutoSearchSubDesc = 35 UMETA(Tooltip="대상 탐색 탭 서브설명"),
+	AutoSearch = 36 UMETA(Tooltip="대상 탐색"),
+	GuildNotice = 37 UMETA(Tooltip="길드 티커 알림 ON/OFF"),
+	SummonSkip = 38 UMETA(Tooltip="소환 스킵 ON/OFF"),
+	BuddyNotice = 39 UMETA(Tooltip="친구 티커 알림 ON/OFF"),
+	AllNotice = 40 UMETA(Tooltip="모든 알림 ON/OFF"),
+	CostumeHairOn = 41 UMETA(Tooltip="코스튬 헤어 보이기 ON/OFF"),
+	Logout = 42 UMETA(Tooltip="계정로그아웃"),
+	InventoryLongPressEnable = 43 UMETA(Tooltip="인벤토리에서 롱프레스 사용 유무"),
+	Battle_MannerMode = 44 UMETA(Tooltip="매너 모드(ON/파티, 기사단 예외/OFF)"),
+	Battle_NonAutoMoveKeepTarget = 45 UMETA(Tooltip="수동 이동 시, 공격 대상 유지"),
+	Battle_NonAutoMoveKeepAuto = 46 UMETA(Tooltip="수동 이동 시, 자동 전투 유지"),
+	Battle_DamageFloater = 47 UMETA(Tooltip="데미지 플로터 출력"),
+	Battle_DropItemName = 48 UMETA(Tooltip="드랍 아이템 이름 출력"),
+	Battle_NPCName = 49 UMETA(Tooltip="NPC 이름 출력"),
+	Battle_NPCFunctionIcon = 50 UMETA(Tooltip="NPC 기능 아이콘 출력"),
+	Battle_PlayerName = 51 UMETA(Tooltip="PC 이름 출력"),
+	Battle_ScanEffect = 52 UMETA(Tooltip="수동 스캔시 스캔(음파) 이펙트 표현"),
+	AutoItemGain = 53 UMETA(Tooltip="아이템 자동 획득 설정"),
+	AutoItemGainWeight = 54 UMETA(Tooltip="아이템 자동 획득 무게 설정"),
+	AnotherUserItemGain = 55 UMETA(Tooltip="다른 플레이어가 드랍한 아이템 획득 설정"),
+	AutoPotionUse = 56 UMETA(Tooltip="자동 물약 사용 설정"),
+	AutoSkillUse = 57 UMETA(Tooltip="자동 스킬 사용 설정"),
+	BuffAlwaysUse = 58 UMETA(Tooltip="MP 관계 없이, 지속형 스킬 항상 사용"),
+	SaveBattery_Start = 59 UMETA(Tooltip="절전모드 진입 시간"),
+	SaveBattery_AutoQuit = 60 UMETA(Tooltip="다른 플레이어에게 피격 시, 절전 모드 자동 해제"),
+	TouchMove = 61 UMETA(Tooltip="지면 터치 시 캐릭터 이동 기능"),
+	ItemTooltip = 62 UMETA(Tooltip="아이템 상세창 확인 방법 변경"),
+	AutoPartyConfirm = 63 UMETA(Tooltip="자동 파티 수락"),
+	CameraSetting = 64 UMETA(Tooltip="카메라 모드 설정"),
+	Camera_Shake = 65 UMETA(Tooltip="카메라 흔들림 연출"),
+	Costume_Hair = 66 UMETA(Tooltip="코스튬 머리 외형 보이기"),
+	Graphic_Total = 67 UMETA(Tooltip="그래픽 일괄 설정"),
+	Graphic_Total_Desc = 68 UMETA(Tooltip="그래픽 설정을 선택한 사양으로 모두 변경 합니다."),
+	TargetSearchArea = 69 UMETA(Tooltip="대상 탐색 범위"),
+	NPC_BattleMon = 70 UMETA(Tooltip="1순위 나를 공격 중인 몬스터"),
+	NPC_QuestMon = 71 UMETA(Tooltip="2순위 퀘스트 목표 몬스터"),
+	NPC_AgrresiveMon = 72 UMETA(Tooltip="3순위 선공 몬스터"),
+	AlertVolumeOn = 73 UMETA(Tooltip="알림 볼륨 전체 ON/OFF"),
+	AlertVolume = 74 UMETA(Tooltip="알림 볼륨"),
+	DeathAlert = 75 UMETA(Tooltip="사망 알림"),
+	FriendAlert = 76 UMETA(Tooltip="친구 접속 알림"),
+	GuildAlert = 77 UMETA(Tooltip="기사단 접속 알림"),
+	PuchAlert = 78 UMETA(Tooltip="Push 알림 설정"),
+	PuchAlert_Night = 79 UMETA(Tooltip="야간 Pusu 알림 설정"),
+	Quest_Skip = 80 UMETA(Tooltip="퀘스트 대화 자동 넘기기"),
+	Battle_NPCTalkBalloon = 81 UMETA(Tooltip="NPC 말풍선 출력"),
+	AllAlert = 82 UMETA(Tooltip="모든 알림"),
+	ConsoleAlert = 83 UMETA(Tooltip="공지 알림"),
+	ConsoleAlert_Night = 84 UMETA(Tooltip="야간 알림"),
+	HPRateAlert = 85 UMETA(Tooltip="hp 부족 알림"),
+	HPRateRingerAlert = 86 UMETA(Tooltip="hp 부족 벨 알림"),
+	HPRateVibrateAlert = 87 UMETA(Tooltip="hp 부족 진동 알림"),
+	WeightAlert = 88 UMETA(Tooltip="무게 알림"),
+	Graphic_Total_Mobile = 89 UMETA(Tooltip="그래픽 일괄 설정(모바일)"),
+	Effect_Mobile = 90 UMETA(Tooltip="비주얼효과 품질 (0~2)(모바일)"),
+	Foliage_Mobile = 91 UMETA(Tooltip="수풀밀도 품질 (0~2)(모바일)"),
+	PostProcess_Mobile = 92 UMETA(Tooltip="포스트프로세스 품질 (0~2)(모바일)"),
+	Shadow_Mobile = 93 UMETA(Tooltip="그림자 품질 (0~2)(모바일)"),
+	Texture_Mobile = 94 UMETA(Tooltip="텍스쳐 품질 (0~2)(모바일)"),
+	ViewDistance_Mobile = 95 UMETA(Tooltip="시야거리 품질 (0~2)(모바일)"),
+	Resolution_Mobile = 96 UMETA(Tooltip="해상도 품질 (0~2)(모바일)"),
+	FrameRate_Mobile = 97 UMETA(Tooltip="프레임제한 (20, 30, 45)(모바일)"),
+	ConsoleAlert_Night_Desc = 98 UMETA(Tooltip="야간 알림 설명"),
+	AutoPotionAlert = 99 UMETA(Tooltip="자동 물약 잔여 개수 알림"),
+	PC_BattleCharacter_Manual = 100 UMETA(Tooltip="1순위 나를 공격 중인 캐릭터"),
+	PC_Enermy_manual = 101 UMETA(Tooltip="2순위 나와 적대 관계인 캐릭터"),
+	NPC_BattleMon_Manual = 102 UMETA(Tooltip="3순위 나를 공격 중인 몬스터"),
+	NPC_QuestMon_Manual = 103 UMETA(Tooltip="4순위 퀘스트 목표 몬스터"),
+	NPC_AgrresiveMon_Manual = 104 UMETA(Tooltip="5순위 선공 몬스터"),
+	ManualSearchMainDesc = 105 UMETA(Tooltip="대상 탐색 수동 사냥 설명"),
+	PvpAttackedRingerAlert = 106 UMETA(Tooltip="PVP 공격받을 때 경고 벨알림"),
+	PvpAttackedVibrateAlert = 107 UMETA(Tooltip="PVP 공격받을 때 경고 진동알림"),
+	UIScale = 108 UMETA(Tooltip="UIScale"),
+	Language = 109 UMETA(Tooltip="언어 설정"),
+	LanguageVoice = 110 UMETA(Tooltip="음성 언어 설정"),
+	ManualBattle_AutoCounterAttack = 111 UMETA(Tooltip="자동 반격"),
+	ManualBattle_AutoSkillUse = 112 UMETA(Tooltip="자동 스킬사용"),
+	ParticleQuality = 113 UMETA(Tooltip="파티클 시그니피컨트 컨트롤"),
+	HPPotionRingerAlert = 114 UMETA(Tooltip="HP 자동물약 부족 소리알림"),
+	HPPotionVibrateAlert = 115 UMETA(Tooltip="HP 자동물약 부족 진동알림"),
+	CombatStateAlert = 116 UMETA(Tooltip="전투 편의 알림"),
+	CombatStateAlertIntervalTime = 117 UMETA(Tooltip="전투 편의 알림 시간 조절"),
+	PersonalTradingAutoReject = 118 UMETA(Tooltip="개인 거래 자동 거절"),
+	Max = 119,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsOptionItemType)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Resolution)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, FrameRate)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoTuning)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ViewDistance)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PostProcess)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Shadow)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Effect)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Texture)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Foliage)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, SSAO)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Outline)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, MasterOn)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, MasterVolume)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, BgmOn)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, BgmVolume)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, EffectOn)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, EffectVolume)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, HpPotionAotoRate)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, MpPotionAotoRate)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PotionPriority)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoCombatGrade)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, MannerMode)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ItemLootGrade)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, HpRateAlertLevel)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PvpAttackedAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoLogin)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, DisableDistortion)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, TerrainNormalDistance)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoBattleRange)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoHPPortionUseRate)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoDropItemRootMinimalGrade)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, EmptySpace)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, DevideLine)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoSearchMainDesc)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoSearchSubDesc)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoSearch)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, GuildNotice)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, SummonSkip)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, BuddyNotice)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AllNotice)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, CostumeHairOn)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Logout)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, InventoryLongPressEnable)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_MannerMode)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_NonAutoMoveKeepTarget)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_NonAutoMoveKeepAuto)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_DamageFloater)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_DropItemName)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_NPCName)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_NPCFunctionIcon)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_PlayerName)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_ScanEffect)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoItemGain)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoItemGainWeight)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AnotherUserItemGain)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoPotionUse)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoSkillUse)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, BuffAlwaysUse)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, SaveBattery_Start)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, SaveBattery_AutoQuit)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, TouchMove)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ItemTooltip)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoPartyConfirm)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, CameraSetting)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Camera_Shake)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Costume_Hair)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Graphic_Total)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Graphic_Total_Desc)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, TargetSearchArea)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, NPC_BattleMon)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, NPC_QuestMon)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, NPC_AgrresiveMon)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AlertVolumeOn)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AlertVolume)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, DeathAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, FriendAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, GuildAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PuchAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PuchAlert_Night)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Quest_Skip)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Battle_NPCTalkBalloon)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AllAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ConsoleAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ConsoleAlert_Night)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, HPRateAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, HPRateRingerAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, HPRateVibrateAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, WeightAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Graphic_Total_Mobile)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Effect_Mobile)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Foliage_Mobile)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PostProcess_Mobile)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Shadow_Mobile)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Texture_Mobile)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ViewDistance_Mobile)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Resolution_Mobile)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, FrameRate_Mobile)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ConsoleAlert_Night_Desc)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, AutoPotionAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PC_BattleCharacter_Manual)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PC_Enermy_manual)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, NPC_BattleMon_Manual)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, NPC_QuestMon_Manual)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, NPC_AgrresiveMon_Manual)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ManualSearchMainDesc)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PvpAttackedRingerAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PvpAttackedVibrateAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, UIScale)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Language)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, LanguageVoice)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ManualBattle_AutoCounterAttack)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ManualBattle_AutoSkillUse)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, ParticleQuality)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, HPPotionRingerAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, HPPotionVibrateAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, CombatStateAlert)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, CombatStateAlertIntervalTime)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, PersonalTradingAutoReject)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionItemType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsOptionItemType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsOptionItemType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Resolution)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, FrameRate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoTuning)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ViewDistance)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PostProcess)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Shadow)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Effect)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Texture)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Foliage)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, SSAO)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Outline)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, MasterOn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, MasterVolume)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, BgmOn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, BgmVolume)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, EffectOn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, EffectVolume)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, HpPotionAotoRate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, MpPotionAotoRate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PotionPriority)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoCombatGrade)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, MannerMode)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ItemLootGrade)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, HpRateAlertLevel)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PvpAttackedAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoLogin)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, DisableDistortion)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, TerrainNormalDistance)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoBattleRange)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoHPPortionUseRate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoDropItemRootMinimalGrade)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, EmptySpace)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, DevideLine)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoSearchMainDesc)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoSearchSubDesc)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoSearch)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, GuildNotice)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, SummonSkip)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, BuddyNotice)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AllNotice)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, CostumeHairOn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Logout)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, InventoryLongPressEnable)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_MannerMode)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_NonAutoMoveKeepTarget)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_NonAutoMoveKeepAuto)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_DamageFloater)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_DropItemName)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_NPCName)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_NPCFunctionIcon)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_PlayerName)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_ScanEffect)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoItemGain)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoItemGainWeight)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AnotherUserItemGain)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoPotionUse)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoSkillUse)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, BuffAlwaysUse)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, SaveBattery_Start)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, SaveBattery_AutoQuit)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, TouchMove)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ItemTooltip)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoPartyConfirm)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, CameraSetting)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Camera_Shake)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Costume_Hair)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Graphic_Total)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Graphic_Total_Desc)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, TargetSearchArea)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, NPC_BattleMon)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, NPC_QuestMon)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, NPC_AgrresiveMon)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AlertVolumeOn)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AlertVolume)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, DeathAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, FriendAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, GuildAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PuchAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PuchAlert_Night)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Quest_Skip)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Battle_NPCTalkBalloon)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AllAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ConsoleAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ConsoleAlert_Night)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, HPRateAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, HPRateRingerAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, HPRateVibrateAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, WeightAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Graphic_Total_Mobile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Effect_Mobile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Foliage_Mobile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PostProcess_Mobile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Shadow_Mobile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Texture_Mobile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ViewDistance_Mobile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Resolution_Mobile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, FrameRate_Mobile)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ConsoleAlert_Night_Desc)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, AutoPotionAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PC_BattleCharacter_Manual)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PC_Enermy_manual)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, NPC_BattleMon_Manual)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, NPC_QuestMon_Manual)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, NPC_AgrresiveMon_Manual)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ManualSearchMainDesc)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PvpAttackedRingerAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PvpAttackedVibrateAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, UIScale)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Language)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, LanguageVoice)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ManualBattle_AutoCounterAttack)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ManualBattle_AutoSkillUse)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, ParticleQuality)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, HPPotionRingerAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, HPPotionVibrateAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, CombatStateAlert)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, CombatStateAlertIntervalTime)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, PersonalTradingAutoReject)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionItemType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="EGsOptionSelectType",Tooltip="EGsOptionSelectType"))
+enum class EGsOptionSelectType : uint8
+{
+	ButtonGroup = 0 UMETA(Tooltip="버튼 리스트"),
+	Slider = 1 UMETA(Tooltip="슬라이더"),
+	OnOff = 2 UMETA(Tooltip="on/off"),
+	Text = 3 UMETA(Tooltip="문자열"),
+	DevideLine = 4 UMETA(Tooltip="라인"),
+	EmptySpace = 5 UMETA(Tooltip="공백"),
+	Button = 6 UMETA(Tooltip="버튼"),
+	OnOffGroup = 7 UMETA(Tooltip="토글 리스트"),
+	CheckGroup = 8 UMETA(Tooltip="체크 박스 리스트"),
+	Max = 9,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsOptionSelectType)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, ButtonGroup)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, Slider)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, OnOff)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, Text)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, DevideLine)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, EmptySpace)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, Button)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, OnOffGroup)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, CheckGroup)
+GS_ENUM_LEXTOSTRING_CASE(EGsOptionSelectType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsOptionSelectType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsOptionSelectType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, ButtonGroup)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, Slider)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, OnOff)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, Text)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, DevideLine)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, EmptySpace)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, Button)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, OnOffGroup)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, CheckGroup)
+GS_ENUM_LEXFROMSTRING_CASE(EGsOptionSelectType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="WeaponType Icon을 용도에 따른 구분",Tooltip="WeaponType Icon을 용도에 따른 구분"))
+enum class EGsPurposeIcon : uint8
+{
+	Normal = 0 UMETA(Tooltip="Menu Normal Button 용"),
+	Selected = 1 UMETA(Tooltip="Menu Selected Button 용"),
+	Disable = 2 UMETA(Tooltip="Menu Disable Button 용"),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsPurposeIcon)
+GS_ENUM_LEXTOSTRING_CASE(EGsPurposeIcon, Normal)
+GS_ENUM_LEXTOSTRING_CASE(EGsPurposeIcon, Selected)
+GS_ENUM_LEXTOSTRING_CASE(EGsPurposeIcon, Disable)
+GS_ENUM_LEXTOSTRING_CASE(EGsPurposeIcon, Max)
+GS_ENUM_LEXTOSTRING_END(EGsPurposeIcon)
+
+GS_ENUM_LEXFROMSTRING_START(EGsPurposeIcon)
+GS_ENUM_LEXFROMSTRING_CASE(EGsPurposeIcon, Normal)
+GS_ENUM_LEXFROMSTRING_CASE(EGsPurposeIcon, Selected)
+GS_ENUM_LEXFROMSTRING_CASE(EGsPurposeIcon, Disable)
+GS_ENUM_LEXFROMSTRING_CASE(EGsPurposeIcon, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsQuestSlotType : uint8
+{
+	QUEST_SLOT_TYPE_NONE = 0 UMETA(Tooltip="0. NONE"),
+	CHPTER_SLOT_COLOR = 1 UMETA(Tooltip="1.슬롯배경_Color_챕터"),
+	CHPTER_SLOT_LOCK_COLOR = 2 UMETA(Tooltip="2.슬롯배경_Color_챕터잠금"),
+	STORY_SLOT_COLOR = 3 UMETA(Tooltip="3. 슬롯배경_Color_스토리"),
+	CHPTER_LEFT_ICON_COLOR = 4 UMETA(Tooltip="4. 좌측아이콘_Color_챕터"),
+	CHPTER_LEFT_ICON_LOCK_COLOR = 5 UMETA(Tooltip="5. 좌측아이콘_Color_챕터잠금"),
+	STORY_LEFT_ICON_COLOR = 6 UMETA(Tooltip="6. 좌측아이콘_Color_스토리진행중"),
+	CHPTER_LEFT_SPRITE = 7 UMETA(Tooltip="7. 좌측아이콘_Sprite_챕터"),
+	CHPTER_LEFT_LOCK_SPRITE = 8 UMETA(Tooltip="8. 좌측아이콘_Sprite_챕터잠금"),
+	STORY_LEFT_SPRITE = 9 UMETA(Tooltip="9. 좌측아이콘_Sprite_스토리진행중"),
+	CHPTER_LEFT_NUMBER = 10 UMETA(Tooltip="10. 챕터넘버_Color_기본"),
+	CHPTER_LEFT_LOCK_NUMBER = 11 UMETA(Tooltip="11. 챕터넘버_Color_잠금"),
+	CHPTER_TITLE_COLOR = 12 UMETA(Tooltip="12. 슬롯타이틀_Color_챕터기본"),
+	CHPTER_TITLE_LOCK_COLOR = 13 UMETA(Tooltip="13. 슬롯타이틀_Color_챕터잠금"),
+	STORY_TITLE_COLOR = 14 UMETA(Tooltip="14. 슬롯타이틀_Color_스토리진행중"),
+	STORY_TITLE_COMPLET_COLOR = 15 UMETA(Tooltip="15. 슬롯타이틀_Color_스토리완료"),
+	STORY_TITLE_LOCK_COLOR = 16 UMETA(Tooltip="16. 슬롯타이틀_Color_스토리잠금"),
+	CHPTER_RIGHT_LOCK_COLOR = 17 UMETA(Tooltip="17. 우측아이콘_Color_챕터잠금"),
+	STORY_RIGHT_COMPLET_COLOR = 18 UMETA(Tooltip="18. 우측아이콘_Color_스토리완료"),
+	STORY_RIGHT_WATING_COLOR = 19 UMETA(Tooltip="19. 우측아이콘_Color_스토리수락대기"),
+	STORY_RIGHT_COLOR_HUDUI_ON = 20 UMETA(Tooltip="20. 우측아이콘_Color_스토리허드보임"),
+	STORY_RIGHT_COLOR_HUDUI_OFF = 21 UMETA(Tooltip="21. 우측아이콘_Color_스토리허드안보임"),
+	STORY_RIGHT_LOCK_CLOLOR = 22 UMETA(Tooltip="22. 우측아이콘_Color_스토리잠금"),
+	RIGHT_SPRITE_LOCK = 23 UMETA(Tooltip="23. 우측아이콘_Sprite_잠금"),
+	STORY_RIGHT_SPRITE_COMPLET = 24 UMETA(Tooltip="24. 우측아이콘_Sprite_스토리완료"),
+	STORY_RIGHT_SPRITE_WATING = 25 UMETA(Tooltip="25. 우측아이콘_Sprite_스토리수락대기"),
+	STORY_RIGHT_SPRITE_HUDUI_ON = 26 UMETA(Tooltip="26. 우측아이콘_Sprite_스토리허드보임"),
+	MAP_SLOT_COLOR = 27 UMETA(Tooltip="27. 맵슬롯배경_Color"),
+	MAP_SLOT_LOCK_COLOR = 28 UMETA(Tooltip="28. 맵슬롯배경_Color_잠금"),
+	MAP_SLOT_TEXT_COLOR = 29 UMETA(Tooltip="29. 맵슬롯타이틀_Text_Color"),
+	MAP_SLOT_TEXT_LOCK_COLOR = 30 UMETA(Tooltip="30. 맵슬롯타이틀_Text_Color_잠금"),
+	GUIDE_REWARDED_SLOT_COLOR = 31 UMETA(Tooltip="31. 가이드 완료 슬롯 컬러"),
+	GUIDE_REWARDED_TITLE_COLOR = 32 UMETA(Tooltip="32. 가이드 완료 글자 컬러"),
+	GUIDE_RIGHT_COMPLET_COLOR = 33 UMETA(Tooltip="33. 가이드 완료 체크표시 컬러"),
+	Max = 34,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsQuestSlotType)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, QUEST_SLOT_TYPE_NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_SLOT_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_SLOT_LOCK_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_SLOT_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_ICON_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_ICON_LOCK_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_LEFT_ICON_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_SPRITE)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_LOCK_SPRITE)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_LEFT_SPRITE)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_NUMBER)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_LOCK_NUMBER)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_TITLE_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_TITLE_LOCK_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_TITLE_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_TITLE_COMPLET_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_TITLE_LOCK_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, CHPTER_RIGHT_LOCK_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_COMPLET_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_WATING_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_COLOR_HUDUI_ON)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_COLOR_HUDUI_OFF)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_LOCK_CLOLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, RIGHT_SPRITE_LOCK)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_SPRITE_COMPLET)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_SPRITE_WATING)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_SPRITE_HUDUI_ON)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, MAP_SLOT_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, MAP_SLOT_LOCK_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, MAP_SLOT_TEXT_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, MAP_SLOT_TEXT_LOCK_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, GUIDE_REWARDED_SLOT_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, GUIDE_REWARDED_TITLE_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, GUIDE_RIGHT_COMPLET_COLOR)
+GS_ENUM_LEXTOSTRING_CASE(EGsQuestSlotType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsQuestSlotType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsQuestSlotType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, QUEST_SLOT_TYPE_NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_SLOT_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_SLOT_LOCK_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_SLOT_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_ICON_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_ICON_LOCK_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_LEFT_ICON_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_SPRITE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_LOCK_SPRITE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_LEFT_SPRITE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_NUMBER)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_LEFT_LOCK_NUMBER)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_TITLE_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_TITLE_LOCK_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_TITLE_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_TITLE_COMPLET_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_TITLE_LOCK_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, CHPTER_RIGHT_LOCK_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_COMPLET_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_WATING_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_COLOR_HUDUI_ON)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_COLOR_HUDUI_OFF)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_LOCK_CLOLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, RIGHT_SPRITE_LOCK)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_SPRITE_COMPLET)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_SPRITE_WATING)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, STORY_RIGHT_SPRITE_HUDUI_ON)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, MAP_SLOT_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, MAP_SLOT_LOCK_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, MAP_SLOT_TEXT_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, MAP_SLOT_TEXT_LOCK_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, GUIDE_REWARDED_SLOT_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, GUIDE_REWARDED_TITLE_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, GUIDE_RIGHT_COMPLET_COLOR)
+GS_ENUM_LEXFROMSTRING_CASE(EGsQuestSlotType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsSocialEmotion : uint8
+{
+	Laugh = 0 UMETA(Tooltip="웃음"),
+	Sadness = 1 UMETA(Tooltip="슬픔"),
+	Deny = 2 UMETA(Tooltip="부정"),
+	Greeting = 3 UMETA(Tooltip="인사"),
+	Favor = 4 UMETA(Tooltip="부탁"),
+	Agree = 5 UMETA(Tooltip="동의"),
+	Brag = 6 UMETA(Tooltip="우쭐"),
+	Fighting = 7 UMETA(Tooltip="파이팅"),
+	HighMotivate = 8 UMETA(Tooltip="의욕 충만"),
+	Heart = 9 UMETA(Tooltip="하트"),
+	Dance = 10 UMETA(Tooltip="춤"),
+	Surprise = 11 UMETA(Tooltip="놀람"),
+	IdleEmotion = 12 UMETA(Tooltip="기타 Idle 동작"),
+	Max = 13,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsSocialEmotion)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Laugh)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Sadness)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Deny)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Greeting)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Favor)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Agree)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Brag)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Fighting)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, HighMotivate)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Heart)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Dance)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Surprise)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, IdleEmotion)
+GS_ENUM_LEXTOSTRING_CASE(EGsSocialEmotion, Max)
+GS_ENUM_LEXTOSTRING_END(EGsSocialEmotion)
+
+GS_ENUM_LEXFROMSTRING_START(EGsSocialEmotion)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Laugh)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Sadness)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Deny)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Greeting)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Favor)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Agree)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Brag)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Fighting)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, HighMotivate)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Heart)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Dance)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Surprise)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, IdleEmotion)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSocialEmotion, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="Master",Tooltip="Master"))
+enum class EGsSoundMixType : uint8
+{
+	Master = 0 UMETA(Tooltip="디폴트 mix"),
+	Reverb = 1 UMETA(Tooltip="효과 mix"),
+	Cinemas = 2 UMETA(Tooltip="영상 나올때 사용하는 mix"),
+	NpcDialog = 3 UMETA(Tooltip="npc대화 상태 때 사용하는 mix"),
+	Menu = 4 UMETA(Tooltip="메뉴UI 풀 화면일때 사용하는 mix"),
+	Summon = 5 UMETA(Tooltip="뽑기 mix"),
+	SkillPreview = 6 UMETA(Tooltip="스킬 미리보기 mix"),
+	SubDialog = 7 UMETA(Tooltip="Sub 대화 상태 때 사용하는 mix"),
+	EventAction = 8 UMETA(Tooltip="Event Action 상태 때 사용하는 mix"),
+	MasterLobby = 9 UMETA(Tooltip="디폴트 마스터 로비용"),
+	Max = 10,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsSoundMixType)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, Master)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, Reverb)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, Cinemas)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, NpcDialog)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, Menu)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, Summon)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, SkillPreview)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, SubDialog)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, EventAction)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, MasterLobby)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundMixType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsSoundMixType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsSoundMixType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, Master)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, Reverb)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, Cinemas)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, NpcDialog)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, Menu)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, Summon)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, SkillPreview)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, SubDialog)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, EventAction)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, MasterLobby)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundMixType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsSoundPlayType : uint8
+{
+	None = 0,
+	Bgm = 1,
+	Battle = 2,
+	Voice = 3,
+	FootPrint = 4,
+	Max = 5,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsSoundPlayType)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundPlayType, None)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundPlayType, Bgm)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundPlayType, Battle)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundPlayType, Voice)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundPlayType, FootPrint)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundPlayType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsSoundPlayType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsSoundPlayType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundPlayType, None)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundPlayType, Bgm)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundPlayType, Battle)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundPlayType, Voice)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundPlayType, FootPrint)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundPlayType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsSoundVolumeType : uint8
+{
+	Master = 0 UMETA(Tooltip="게임 전체 볼륨"),
+	Music = 1 UMETA(Tooltip="배경음악 (bgm) 볼륨"),
+	Game = 2 UMETA(Tooltip="배경음을 제외 한 모든 볼륨"),
+	Notice = 3 UMETA(Tooltip="알림음"),
+	MasterLobby = 4 UMETA(Tooltip="다운로드 전 사용할 로비용 마스터"),
+	Max = 5,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsSoundVolumeType)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundVolumeType, Master)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundVolumeType, Music)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundVolumeType, Game)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundVolumeType, Notice)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundVolumeType, MasterLobby)
+GS_ENUM_LEXTOSTRING_CASE(EGsSoundVolumeType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsSoundVolumeType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsSoundVolumeType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundVolumeType, Master)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundVolumeType, Music)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundVolumeType, Game)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundVolumeType, Notice)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundVolumeType, MasterLobby)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSoundVolumeType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsStatisticsSubCategory : uint8
+{
+	NONE = 0,
+	BATTLE_ATTACK_DAMAGE = 1 UMETA(Tooltip="가한 대미지"),
+	BATTLE_DAMAGED = 2 UMETA(Tooltip="받은 데미지"),
+	BATTLE_KILL_DEATH = 3 UMETA(Tooltip="킬데스"),
+	BATTLE_HEAL = 4 UMETA(Tooltip="회복"),
+	GROWTH_EXP = 5 UMETA(Tooltip="성장_경험치"),
+	GROWTH_FAIRY = 6 UMETA(Tooltip="성장_페어리"),
+	GROWTH_EQUIP = 7 UMETA(Tooltip="성장_장비"),
+	GROWTH_COSTUME = 8 UMETA(Tooltip="성장_코스튬"),
+	GROWTH_CRAFT = 9 UMETA(Tooltip="성장_제작"),
+	ITEM_EQUIP = 10 UMETA(Tooltip="아이템_장비"),
+	ITEM_CONSUME = 11 UMETA(Tooltip="아이템_소모품"),
+	ITEM_GOLD = 12 UMETA(Tooltip="아이템_골드"),
+	ETC_TIME = 13 UMETA(Tooltip="기타_시간"),
+	Max = 14,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsStatisticsSubCategory)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, BATTLE_ATTACK_DAMAGE)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, BATTLE_DAMAGED)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, BATTLE_KILL_DEATH)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, BATTLE_HEAL)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, GROWTH_EXP)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, GROWTH_FAIRY)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, GROWTH_EQUIP)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, GROWTH_COSTUME)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, GROWTH_CRAFT)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, ITEM_EQUIP)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, ITEM_CONSUME)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, ITEM_GOLD)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, ETC_TIME)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsSubCategory, Max)
+GS_ENUM_LEXTOSTRING_END(EGsStatisticsSubCategory)
+
+GS_ENUM_LEXFROMSTRING_START(EGsStatisticsSubCategory)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, BATTLE_ATTACK_DAMAGE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, BATTLE_DAMAGED)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, BATTLE_KILL_DEATH)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, BATTLE_HEAL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, GROWTH_EXP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, GROWTH_FAIRY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, GROWTH_EQUIP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, GROWTH_COSTUME)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, GROWTH_CRAFT)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, ITEM_EQUIP)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, ITEM_CONSUME)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, ITEM_GOLD)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, ETC_TIME)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsSubCategory, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsStatisticsValueType : uint8
+{
+	VALUE = 0 UMETA(Tooltip="값"),
+	RATE = 1 UMETA(Tooltip="만분율"),
+	TIME = 2 UMETA(Tooltip="시간"),
+	Max = 3,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsStatisticsValueType)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsValueType, VALUE)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsValueType, RATE)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsValueType, TIME)
+GS_ENUM_LEXTOSTRING_CASE(EGsStatisticsValueType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsStatisticsValueType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsStatisticsValueType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsValueType, VALUE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsValueType, RATE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsValueType, TIME)
+GS_ENUM_LEXFROMSTRING_CASE(EGsStatisticsValueType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType)
+enum class EGsSubDialogActorFaceType : uint8
+{
+	FACE_NORMAL = 0 UMETA(Tooltip="일반"),
+	FACE_ANGRY = 1 UMETA(Tooltip="분노"),
+	FACE_SMILE = 2 UMETA(Tooltip="웃음"),
+	FACE_SAD = 3 UMETA(Tooltip="슬픔"),
+	Max = 4,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsSubDialogActorFaceType)
+GS_ENUM_LEXTOSTRING_CASE(EGsSubDialogActorFaceType, FACE_NORMAL)
+GS_ENUM_LEXTOSTRING_CASE(EGsSubDialogActorFaceType, FACE_ANGRY)
+GS_ENUM_LEXTOSTRING_CASE(EGsSubDialogActorFaceType, FACE_SMILE)
+GS_ENUM_LEXTOSTRING_CASE(EGsSubDialogActorFaceType, FACE_SAD)
+GS_ENUM_LEXTOSTRING_CASE(EGsSubDialogActorFaceType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsSubDialogActorFaceType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsSubDialogActorFaceType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSubDialogActorFaceType, FACE_NORMAL)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSubDialogActorFaceType, FACE_ANGRY)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSubDialogActorFaceType, FACE_SMILE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSubDialogActorFaceType, FACE_SAD)
+GS_ENUM_LEXFROMSTRING_CASE(EGsSubDialogActorFaceType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+UENUM(BlueprintType, meta=(Tooltip="시간 표기 타입",Tooltip="시간 표기 타입"))
+enum class EGsTimeDisplayType : uint8
+{
+	NONE = 0 UMETA(Tooltip="초기값"),
+	YMD = 1 UMETA(Tooltip="Y/M/D"),
+	YMD_HMS = 2 UMETA(Tooltip="Y/M/D H:M:S"),
+	YMD_HM = 3 UMETA(Tooltip="Y/M/D H:M"),
+	YMD_AM_HMS = 4 UMETA(Tooltip="Y/M/D 오전 H시 M분 S초"),
+	YMD_AM_HM = 5 UMETA(Tooltip="Y/M/D 오전 H시 M분"),
+	Max = 6,
+};
+
+GS_ENUM_LEXTOSTRING_START(EGsTimeDisplayType)
+GS_ENUM_LEXTOSTRING_CASE(EGsTimeDisplayType, NONE)
+GS_ENUM_LEXTOSTRING_CASE(EGsTimeDisplayType, YMD)
+GS_ENUM_LEXTOSTRING_CASE(EGsTimeDisplayType, YMD_HMS)
+GS_ENUM_LEXTOSTRING_CASE(EGsTimeDisplayType, YMD_HM)
+GS_ENUM_LEXTOSTRING_CASE(EGsTimeDisplayType, YMD_AM_HMS)
+GS_ENUM_LEXTOSTRING_CASE(EGsTimeDisplayType, YMD_AM_HM)
+GS_ENUM_LEXTOSTRING_CASE(EGsTimeDisplayType, Max)
+GS_ENUM_LEXTOSTRING_END(EGsTimeDisplayType)
+
+GS_ENUM_LEXFROMSTRING_START(EGsTimeDisplayType)
+GS_ENUM_LEXFROMSTRING_CASE(EGsTimeDisplayType, NONE)
+GS_ENUM_LEXFROMSTRING_CASE(EGsTimeDisplayType, YMD)
+GS_ENUM_LEXFROMSTRING_CASE(EGsTimeDisplayType, YMD_HMS)
+GS_ENUM_LEXFROMSTRING_CASE(EGsTimeDisplayType, YMD_HM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsTimeDisplayType, YMD_AM_HMS)
+GS_ENUM_LEXFROMSTRING_CASE(EGsTimeDisplayType, YMD_AM_HM)
+GS_ENUM_LEXFROMSTRING_CASE(EGsTimeDisplayType, Max)
+GS_ENUM_LEXFROMSTRING_END()
+
+#undef GS_ENUM_LEXTOSTRING_START
+#undef GS_ENUM_LEXTOSTRING_CASE
+#undef GS_ENUM_LEXTOSTRING_END
+#undef GS_ENUM_LEXFROMSTRING_START
+#undef GS_ENUM_LEXFROMSTRING_CASE
+#undef GS_ENUM_LEXFROMSTRING_END

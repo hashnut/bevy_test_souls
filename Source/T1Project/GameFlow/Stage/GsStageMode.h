@@ -1,0 +1,34 @@
+﻿#pragma once
+
+class FGsStageMode
+{
+public:
+	enum Lobby
+	{
+		INTRO,
+		TITLE,
+		CHARACTER_SELECT,
+		CHARACTER_CREATE,
+		CHARACTER_CUSTOMIZING,	
+		PLAYABLE_EVENT,
+		PATCH,
+		LOBBY_MAX,
+	};
+
+	enum Game
+	{
+		TOWN,
+		FIELD,
+		CHAOS,
+		DUNGEON,
+		GUILD_DUNGEON,
+		PVP_CONTENT,		
+		SAFETY_ZONE,
+		ARENA_READY,
+		ARENA,
+		WORLD_BOSS,
+		NON_PK,
+		AGIT_DUNGEON,
+		GAME_MAX,
+	};
+};

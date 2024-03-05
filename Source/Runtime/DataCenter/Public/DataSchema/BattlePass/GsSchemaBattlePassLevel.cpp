@@ -1,0 +1,9 @@
+﻿/// DO NOT EDIT THIS. This file is an auto generated file. Just use header generator.
+#include "Runtime/DataCenter/Public/DataSchema/BattlePass/GsSchemaBattlePassLevel.h"
+#include "../Plugins/RSQL/Source/Runtime/Public/DataTable/GsDataTable.h"
+FGsSchemaBattlePassLevel::FGsSchemaBattlePassLevel()
+{
+	SET_ALL_PROPERTIES_FROM_ASSETSCHEMA_DEFAULT(FGsSchemaBattlePassLevel)
+	
+	passLevelGroupId = 0;
+}
