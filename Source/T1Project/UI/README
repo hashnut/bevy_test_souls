@@ -1,8 +1,0 @@
-* 각 폴더의 역할
-
-- UILib : Base클래스, 컨테이너, 매니저 클래스 등
-- UIControlLib : ContentWidget 상속 클래스들, UI 제어를 위한 컨트롤들
-- UIContent : 게임에 직접 관련된 클래스들. 대부분의 파일 여기에 추가.
-- Sample : UI나 컨트롤 활용방법 등 예제파일
-
-* UILib, UIControlLib 에 파일 추가/수정/삭제 시 담당자(정유진)나 파트장과 논의 후 처리부탁드립니다.
