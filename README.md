@@ -1,2 +1,2 @@
-# Project_Z
-Zenonia code backup (제노니아)
+# Let's Dice!
+Casual game with dice using unreal engine
