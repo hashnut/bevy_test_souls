@@ -1,2 +1,2 @@
-# Let's Dice!
-Casual game with dice using unreal engine
+# Bevy_Test_Souls
+Bevy engine soulslike game test
