@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\\src\\components\" \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\\src\\systems\" \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\\src\\resources\" \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\\src\\states\" \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\\src\\utils\" \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\\assets\\models\" \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\\assets\\textures\" \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\\assets\\sounds\" \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\\assets\\fonts\")",
+      "Bash(cd \"C:\\Users\\duck\\Documents\\claude_projects\\soulslike-test\")",
+      "Bash(cargo check)",
+      "Bash(timeout 30 cargo build --release)",
+      "Bash(cargo run)"
+    ],
+    "deny": []
+  }
+}
