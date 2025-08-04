@@ -1,0 +1,199 @@
+FBX to GLTF/GLB Conversion Log (Blender)
+==================================================
+
+Settings:
+- Input Directory: assets\Animations
+- Output Directory: assets\Animations_GLTF
+- Format: GLB
+- Skip Existing: False
+
+Results:
+- Total files converted: 0
+- Total files skipped: 0
+- Total errors: 184
+
+File Details:
+Aurora/Ability_E - Failed
+Aurora/Ability_E_InMotion - Failed
+Aurora/Ability_E_InMotion_MSA - Failed
+Aurora/Ability_E_InMotion_V2 - Failed
+Aurora/Ability_E_InMotion_V2_MSA - Failed
+Aurora/Ability_E_MSA - Failed
+Aurora/Ability_E_V2 - Failed
+Aurora/Ability_E_V2_MSA - Failed
+Aurora/Ability_Q - Failed
+Aurora/Ability_Q_InMotion - Failed
+Aurora/Ability_Q_InMotion_MSA - Failed
+Aurora/Ability_Q_MSA - Failed
+Aurora/Ability_Q_Stop - Failed
+Aurora/Ability_Q_Stop_MSA - Failed
+Aurora/Ability_Q_Targeting - Failed
+Aurora/Ability_Q_Targeting_Intro - Failed
+Aurora/Ability_Q_Targeting_Intro_MSA - Failed
+Aurora/Ability_Q_Targeting_MSA - Failed
+Aurora/Ability_R - Failed
+Aurora/Ability_RMB_Bwd - Failed
+Aurora/Ability_RMB_BwdLeft - Failed
+Aurora/Ability_RMB_BwdRight - Failed
+Aurora/Ability_RMB_Fwd - Failed
+Aurora/Ability_RMB_FwdLeft - Failed
+Aurora/Ability_RMB_FwdRight - Failed
+Aurora/Ability_RMB_Left - Failed
+Aurora/Ability_RMB_Right - Failed
+Aurora/Ability_R_InMotion - Failed
+Aurora/Ability_R_InMotion_MSA - Failed
+Aurora/Ability_R_InPlace - Failed
+Aurora/Ability_R_InPlace_MSA - Failed
+Aurora/Ability_R_InPlace_V2 - Failed
+Aurora/Ability_R_InPlace_V2_MSA - Failed
+Aurora/Ability_R_MSA - Failed
+Aurora/Ability_R_Targeting - Failed
+Aurora/Ability_R_Targeting_MSA - Failed
+Aurora/Aurora_Weighting_work - Failed
+Aurora/Bound - Failed
+Aurora/Cast - Failed
+Aurora/Death - Failed
+Aurora/Emote_Ice_Sculpture - Failed
+Aurora/Emote_Ice_Sculpture_Pose - Failed
+Aurora/Emote_Laugh_T1 - Failed
+Aurora/Emote_Minion_Kick - Failed
+Aurora/Emote_Slice - Failed
+Aurora/FrontEndPose - Failed
+Aurora/HitReact_Back - Failed
+Aurora/HitReact_Front - Failed
+Aurora/HitReact_Left - Failed
+Aurora/HitReact_Right - Failed
+Aurora/Idle - Failed
+Aurora/Idle_Additive - Failed
+Aurora/Idle_Noise_A - Failed
+Aurora/Idle_Noise_B - Failed
+Aurora/Idle_Straight - Failed
+Aurora/Jog_Bwd - Failed
+Aurora/Jog_BwdToFwd_Spin_CCW - Failed
+Aurora/Jog_BwdToFwd_Spin_CW - Failed
+Aurora/Jog_Bwd_CircleLeft - Failed
+Aurora/Jog_Bwd_CircleRight - Failed
+Aurora/Jog_Bwd_Combat - Failed
+Aurora/Jog_Bwd_Downhill - Failed
+Aurora/Jog_Bwd_Pivot180 - Failed
+Aurora/Jog_Bwd_Start - Failed
+Aurora/Jog_Bwd_Stop - Failed
+Aurora/Jog_Bwd_Uphill - Failed
+Aurora/Jog_Fwd - Failed
+Aurora/Jog_FwdToBwd_Spin_CCW - Failed
+Aurora/Jog_FwdToBwd_Spin_CW - Failed
+Aurora/Jog_Fwd_Ability_Q - Failed
+Aurora/Jog_Fwd_CircleLeft - Failed
+Aurora/Jog_Fwd_CircleRight - Failed
+Aurora/Jog_Fwd_Combat - Failed
+Aurora/Jog_Fwd_Downhill - Failed
+Aurora/Jog_Fwd_Pivot180 - Failed
+Aurora/Jog_Fwd_Start - Failed
+Aurora/Jog_Fwd_Stop - Failed
+Aurora/Jog_Fwd_Uphill - Failed
+Aurora/Jog_Left - Failed
+Aurora/Jog_Left_CircleLeft - Failed
+Aurora/Jog_Left_CircleRight - Failed
+Aurora/Jog_Left_Combat - Failed
+Aurora/Jog_Left_Downhill - Failed
+Aurora/Jog_Left_Pivot180 - Failed
+Aurora/Jog_Left_Start - Failed
+Aurora/Jog_Left_Stop - Failed
+Aurora/Jog_Left_Uphill - Failed
+Aurora/Jog_Right - Failed
+Aurora/Jog_Right_CircleLeft - Failed
+Aurora/Jog_Right_CircleRight - Failed
+Aurora/Jog_Right_Combat - Failed
+Aurora/Jog_Right_Downhill - Failed
+Aurora/Jog_Right_Pivot180 - Failed
+Aurora/Jog_Right_Start - Failed
+Aurora/Jog_Right_Stop - Failed
+Aurora/Jog_Right_Uphill - Failed
+Aurora/Jump_Apex - Failed
+Aurora/Jump_Land - Failed
+Aurora/Jump_Pad - Failed
+Aurora/Jump_Recovery - Failed
+Aurora/Jump_Recovery_Additive - Failed
+Aurora/Jump_Start - Failed
+Aurora/Knockback_Bwd - Failed
+Aurora/Knockback_Fwd - Failed
+Aurora/Level_Start - Failed
+Aurora/Melee_Attack_Air - Failed
+Aurora/Melee_Attack_Air_Additive - Failed
+Aurora/Primary_Attack_A - Failed
+Aurora/Primary_Attack_A_InMotion - Failed
+Aurora/Primary_Attack_A_InMotion_MSA - Failed
+Aurora/Primary_Attack_A_MSA - Failed
+Aurora/Primary_Attack_B - Failed
+Aurora/Primary_Attack_B_InMotion - Failed
+Aurora/Primary_Attack_B_InMotion_MSA - Failed
+Aurora/Primary_Attack_B_MSA - Failed
+Aurora/Primary_Attack_C - Failed
+Aurora/Primary_Attack_C_InMotion - Failed
+Aurora/Primary_Attack_C_InMotion_MSA - Failed
+Aurora/Primary_Attack_C_MSA - Failed
+Aurora/Primary_Attack_Fast_A - Failed
+Aurora/Primary_Attack_Fast_A_InMotion - Failed
+Aurora/Primary_Attack_Fast_A_InMotion_MSA - Failed
+Aurora/Primary_Attack_Fast_A_MSA - Failed
+Aurora/Primary_Attack_Fast_B - Failed
+Aurora/Primary_Attack_Fast_B_InMotion - Failed
+Aurora/Primary_Attack_Fast_B_InMotion_MSA - Failed
+Aurora/Primary_Attack_Fast_B_MSA - Failed
+Aurora/Primary_Attack_Fast_C - Failed
+Aurora/Primary_Attack_Fast_C_InMotion - Failed
+Aurora/Primary_Attack_Fast_C_InMotion_MSA - Failed
+Aurora/Primary_Attack_Fast_C_MSA - Failed
+Aurora/Primary_Attack_Fast_D - Failed
+Aurora/Primary_Attack_Fast_D_InMotion - Failed
+Aurora/Primary_Attack_Fast_D_InMotion_MSA - Failed
+Aurora/Primary_Attack_Fast_D_MSA - Failed
+Aurora/Primary_Attack_Slow_A - Failed
+Aurora/Primary_Attack_Slow_A_InMotion - Failed
+Aurora/Primary_Attack_Slow_A_InMotion_MSA - Failed
+Aurora/Primary_Attack_Slow_A_MSA - Failed
+Aurora/Primary_Attack_Slow_A_Recovery - Failed
+Aurora/Primary_Attack_Slow_A_Recovery_InMotion - Failed
+Aurora/Primary_Attack_Slow_A_Recovery_InMotion_MSA - Failed
+Aurora/Primary_Attack_Slow_A_Recovery_MSA - Failed
+Aurora/Primary_Attack_Slow_B - Failed
+Aurora/Primary_Attack_Slow_B_InMotion - Failed
+Aurora/Primary_Attack_Slow_B_InMotion_MSA - Failed
+Aurora/Primary_Attack_Slow_B_MSA - Failed
+Aurora/Primary_Attack_Slow_B_Recovery - Failed
+Aurora/Primary_Attack_Slow_B_Recovery_InMotion - Failed
+Aurora/Primary_Attack_Slow_B_Recovery_InMotion_MSA - Failed
+Aurora/Primary_Attack_Slow_B_Recovery_MSA - Failed
+Aurora/Primary_Attack_Slow_C - Failed
+Aurora/Primary_Attack_Slow_C_InMotion - Failed
+Aurora/Primary_Attack_Slow_C_InMotion_MSA - Failed
+Aurora/Primary_Attack_Slow_C_MSA - Failed
+Aurora/Primary_Attack_Slow_C_Recovery - Failed
+Aurora/Primary_Attack_Slow_C_Recovery_MSA - Failed
+Aurora/Primary_Attack_Slow_D - Failed
+Aurora/Primary_Attack_Slow_D_InMotion - Failed
+Aurora/Primary_Attack_Slow_D_InMotion_MSA - Failed
+Aurora/Primary_Attack_Slow_D_MSA - Failed
+Aurora/Recall - Failed
+Aurora/Select_Screen - Failed
+Aurora/Stun_Loop - Failed
+Aurora/Stun_Start - Failed
+Aurora/Turn_In_Place_Fast - Failed
+Aurora/Turn_In_Place_Fast_Additive - Failed
+Aurora/Turn_In_Place_Slow - Failed
+Aurora/Turn_In_Place_Slow_Additive - Failed
+Aurora/Turn_In_Place_Zero - Failed
+Aurora/Turn_In_Place_Zero_Additive - Failed
+Aurora/Turn_Left_180 - Failed
+Aurora/Turn_Left_90 - Failed
+Aurora/Turn_Right_180 - Failed
+Aurora/Turn_Right_90 - Failed
+Great_Sword/Great Sword Idle - Failed
+Great_Sword/Great Sword Impact - Failed
+Great_Sword/Great Sword Kick - Failed
+Great_Sword/Great Sword Run - Failed
+Great_Sword/Great Sword Sheath - Failed
+Great_Sword/Great Sword Slash - Failed
+Great_Sword/Great Sword Strafe - Failed
+Great_Sword/Great Sword Turn - Failed
+Great_Sword/Great Sword Walk - Failed

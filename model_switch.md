@@ -1,0 +1,33 @@
+cat << EOF > request.json
+{
+    "anthropic_version": "vertex-2023-10-16"
+    ,"stream": false
+    ,"max_tokens": 32000
+    ,"temperature": 1
+    ,"top_p": 1
+    ,"top_k": 1
+    ,"messages": [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "To help you create the best possible game development prompt, please provide the following information:\n\n1.  **Game Description:**\n    *   Describe the game you want to create. Include details about the genre, theme, and core mechanics.\n    *   For example: \"I want to create a 2D platformer where the player controls a character who can jump and shoot enemies.\"\n    {game_description}\n2.  **Specific Requirements:**\n    *   List any specific features, functionalities, or constraints you want to incorporate into the game.\n    *   For example: \"I want to use tilemaps for the level design, implement a simple AI for the enemies, and ensure the game runs smoothly at 60 FPS.\"\n    {specific_requirements}\n3.  **Example Code Snippets:**\n    *   Provide any example code snippets or references to specific Bevy features you want to use.\n    *   For example: \"I want to use the `bevy_ecs` crate for entity component system management and the `bevy_render` crate for rendering the game graphics.\"\n    {example_code_snippets}\n\nOnce you have provided this information, I will generate a detailed prompt that you can use to guide your Bevy game development process."
+                }
+            ]
+        }
+    ]
+}
+EOF
+
+ENDPOINT="aiplatform.googleapis.com"
+LOCATION_ID="global"
+PROJECT_ID="agds-462601"
+MODEL_ID="claude-opus-4"
+METHOD="rawPredict"
+
+curl -X POST \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "Content-Type: application/json; charset=utf-8" \
+  -d @request.json \
+"https://${ENDPOINT}/v1/projects/${PROJECT_ID}/locations/${LOCATION_ID}/publishers/anthropic/models/${MODEL_ID}:${METHOD}"

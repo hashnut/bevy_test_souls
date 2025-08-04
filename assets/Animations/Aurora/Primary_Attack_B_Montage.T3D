@@ -1,0 +1,24 @@
+Begin Object Class=/Script/Engine.AnimMontage Name="Primary_Attack_B_Montage" ExportPath=/Script/Engine.AnimMontage'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Primary_Attack_B_Montage.Primary_Attack_B_Montage"'
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_0" ExportPath=/Script/UnrealEd.SceneThumbnailInfo'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Primary_Attack_B_Montage.Primary_Attack_B_Montage:SceneThumbnailInfo_0"'
+   End Object
+   Begin Object Class=/Script/Engine.AnimDataModel Name="AnimDataModel" ExportPath=/Script/Engine.AnimDataModel'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Primary_Attack_B_Montage.Primary_Attack_B_Montage:AnimDataModel"'
+   End Object
+   Begin Object Name="SceneThumbnailInfo_0" ExportPath=/Script/UnrealEd.SceneThumbnailInfo'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Primary_Attack_B_Montage.Primary_Attack_B_Montage:SceneThumbnailInfo_0"'
+   End Object
+   Begin Object Name="AnimDataModel" ExportPath=/Script/Engine.AnimDataModel'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Primary_Attack_B_Montage.Primary_Attack_B_Montage:AnimDataModel"'
+      FrameRate=(Numerator=100000)
+      NumberOfFrames=100000
+      NumberOfKeys=100001
+      bPopulated=True
+   End Object
+   BlendIn=(BlendTime=0.100000)
+   CompositeSections(0)=(SectionName="Default",LinkedMontage=/Script/Engine.AnimMontage'"Primary_Attack_B_Montage"',SegmentIndex=0,SegmentLength=1.000000,LinkedSequence=/Script/Engine.AnimSequence'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Primary_Attack_B.Primary_Attack_B"')
+   SlotAnimTracks(0)=(SlotName="UpperBody",AnimTrack=(AnimSegments=((AnimReference=/Script/Engine.AnimSequence'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Primary_Attack_B.Primary_Attack_B"',AnimEndTime=1.000000))))
+   Notifies(0)=(EndTriggerTimeOffset=0.000100,NotifyName="SaveAttack",Guid=8A47D1854BDD92FC618E1D92FC98980B,LinkedMontage=/Script/Engine.AnimMontage'"Primary_Attack_B_Montage"',SegmentIndex=0,SegmentLength=1.000000,LinkValue=0.620690,LinkedSequence=/Script/Engine.AnimSequence'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Primary_Attack_B.Primary_Attack_B"')
+   Notifies(1)=(NotifyName="ResetCombo",EndLink=(LinkValue=0.990000),Guid=994521FF4B33D4C83F3C108345A45370,LinkedMontage=/Script/Engine.AnimMontage'"Primary_Attack_B_Montage"',SegmentIndex=0,SegmentLength=1.000000,LinkValue=0.990000,LinkedSequence=/Script/Engine.AnimSequence'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Primary_Attack_B.Primary_Attack_B"')
+   SequenceLength=1.000000
+   AnimNotifyTracks(0)=(TrackName="1",TrackColor=(R=0.500000,G=0.500000,B=0.500000,A=1.000000))
+   DataModelInterface=AnimDataModel'Primary_Attack_B_Montage:AnimDataModel'
+   Skeleton=/Script/Engine.Skeleton'"/Game/ParagonAurora/Characters/Heroes/Aurora/Meshes/Aurora_Skeleton.Aurora_Skeleton"'
+   ThumbnailInfo=/Script/UnrealEd.SceneThumbnailInfo'"SceneThumbnailInfo_0"'
+End Object

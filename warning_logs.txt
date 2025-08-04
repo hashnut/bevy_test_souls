@@ -1,0 +1,239 @@
+warning: unused import: `crate::components::*`
+ --> src\systems\input.rs:2:5
+  |
+2 | use crate::components::*;
+  |     ^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `math::*`
+ --> src\utils\mod.rs:3:9
+  |
+3 | pub use math::*;
+  |         ^^^^^^^
+
+warning: variable does not need to be mutable
+  --> src\systems\player_movement.rs:12:10
+   |
+12 |     for (mut transform, mut velocity, mut player, mut stamina) in player_query.iter_mut() {
+   |          ----^^^^^^^^^
+   |          |
+   |          help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` on by default
+
+warning: unused variable: `mouse_input`
+ --> src\systems\input.rs:8:5
+  |
+8 |     mouse_input: Res<ButtonInput<MouseButton>>,
+  |     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_mouse_input`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `enemy_query`
+  --> src\systems\combat.rs:12:9
+   |
+12 |     mut enemy_query: Query<(Entity, &Transform, &mut Health), (With<Enemy>, Without<Player>)>,
+   |         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_enemy_query`
+
+warning: variable does not need to be mutable
+  --> src\systems\combat.rs:12:5
+   |
+12 |     mut enemy_query: Query<(Entity, &Transform, &mut Health), (With<Enemy>, Without<Player>)>,
+   |     ----^^^^^^^^^^^
+   |     |
+   |     help: remove this `mut`
+
+warning: unused variable: `player_entity`
+  --> src\systems\combat.rs:53:5
+   |
+53 |     player_entity: Entity,
+   |     ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_player_entity`
+
+warning: unused variable: `attack_state`
+   --> src\systems\combat.rs:131:14
+    |
+131 |     for (mut attack_state, mut weapon) in player_query.iter_mut() {
+    |              ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_attack_state`
+
+warning: unused variable: `weapon`
+   --> src\systems\combat.rs:131:32
+    |
+131 |     for (mut attack_state, mut weapon) in player_query.iter_mut() {
+    |                                ^^^^^^ help: if this is intentional, prefix it with an underscore: `_weapon`
+
+warning: variable does not need to be mutable
+   --> src\systems\combat.rs:131:10
+    |
+131 |     for (mut attack_state, mut weapon) in player_query.iter_mut() {
+    |          ----^^^^^^^^^^^^
+    |          |
+    |          help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src\systems\combat.rs:131:28
+    |
+131 |     for (mut attack_state, mut weapon) in player_query.iter_mut() {
+    |                            ----^^^^^^
+    |                            |
+    |                            help: remove this `mut`
+
+warning: unused variable: `player_entity`
+   --> src\systems\enemy_ai.rs:155:13
+    |
+155 |     let Ok((player_entity, player_transform, mut player_health)) = player_query.get_single_mut() else {
+    |             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_player_entity`
+
+warning: unused variable: `enemy_entity`
+   --> src\systems\enemy_ai.rs:159:10
+    |
+159 |     for (enemy_entity, enemy_transform, mut ai_state, enemy) in enemy_query.iter_mut() {
+    |          ^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_enemy_entity`
+
+warning: variable does not need to be mutable
+   --> src\systems\enemy_ai.rs:159:41
+    |
+159 |     for (enemy_entity, enemy_transform, mut ai_state, enemy) in enemy_query.iter_mut() {
+    |                                         ----^^^^^^^^
+    |                                         |
+    |                                         help: remove this `mut`
+
+warning: fields `sensitivity` and `target` are never read
+  --> src\components\player.rs:25:9
+   |
+23 | pub struct CameraController {
+   |            ---------------- fields in this struct
+24 |     pub distance: f32,
+25 |     pub sensitivity: f32,
+   |         ^^^^^^^^^^^
+...
+28 |     pub target: Option<Entity>,
+   |         ^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: struct `DeathMarker` is never constructed
+  --> src\components\stats.rs:41:12
+   |
+41 | pub struct DeathMarker {
+   |            ^^^^^^^^^^^
+
+warning: field `ai_type` is never read
+ --> src\components\enemy.rs:5:9
+  |
+4 | pub struct Enemy {
+  |            ----- field in this struct
+5 |     pub ai_type: EnemyType,
+  |         ^^^^^^^
+
+warning: variants `Archer` and `Boss` are never constructed
+  --> src\components\enemy.rs:29:5
+   |
+27 | pub enum EnemyType {
+   |          --------- variants in this enum
+28 |     BasicMelee,
+29 |     Archer,
+   |     ^^^^^^
+30 |     Boss,
+   |     ^^^^
+   |
+   = note: `EnemyType` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: variant `Stunned` is never constructed
+  --> src\components\enemy.rs:50:5
+   |
+43 | pub enum AIStateType {
+   |          ----------- variant in this enum
+...
+50 |     Stunned,
+   |     ^^^^^^^
+   |
+   = note: `AIStateType` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: fields `points`, `current_index`, and `patrol_speed` are never read
+  --> src\components\enemy.rs:55:9
+   |
+54 | pub struct PatrolPath {
+   |            ---------- fields in this struct
+55 |     pub points: Vec<Vec3>,
+   |         ^^^^^^
+56 |     pub current_index: usize,
+   |         ^^^^^^^^^^^^^
+57 |     pub patrol_speed: f32,
+   |         ^^^^^^^^^^^^
+
+warning: struct `UpdateHealthUI` is never constructed
+  --> src\components\ui.rs:24:12
+   |
+24 | pub struct UpdateHealthUI {
+   |            ^^^^^^^^^^^^^^
+
+warning: struct `UpdateStaminaUI` is never constructed
+  --> src\components\ui.rs:30:12
+   |
+30 | pub struct UpdateStaminaUI {
+   |            ^^^^^^^^^^^^^^^
+
+warning: struct `UpdateSoulsUI` is never constructed
+  --> src\components\ui.rs:36:12
+   |
+36 | pub struct UpdateSoulsUI {
+   |            ^^^^^^^^^^^^^
+
+warning: function `create_bar_style` is never used
+  --> src\components\ui.rs:41:8
+   |
+41 | pub fn create_bar_style(width: f32, height: f32) -> Node {
+   |        ^^^^^^^^^^^^^^^^
+
+warning: field `interact` is never read
+  --> src\resources\input.rs:11:9
+   |
+4  | pub struct InputMapping {
+   |            ------------ field in this struct
+...
+11 |     pub interact: KeyCode,
+   |         ^^^^^^^^
+
+warning: variant `Loading` is never constructed
+  --> src\states\mod.rs:10:5
+   |
+4  | pub enum GameState {
+   |          --------- variant in this enum
+...
+10 |     Loading,
+   |     ^^^^^^^
+   |
+   = note: `GameState` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: function `distance_3d` is never used
+ --> src\utils\math.rs:3:8
+  |
+3 | pub fn distance_3d(a: Vec3, b: Vec3) -> f32 {
+  |        ^^^^^^^^^^^
+
+warning: function `distance_2d` is never used
+ --> src\utils\math.rs:7:8
+  |
+7 | pub fn distance_2d(a: Vec3, b: Vec3) -> f32 {
+  |        ^^^^^^^^^^^
+
+warning: function `lerp_vec3` is never used
+  --> src\utils\math.rs:13:8
+   |
+13 | pub fn lerp_vec3(a: Vec3, b: Vec3, t: f32) -> Vec3 {
+   |        ^^^^^^^^^
+
+warning: function `normalize_angle` is never used
+  --> src\utils\math.rs:17:8
+   |
+17 | pub fn normalize_angle(angle: f32) -> f32 {
+   |        ^^^^^^^^^^^^^^^
+
+warning: function `angle_between_vectors` is never used
+  --> src\utils\math.rs:25:8
+   |
+25 | pub fn angle_between_vectors(a: Vec3, b: Vec3) -> f32 {
+   |        ^^^^^^^^^^^^^^^^^^^^^
+
+warning: `dark-rust` (bin "dark-rust") generated 31 warnings (run `cargo fix --bin "dark-rust"` to apply 7 suggestions)

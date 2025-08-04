@@ -1,0 +1,27 @@
+Begin Object Class=/Script/Engine.AnimMontage Name="LevelStart_Montage" ExportPath=/Script/Engine.AnimMontage'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/LevelStart_Montage.LevelStart_Montage"'
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfo Name="SceneThumbnailInfo_0" ExportPath=/Script/UnrealEd.SceneThumbnailInfo'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/LevelStart_Montage.LevelStart_Montage:SceneThumbnailInfo_0"'
+   End Object
+   Begin Object Class=/Script/Engine.AnimNotify_PlayParticleEffect Name="AnimNotify_PlayParticleEffect_0" ExportPath=/Script/Engine.AnimNotify_PlayParticleEffect'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/LevelStart_Montage.LevelStart_Montage:AnimNotify_PlayParticleEffect_0"'
+   End Object
+   Begin Object Class=/Script/Engine.AnimDataModel Name="AnimDataModel" ExportPath=/Script/Engine.AnimDataModel'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/LevelStart_Montage.LevelStart_Montage:AnimDataModel"'
+   End Object
+   Begin Object Name="SceneThumbnailInfo_0" ExportPath=/Script/UnrealEd.SceneThumbnailInfo'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/LevelStart_Montage.LevelStart_Montage:SceneThumbnailInfo_0"'
+   End Object
+   Begin Object Name="AnimNotify_PlayParticleEffect_0" ExportPath=/Script/Engine.AnimNotify_PlayParticleEffect'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/LevelStart_Montage.LevelStart_Montage:AnimNotify_PlayParticleEffect_0"'
+      SocketName="FX_Heart_Emote"
+   End Object
+   Begin Object Name="AnimDataModel" ExportPath=/Script/Engine.AnimDataModel'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/LevelStart_Montage.LevelStart_Montage:AnimDataModel"'
+      FrameRate=(Numerator=100000)
+      NumberOfFrames=500000
+      NumberOfKeys=500001
+      bPopulated=True
+   End Object
+   CompositeSections(0)=(SectionName="Default",LinkedMontage=/Script/Engine.AnimMontage'"LevelStart_Montage"',SegmentIndex=0,SegmentLength=5.000000,LinkedSequence=/Script/Engine.AnimSequence'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Level_Start.Level_Start"')
+   SlotAnimTracks(0)=(SlotName="UpperBody",AnimTrack=(AnimSegments=((AnimReference=/Script/Engine.AnimSequence'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Level_Start.Level_Start"',AnimEndTime=5.000000))))
+   Notifies(0)=(NotifyName="PlayParticleEffect",Notify=/Script/Engine.AnimNotify_PlayParticleEffect'"AnimNotify_PlayParticleEffect_0"',EndLink=(LinkValue=2.352852),Guid=EC38CC7D4BEF67353F1C08B2956EE1DD,LinkedMontage=/Script/Engine.AnimMontage'"LevelStart_Montage"',SegmentIndex=0,SegmentLength=5.000000,LinkValue=2.352852,LinkedSequence=/Script/Engine.AnimSequence'"/Game/ParagonAurora/Characters/Heroes/Aurora/Animations/Level_Start.Level_Start"')
+   SequenceLength=5.000000
+   AnimNotifyTracks(0)=(TrackName="1",TrackColor=(R=0.500000,G=0.500000,B=0.500000,A=1.000000))
+   DataModelInterface=AnimDataModel'LevelStart_Montage:AnimDataModel'
+   Skeleton=/Script/Engine.Skeleton'"/Game/ParagonAurora/Characters/Heroes/Aurora/Meshes/Aurora_Skeleton.Aurora_Skeleton"'
+   ThumbnailInfo=/Script/UnrealEd.SceneThumbnailInfo'"SceneThumbnailInfo_0"'
+End Object

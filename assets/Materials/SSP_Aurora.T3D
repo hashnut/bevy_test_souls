@@ -1,0 +1,3 @@
+Begin Object Class=/Script/Engine.SubsurfaceProfile Name="SSP_Aurora" ExportPath=/Script/Engine.SubsurfaceProfile'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/SSP_Aurora.SSP_Aurora"'
+   Settings=(SurfaceAlbedo=(R=0.335872,G=0.673753,B=0.906040,A=1.000000),MeanFreePathColor=(R=0.859196,G=0.929242,B=1.000000,A=6.834407),MeanFreePathDistance=0.396271,WorldUnitScale=0.333333,bEnableBurley=True,bEnableMeanFreePath=True,Tint=(R=0.343089,G=0.839086,B=1.000000,A=1.000000),ScatterRadius=800.000000,SubsurfaceColor=(R=0.343089,G=0.839086,B=1.000000,A=1.000000),FalloffColor=(R=0.370675,G=0.743613,B=1.000000,A=1.000000))
+End Object

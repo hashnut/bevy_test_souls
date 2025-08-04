@@ -1,0 +1,26 @@
+{
+  "Aurora": {
+    "idle": "Idle.glb",
+    "walk": "Jog_Fwd.glb",
+    "run": "Jog_Fwd.glb",
+    "walk_combat": "Jog_Fwd_Combat.glb",
+    "roll_forward": "Ability_RMB_Fwd.glb",
+    "roll_backward": "Ability_RMB_Bwd.glb",
+    "roll_left": "Ability_RMB_Left.glb",
+    "roll_right": "Ability_RMB_Right.glb",
+    "jump_start": "Jump_Start.glb",
+    "jump_apex": "Jump_Apex.glb",
+    "jump_land": "Jump_Land.glb",
+    "attack_1": "Primary_Attack_A.glb",
+    "attack_2": "Primary_Attack_B.glb",
+    "attack_3": "Primary_Attack_C.glb",
+    "parry": "HitReact_Front.glb",
+    "death": "Death.glb"
+  },
+  "GreatSword": {
+    "idle": "Great Sword Idle.glb",
+    "walk": "Great Sword Walk.glb",
+    "run": "Great Sword Run.glb",
+    "slash": "Great Sword Slash.glb"
+  }
+}

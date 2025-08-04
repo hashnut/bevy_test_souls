@@ -1,0 +1,27 @@
+[package]
+name = "dark-rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = { version = "0.15", features = ["default", "animation", "bevy_gltf"] }
+bevy_rapier3d = "0.28"
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[dev-dependencies]
+criterion = "0.5"
+
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+lto = true
+panic = "abort"
+codegen-units = 1
+strip = true

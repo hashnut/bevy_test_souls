@@ -1,0 +1,536 @@
+Begin Object Class=/Script/Engine.MaterialFunction Name="MF_Aurora_Sword_FX" ExportPath=/Script/Engine.MaterialFunction'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX"'
+   Begin Object Class=/Script/Engine.MaterialFunctionEditorOnlyData Name="MF_Aurora_Sword_FXEditorOnlyData" ExportPath=/Script/Engine.MaterialFunctionEditorOnlyData'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MF_Aurora_Sword_FXEditorOnlyData"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_2" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_2"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_5" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_5"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_7" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_7"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_8" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_8"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_9" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_9"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionBreakMaterialAttributes Name="MaterialExpressionBreakMaterialAttributes_0" ExportPath=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionClamp Name="MaterialExpressionClamp_1" ExportPath=/Script/Engine.MaterialExpressionClamp'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionClamp_1"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionComponentMask Name="MaterialExpressionComponentMask_5" ExportPath=/Script/Engine.MaterialExpressionComponentMask'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionComponentMask_5"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_2" ExportPath=/Script/Engine.MaterialExpressionConstant'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionConstant_2"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant3Vector Name="MaterialExpressionConstant3Vector_1" ExportPath=/Script/Engine.MaterialExpressionConstant3Vector'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionConstant3Vector_1"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionFloor Name="MaterialExpressionFloor_5" ExportPath=/Script/Engine.MaterialExpressionFloor'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFloor_5"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionFresnel Name="MaterialExpressionFresnel_0" ExportPath=/Script/Engine.MaterialExpressionFresnel'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFresnel_0"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionFunctionInput Name="MaterialExpressionFunctionInput_0" ExportPath=/Script/Engine.MaterialExpressionFunctionInput'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_0"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionFunctionInput Name="MaterialExpressionFunctionInput_1" ExportPath=/Script/Engine.MaterialExpressionFunctionInput'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_1"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionFunctionInput Name="MaterialExpressionFunctionInput_2" ExportPath=/Script/Engine.MaterialExpressionFunctionInput'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_2"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionFunctionOutput Name="MaterialExpressionFunctionOutput_0" ExportPath=/Script/Engine.MaterialExpressionFunctionOutput'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFunctionOutput_0"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionLinearInterpolate Name="MaterialExpressionLinearInterpolate_1" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_1"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionLinearInterpolate Name="MaterialExpressionLinearInterpolate_17" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_17"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionLinearInterpolate Name="MaterialExpressionLinearInterpolate_18" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_18"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionLinearInterpolate Name="MaterialExpressionLinearInterpolate_19" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_19"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionLinearInterpolate Name="MaterialExpressionLinearInterpolate_2" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_2"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionLinearInterpolate Name="MaterialExpressionLinearInterpolate_3" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_3"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionLinearInterpolate Name="MaterialExpressionLinearInterpolate_8" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_8"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMakeMaterialAttributes Name="MaterialExpressionMakeMaterialAttributes_2" ExportPath=/Script/Engine.MaterialExpressionMakeMaterialAttributes'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMakeMaterialAttributes_2"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMaterialFunctionCall Name="MaterialExpressionMaterialFunctionCall_0" ExportPath=/Script/Engine.MaterialExpressionMaterialFunctionCall'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMaterialFunctionCall_0"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMaterialFunctionCall Name="MaterialExpressionMaterialFunctionCall_16" ExportPath=/Script/Engine.MaterialExpressionMaterialFunctionCall'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMaterialFunctionCall_16"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_16" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_16"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_17" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_17"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_18" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_18"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_19" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_19"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_20" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_20"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_21" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_21"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_22" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_22"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_24" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_24"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_3" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_3"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_5" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_5"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionOneMinus Name="MaterialExpressionOneMinus_0" ExportPath=/Script/Engine.MaterialExpressionOneMinus'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionOneMinus_0"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionOneMinus Name="MaterialExpressionOneMinus_2" ExportPath=/Script/Engine.MaterialExpressionOneMinus'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionOneMinus_2"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionOneMinus Name="MaterialExpressionOneMinus_4" ExportPath=/Script/Engine.MaterialExpressionOneMinus'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionOneMinus_4"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionPower Name="MaterialExpressionPower_0" ExportPath=/Script/Engine.MaterialExpressionPower'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionPower_0"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_10" ExportPath=/Script/Engine.MaterialExpressionScalarParameter'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_10"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_13" ExportPath=/Script/Engine.MaterialExpressionScalarParameter'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_13"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureCoordinate Name="MaterialExpressionTextureCoordinate_5" ExportPath=/Script/Engine.MaterialExpressionTextureCoordinate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionTextureCoordinate_5"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_3" ExportPath=/Script/Engine.MaterialExpressionTextureSample'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionTextureSample_3"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionVectorParameter Name="MaterialExpressionVectorParameter_4" ExportPath=/Script/Engine.MaterialExpressionVectorParameter'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionVectorParameter_4"'
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionVertexNormalWS Name="MaterialExpressionVertexNormalWS_5" ExportPath=/Script/Engine.MaterialExpressionVertexNormalWS'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionVertexNormalWS_5"'
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0" ExportPath=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:SceneThumbnailInfoWithPrimitive_0"'
+   End Object
+   Begin Object Class=/Script/Engine.Material Name="Material_0" ExportPath=/Script/Engine.Material'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:Material_0"'
+      Begin Object Class=/Script/Engine.MaterialEditorOnlyData Name="Material_0EditorOnlyData" ExportPath=/Script/Engine.MaterialEditorOnlyData'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:Material_0.Material_0EditorOnlyData"'
+      End Object
+   End Object
+   Begin Object Name="MF_Aurora_Sword_FXEditorOnlyData" ExportPath=/Script/Engine.MaterialFunctionEditorOnlyData'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MF_Aurora_Sword_FXEditorOnlyData"'
+      ExpressionCollection=(Expressions=(/Script/Engine.MaterialExpressionFunctionOutput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionOutput_0"',/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_10"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_17"',/Script/Engine.MaterialExpressionVertexNormalWS'"MF_Aurora_Sword_FX:MaterialExpressionVertexNormalWS_5"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_16"',/Script/Engine.MaterialExpressionFloor'"MF_Aurora_Sword_FX:MaterialExpressionFloor_5"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_5"',/Script/Engine.MaterialExpressionComponentMask'"MF_Aurora_Sword_FX:MaterialExpressionComponentMask_5"',/Script/Engine.MaterialExpressionTextureCoordinate'"MF_Aurora_Sword_FX:MaterialExpressionTextureCoordinate_5"',/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_0"',/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',/Script/Engine.MaterialExpressionMakeMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionMakeMaterialAttributes_2"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_17"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_7"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_18"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_18"',/Script/Engine.MaterialExpressionConstant3Vector'"MF_Aurora_Sword_FX:MaterialExpressionConstant3Vector_1"',/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_1"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_19"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_19"',/Script/Engine.MaterialExpressionMaterialFunctionCall'"MF_Aurora_Sword_FX:MaterialExpressionMaterialFunctionCall_16"',/Script/Engine.MaterialExpressionVectorParameter'"MF_Aurora_Sword_FX:MaterialExpressionVectorParameter_4"',/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_13"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_8"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_20"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_9"',/Script/Engine.MaterialExpressionFresnel'"MF_Aurora_Sword_FX:MaterialExpressionFresnel_0"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_21"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_22"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_24"',/Script/Engine.MaterialExpressionOneMinus'"MF_Aurora_Sword_FX:MaterialExpressionOneMinus_0"',/Script/Engine.MaterialExpressionPower'"MF_Aurora_Sword_FX:MaterialExpressionPower_0"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_3"',/Script/Engine.MaterialExpressionOneMinus'"MF_Aurora_Sword_FX:MaterialExpressionOneMinus_2"',/Script/Engine.MaterialExpressionMaterialFunctionCall'"MF_Aurora_Sword_FX:MaterialExpressionMaterialFunctionCall_0"',/Script/Engine.MaterialExpressionTextureSample'"MF_Aurora_Sword_FX:MaterialExpressionTextureSample_3"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_1"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_2"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_2"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_3"',/Script/Engine.MaterialExpressionClamp'"MF_Aurora_Sword_FX:MaterialExpressionClamp_1"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_5"',/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_2"',/Script/Engine.MaterialExpressionOneMinus'"MF_Aurora_Sword_FX:MaterialExpressionOneMinus_4"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_8"',/Script/Engine.MaterialExpressionConstant'"MF_Aurora_Sword_FX:MaterialExpressionConstant_2"'))
+   End Object
+   Begin Object Name="MaterialExpressionAdd_2" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_2"'
+      A=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_5"')
+      B=(Expression=/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_13"')
+      MaterialExpressionEditorX=-1024
+      MaterialExpressionEditorY=912
+      MaterialExpressionGuid=17627B5A41E9E3F3A7310690D415DDE1
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionAdd_5" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_5"'
+      A=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_16"')
+      B=(Expression=/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_19"')
+      MaterialExpressionEditorX=-1648
+      MaterialExpressionEditorY=608
+      MaterialExpressionGuid=2A3FE859454008624D8AE18435ECE6F7
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionAdd_7" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_7"'
+      A=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=10,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_19"')
+      MaterialExpressionEditorX=-464
+      MaterialExpressionEditorY=144
+      MaterialExpressionGuid=A6D66CA847CAB62F15D5B4983831F8FF
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionAdd_8" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_8"'
+      A=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=5,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_21"')
+      MaterialExpressionEditorX=-384
+      MaterialExpressionEditorY=800
+      MaterialExpressionGuid=9724498D4ABD886F28F8EBB397177A93
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      Desc="Emissive color"
+      bCommentBubbleVisible=True
+   End Object
+   Begin Object Name="MaterialExpressionAdd_9" ExportPath=/Script/Engine.MaterialExpressionAdd'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionAdd_9"'
+      A=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_21"')
+      MaterialExpressionEditorX=-592
+      MaterialExpressionEditorY=448
+      MaterialExpressionGuid=3BAABD204652C730E514378DB0C51ECB
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionBreakMaterialAttributes_0" ExportPath=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"'
+      MaterialAttributes=(Expression=/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_0"')
+      MaterialExpressionEditorX=-1392
+      MaterialExpressionEditorY=-304
+      MaterialExpressionGuid=D8A01328438DBE90AC9CBD8314AF2B9A
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionClamp_1" ExportPath=/Script/Engine.MaterialExpressionClamp'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionClamp_1"'
+      Input=(Expression=/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_3"')
+      MaxDefault=5.000000
+      MaterialExpressionEditorX=-1392
+      MaterialExpressionEditorY=448
+      MaterialExpressionGuid=D9E274A344D6FAE24439B48D03B4477E
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionComponentMask_5" ExportPath=/Script/Engine.MaterialExpressionComponentMask'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionComponentMask_5"'
+      Input=(Expression=/Script/Engine.MaterialExpressionTextureCoordinate'"MF_Aurora_Sword_FX:MaterialExpressionTextureCoordinate_5"')
+      R=True
+      MaterialExpressionEditorX=-2832
+      MaterialExpressionEditorY=432
+      MaterialExpressionGuid=089094214730890370D25B85BF371780
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      bCollapsed=False
+   End Object
+   Begin Object Name="MaterialExpressionConstant_2" ExportPath=/Script/Engine.MaterialExpressionConstant'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionConstant_2"'
+      MaterialExpressionEditorX=-3163
+      MaterialExpressionEditorY=694
+      MaterialExpressionGuid=217B7CA343B2989E5A231DBB3798FBFF
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant3Vector_1" ExportPath=/Script/Engine.MaterialExpressionConstant3Vector'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionConstant3Vector_1"'
+      Constant=(R=0.000000,G=0.000000,B=1.000000,A=0.000000)
+      MaterialExpressionEditorX=-672
+      MaterialExpressionEditorY=-112
+      MaterialExpressionGuid=93B6FF9548AFE01F31468A80EDF58B69
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      bCollapsed=True
+   End Object
+   Begin Object Name="MaterialExpressionFloor_5" ExportPath=/Script/Engine.MaterialExpressionFloor'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFloor_5"'
+      Input=(Expression=/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_5"')
+      MaterialExpressionEditorX=-1040
+      MaterialExpressionEditorY=496
+      MaterialExpressionGuid=ECD940214F1A5854310B0CBA794B4292
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      Desc="Opacity mask"
+      bCommentBubbleVisible=True
+   End Object
+   Begin Object Name="MaterialExpressionFresnel_0" ExportPath=/Script/Engine.MaterialExpressionFresnel'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFresnel_0"'
+      Exponent=0.050000
+      BaseReflectFraction=0.000000
+      MaterialExpressionEditorX=-2112
+      MaterialExpressionEditorY=1392
+      MaterialExpressionGuid=CFC7E1344748DF4B3FC27E8BA3E390BE
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionInput_0" ExportPath=/Script/Engine.MaterialExpressionFunctionInput'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_0"'
+      Preview=(Expression=/Script/Engine.MaterialExpressionMaterialFunctionCall'"MF_Aurora_Sword_FX:MaterialExpressionMaterialFunctionCall_16"')
+      InputName="Material"
+      Id=D654C1504DC78FAF78A5DBAD4E910D05
+      InputType=FunctionInput_MaterialAttributes
+      MaterialExpressionEditorX=-1744
+      MaterialExpressionEditorY=-304
+      MaterialExpressionGuid=DFF9761F4BD8FD6D05265D98907F086B
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionInput_1" ExportPath=/Script/Engine.MaterialExpressionFunctionInput'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_1"'
+      Preview=(Expression=/Script/Engine.MaterialExpressionTextureSample'"MF_Aurora_Sword_FX:MaterialExpressionTextureSample_3"',OutputIndex=2,Mask=1,MaskG=1)
+      InputName="GrowthMask"
+      Id=49C8B592427CC4CAB1CDCEB91CB81A6D
+      InputType=FunctionInput_Scalar
+      bUsePreviewValueAsDefault=True
+      SortPriority=1
+      MaterialExpressionEditorX=-2896
+      MaterialExpressionEditorY=928
+      MaterialExpressionGuid=9E5CED51404691B8A2BAD38451676EF1
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionInput_2" ExportPath=/Script/Engine.MaterialExpressionFunctionInput'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_2"'
+      Preview=(Expression=/Script/Engine.MaterialExpressionConstant'"MF_Aurora_Sword_FX:MaterialExpressionConstant_2"')
+      InputName="FlipGradient"
+      Id=1580C529412873D9256AA194984F5487
+      InputType=FunctionInput_Scalar
+      bUsePreviewValueAsDefault=True
+      SortPriority=2
+      MaterialExpressionEditorX=-3072
+      MaterialExpressionEditorY=688
+      MaterialExpressionGuid=09E5FC714CA5E224765DD796CA9841D6
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionFunctionOutput_0" ExportPath=/Script/Engine.MaterialExpressionFunctionOutput'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionFunctionOutput_0"'
+      A=(Expression=/Script/Engine.MaterialExpressionMakeMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionMakeMaterialAttributes_2"')
+      bLastPreviewed=True
+      Id=104FC7A54F08E9FA578154854F9BD209
+      MaterialExpressionEditorX=304
+      MaterialExpressionEditorY=-304
+      MaterialExpressionGuid=FCB9E5874197B89F9E1CC49182699DE7
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionLinearInterpolate_1" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_1"'
+      Alpha=(Expression=/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_1"')
+      ConstA=0.750000
+      MaterialExpressionEditorX=-2448
+      MaterialExpressionEditorY=816
+      MaterialExpressionGuid=A927FF5347B12C0C512B8A89C6F00A24
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionLinearInterpolate_17" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_17"'
+      A=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=3,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(OutputIndex=3,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      Alpha=(Expression=/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_10"')
+      ConstB=0.000000
+      MaterialExpressionEditorX=-736
+      MaterialExpressionEditorY=-224
+      MaterialExpressionGuid=8B5CE4C5431F9C8E26D303B7234AFECC
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      Desc="Lower roughness"
+      bCommentBubbleVisible=True
+   End Object
+   Begin Object Name="MaterialExpressionLinearInterpolate_18" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_18"'
+      A=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=8,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=/Script/Engine.MaterialExpressionConstant3Vector'"MF_Aurora_Sword_FX:MaterialExpressionConstant3Vector_1"')
+      Alpha=(Expression=/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_10"')
+      MaterialExpressionEditorX=-576
+      MaterialExpressionEditorY=-128
+      MaterialExpressionGuid=204E0F184C24498BA74487ADD0743DC9
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      Desc="Blend out normal"
+      bCommentBubbleVisible=True
+   End Object
+   Begin Object Name="MaterialExpressionLinearInterpolate_19" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_19"'
+      Alpha=(Expression=/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_10"')
+      ConstA=1.160000
+      ConstB=0.000000
+      MaterialExpressionEditorX=-1776
+      MaterialExpressionEditorY=656
+      MaterialExpressionGuid=29807D974402EAC33AD777A1879A6DE6
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionLinearInterpolate_2" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_2"'
+      A=(Expression=/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_10"')
+      Alpha=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_3"')
+      MaterialExpressionEditorX=-1424
+      MaterialExpressionEditorY=1264
+      MaterialExpressionGuid=7578C57949414AE7C7D8BC9485CA0239
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionLinearInterpolate_3" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_3"'
+      Alpha=(Expression=/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_5"')
+      ConstA=5.000000
+      ConstB=0.500000
+      MaterialExpressionEditorX=-1520
+      MaterialExpressionEditorY=448
+      MaterialExpressionGuid=F0EDB34A4325C431BEBFDAB09703DF6E
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionLinearInterpolate_8" ExportPath=/Script/Engine.MaterialExpressionLinearInterpolate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_8"'
+      A=(Expression=/Script/Engine.MaterialExpressionComponentMask'"MF_Aurora_Sword_FX:MaterialExpressionComponentMask_5"')
+      B=(Expression=/Script/Engine.MaterialExpressionOneMinus'"MF_Aurora_Sword_FX:MaterialExpressionOneMinus_4"')
+      Alpha=(Expression=/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_2"')
+      MaterialExpressionEditorX=-2544
+      MaterialExpressionEditorY=640
+      MaterialExpressionGuid=74D9C8514C667BB2FB204FB0E52EBC5F
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionMakeMaterialAttributes_2" ExportPath=/Script/Engine.MaterialExpressionMakeMaterialAttributes'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMakeMaterialAttributes_2"'
+      BaseColor=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      Metallic=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=1,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      Specular=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=2,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      Roughness=(Expression=/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_17"')
+      EmissiveColor=(Expression=/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_8"')
+      Opacity=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=6,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      OpacityMask=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_18"')
+      Normal=(Expression=/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_18"')
+      WorldPositionOffset=(Expression=/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_7"')
+      SubsurfaceColor=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_20"')
+      ClearCoat=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=12,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      ClearCoatRoughness=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=13,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      AmbientOcclusion=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=14,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      Refraction=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=15,Mask=1,MaskR=1,MaskG=1)
+      CustomizedUVs(0)=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=16,Mask=1,MaskR=1,MaskG=1)
+      PixelDepthOffset=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=24,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      MaterialExpressionEditorX=-16
+      MaterialExpressionEditorY=-304
+      MaterialExpressionGuid=44BDC6004875396CD8A999B42360BC63
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionMaterialFunctionCall_0" ExportPath=/Script/Engine.MaterialExpressionMaterialFunctionCall'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMaterialFunctionCall_0"'
+      MaterialFunction=/Script/Engine.MaterialFunction'"/Engine/Functions/Engine_MaterialFunctions02/Utility/DebugTimeSine.DebugTimeSine"'
+      FunctionInputs(0)=(ExpressionInputId=B9000E2C4113026008A1B8A9C95D80FE,Input=(OutputIndex=-1,InputName="Speed"))
+      FunctionOutputs(0)=(ExpressionOutputId=1764AB1D466DDA5DAAC3698A95DF4D12,Output=(OutputName="Result"))
+      MaterialExpressionEditorX=-1984
+      MaterialExpressionEditorY=928
+      MaterialExpressionGuid=526689EB4DF1691506D58FB148AC1787
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      Outputs(0)=(OutputName="Result")
+   End Object
+   Begin Object Name="MaterialExpressionMaterialFunctionCall_16" ExportPath=/Script/Engine.MaterialExpressionMaterialFunctionCall'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMaterialFunctionCall_16"'
+      MaterialFunction=/Script/Engine.MaterialFunction'"/Game/ParagonAurora/Characters/Global/MaterialLayers/ML__Blank.ML__Blank"'
+      FunctionInputs(0)=(ExpressionInputId=3CAC80794EA633328006D9B022F07D01,Input=(OutputIndex=-1,InputName="Tint"))
+      FunctionInputs(1)=(ExpressionInputId=D40B871847FBFD2DDB7F92B403FA8C31,Input=(OutputIndex=-1,InputName="Tiling"))
+      FunctionInputs(2)=(ExpressionInputId=A0FE35B540C4FA57B3CE36B7B7B616AD,Input=(OutputIndex=-1,InputName="Scratches"))
+      FunctionInputs(3)=(ExpressionInputId=3EEB7EB04F170B1EDA9A56BA72A51918,Input=(OutputIndex=-1,InputName="Grime"))
+      FunctionOutputs(0)=(ExpressionOutputId=2CDB93144651310CC53D8C8EF02786B1,Output=(OutputName="MaterialAttributes"))
+      MaterialExpressionEditorX=-2000
+      MaterialExpressionEditorY=-304
+      MaterialExpressionGuid=3BEAE4094DD4D4CA7DBBF7A5C184FC21
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      Outputs(0)=(OutputName="MaterialAttributes")
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_16" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_16"'
+      A=(Expression=/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_8"')
+      B=(Expression=/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_1"')
+      MaterialExpressionEditorX=-2160
+      MaterialExpressionEditorY=624
+      MaterialExpressionGuid=16362D854F7BE6C7C72E01A74D1B77F3
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      bCollapsed=False
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_17" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_17"'
+      A=(Expression=/Script/Engine.MaterialExpressionVertexNormalWS'"MF_Aurora_Sword_FX:MaterialExpressionVertexNormalWS_5"')
+      ConstB=-0.700000
+      MaterialExpressionEditorX=-1504
+      MaterialExpressionEditorY=912
+      MaterialExpressionGuid=26CB8E9B4D54CDB25C2CDEA2877CFD2D
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_18" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_18"'
+      A=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=7,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=/Script/Engine.MaterialExpressionFloor'"MF_Aurora_Sword_FX:MaterialExpressionFloor_5"')
+      MaterialExpressionEditorX=-464
+      MaterialExpressionEditorY=-16
+      MaterialExpressionGuid=59F79B584319CC95B1DD1BB4245A2E39
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_19" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_19"'
+      A=(Expression=/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_10"')
+      B=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_17"')
+      MaterialExpressionEditorX=-1328
+      MaterialExpressionEditorY=864
+      MaterialExpressionGuid=075AE491490CE63C80A7BAAD79F83066
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      Desc="WPO shrink"
+      bCommentBubbleVisible=True
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_20" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_20"'
+      A=(Expression=/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',OutputIndex=11,Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_9"')
+      MaterialExpressionEditorX=-496
+      MaterialExpressionEditorY=400
+      MaterialExpressionGuid=612CAE574EC9E8B9C8876082F125B8DC
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      Desc="Add to subsurface color"
+      bCommentBubbleVisible=True
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_21" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_21"'
+      A=(Expression=/Script/Engine.MaterialExpressionVectorParameter'"MF_Aurora_Sword_FX:MaterialExpressionVectorParameter_4"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_22"')
+      MaterialExpressionEditorX=-656
+      MaterialExpressionEditorY=928
+      MaterialExpressionGuid=16EC4FE84FCB1569B94B83B47734BF90
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_22" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_22"'
+      A=(Expression=/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_2"')
+      B=(Expression=/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_2"')
+      MaterialExpressionEditorX=-880
+      MaterialExpressionEditorY=1072
+      MaterialExpressionGuid=D7EE3282463CE1EE2D373FA5D3C2EC5B
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_24" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_24"'
+      A=(Expression=/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_1"')
+      B=(Expression=/Script/Engine.MaterialExpressionFresnel'"MF_Aurora_Sword_FX:MaterialExpressionFresnel_0"')
+      MaterialExpressionEditorX=-1888
+      MaterialExpressionEditorY=1360
+      MaterialExpressionGuid=F0FDD1B149BD667265BAD28C3DE8C6E7
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_3" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_3"'
+      A=(Expression=/Script/Engine.MaterialExpressionPower'"MF_Aurora_Sword_FX:MaterialExpressionPower_0"')
+      B=(Expression=/Script/Engine.MaterialExpressionOneMinus'"MF_Aurora_Sword_FX:MaterialExpressionOneMinus_0"')
+      MaterialExpressionEditorX=-1600
+      MaterialExpressionEditorY=1312
+      MaterialExpressionGuid=E747F2E240BC9FD2DDE204B95DFC8608
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_5" ExportPath=/Script/Engine.MaterialExpressionMultiply'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionMultiply_5"'
+      A=(Expression=/Script/Engine.MaterialExpressionClamp'"MF_Aurora_Sword_FX:MaterialExpressionClamp_1"')
+      ConstB=5.000000
+      MaterialExpressionEditorX=-1152
+      MaterialExpressionEditorY=720
+      MaterialExpressionGuid=7529356140EF54D0E9783597D200985D
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+      Desc="Add sword fade emissive"
+      bCommentBubbleVisible=True
+   End Object
+   Begin Object Name="MaterialExpressionOneMinus_0" ExportPath=/Script/Engine.MaterialExpressionOneMinus'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionOneMinus_0"'
+      Input=(Expression=/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_24"')
+      MaterialExpressionEditorX=-1760
+      MaterialExpressionEditorY=1360
+      MaterialExpressionGuid=5F727B9644BAC04EBAAE1E8FCEC6521B
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionOneMinus_2" ExportPath=/Script/Engine.MaterialExpressionOneMinus'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionOneMinus_2"'
+      Input=(Expression=/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_8"')
+      MaterialExpressionEditorX=-2000
+      MaterialExpressionEditorY=1264
+      MaterialExpressionGuid=786F9CBE48C15AF12AC31F9C18612475
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionOneMinus_4" ExportPath=/Script/Engine.MaterialExpressionOneMinus'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionOneMinus_4"'
+      Input=(Expression=/Script/Engine.MaterialExpressionComponentMask'"MF_Aurora_Sword_FX:MaterialExpressionComponentMask_5"')
+      MaterialExpressionEditorX=-2688
+      MaterialExpressionEditorY=656
+      MaterialExpressionGuid=FAE68CBE4D380F587E47A5AF88324E8C
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionPower_0" ExportPath=/Script/Engine.MaterialExpressionPower'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionPower_0"'
+      Base=(Expression=/Script/Engine.MaterialExpressionOneMinus'"MF_Aurora_Sword_FX:MaterialExpressionOneMinus_2"')
+      MaterialExpressionEditorX=-1904
+      MaterialExpressionEditorY=1264
+      MaterialExpressionGuid=380AA13F442EEE03BE6199A8C477D357
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_10" ExportPath=/Script/Engine.MaterialExpressionScalarParameter'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_10"'
+      ParameterName="Ice_Effect_SwordFadeOut"
+      ExpressionGUID=CB693DC54AF3847D751B6DA339BF4DD8
+      MaterialExpressionEditorX=-1984
+      MaterialExpressionEditorY=768
+      MaterialExpressionGuid=725B914642DD3484E34CA9B8DD647D2C
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_13" ExportPath=/Script/Engine.MaterialExpressionScalarParameter'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_13"'
+      ParameterName="Ice_Effect_SwordGlow"
+      ExpressionGUID=A0DA49C44E202C69D1436A9113FA0C99
+      MaterialExpressionEditorX=-1248
+      MaterialExpressionEditorY=992
+      MaterialExpressionGuid=4FFE191C4DB0ED7509E54FA8AE423DC1
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureCoordinate_5" ExportPath=/Script/Engine.MaterialExpressionTextureCoordinate'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionTextureCoordinate_5"'
+      MaterialExpressionEditorX=-3184
+      MaterialExpressionEditorY=432
+      MaterialExpressionGuid=26D930774DD1BA529D607185FB66A707
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_3" ExportPath=/Script/Engine.MaterialExpressionTextureSample'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionTextureSample_3"'
+      Texture=/Script/Engine.Texture2D'"/Game/ParagonAurora/Characters/Heroes/Aurora/Textures/T_Aurora_Body_RGB.T_Aurora_Body_RGB"'
+      SamplerType=SAMPLERTYPE_LinearColor
+      MaterialExpressionEditorX=-3120
+      MaterialExpressionEditorY=880
+      MaterialExpressionGuid=EB15AB5E4C1B0622E245B99C217C09D9
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionVectorParameter_4" ExportPath=/Script/Engine.MaterialExpressionVectorParameter'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionVectorParameter_4"'
+      DefaultValue=(R=1.039998,G=6.439157,B=16.000000,A=1.000000)
+      ParameterName="InnerSwordGlow"
+      ExpressionGUID=7005EE7B4E1C7831C20F6EB3D615FA52
+      MaterialExpressionEditorX=-880
+      MaterialExpressionEditorY=832
+      MaterialExpressionGuid=026DA3934553A5C934D004A84B0E32E6
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="MaterialExpressionVertexNormalWS_5" ExportPath=/Script/Engine.MaterialExpressionVertexNormalWS'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:MaterialExpressionVertexNormalWS_5"'
+      MaterialExpressionEditorX=-1664
+      MaterialExpressionEditorY=912
+      MaterialExpressionGuid=8FE1EDC9498CEC91C926898E0242C0F7
+      Function=/Script/Engine.MaterialFunction'"MF_Aurora_Sword_FX"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0" ExportPath=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:SceneThumbnailInfoWithPrimitive_0"'
+   End Object
+   Begin Object Name="Material_0" ExportPath=/Script/Engine.Material'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:Material_0"'
+      Begin Object Name="Material_0EditorOnlyData" ExportPath=/Script/Engine.MaterialEditorOnlyData'"/Game/ParagonAurora/Characters/Heroes/Aurora/Materials/MF_Aurora_Sword_FX.MF_Aurora_Sword_FX:Material_0.Material_0EditorOnlyData"'
+         MaterialAttributes=(Expression=/Script/Engine.MaterialExpressionFunctionOutput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionOutput_0"')
+         ExpressionCollection=(Expressions=(/Script/Engine.MaterialExpressionFunctionOutput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionOutput_0"',/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_10"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_17"',/Script/Engine.MaterialExpressionVertexNormalWS'"MF_Aurora_Sword_FX:MaterialExpressionVertexNormalWS_5"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_16"',/Script/Engine.MaterialExpressionFloor'"MF_Aurora_Sword_FX:MaterialExpressionFloor_5"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_5"',/Script/Engine.MaterialExpressionComponentMask'"MF_Aurora_Sword_FX:MaterialExpressionComponentMask_5"',/Script/Engine.MaterialExpressionTextureCoordinate'"MF_Aurora_Sword_FX:MaterialExpressionTextureCoordinate_5"',/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_0"',/Script/Engine.MaterialExpressionBreakMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionBreakMaterialAttributes_0"',/Script/Engine.MaterialExpressionMakeMaterialAttributes'"MF_Aurora_Sword_FX:MaterialExpressionMakeMaterialAttributes_2"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_17"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_7"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_18"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_18"',/Script/Engine.MaterialExpressionConstant3Vector'"MF_Aurora_Sword_FX:MaterialExpressionConstant3Vector_1"',/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_1"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_19"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_19"',/Script/Engine.MaterialExpressionMaterialFunctionCall'"MF_Aurora_Sword_FX:MaterialExpressionMaterialFunctionCall_16"',/Script/Engine.MaterialExpressionVectorParameter'"MF_Aurora_Sword_FX:MaterialExpressionVectorParameter_4"',/Script/Engine.MaterialExpressionScalarParameter'"MF_Aurora_Sword_FX:MaterialExpressionScalarParameter_13"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_8"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_20"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_9"',/Script/Engine.MaterialExpressionFresnel'"MF_Aurora_Sword_FX:MaterialExpressionFresnel_0"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_21"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_22"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_24"',/Script/Engine.MaterialExpressionOneMinus'"MF_Aurora_Sword_FX:MaterialExpressionOneMinus_0"',/Script/Engine.MaterialExpressionPower'"MF_Aurora_Sword_FX:MaterialExpressionPower_0"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_3"',/Script/Engine.MaterialExpressionOneMinus'"MF_Aurora_Sword_FX:MaterialExpressionOneMinus_2"',/Script/Engine.MaterialExpressionMaterialFunctionCall'"MF_Aurora_Sword_FX:MaterialExpressionMaterialFunctionCall_0"',/Script/Engine.MaterialExpressionTextureSample'"MF_Aurora_Sword_FX:MaterialExpressionTextureSample_3"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_1"',/Script/Engine.MaterialExpressionAdd'"MF_Aurora_Sword_FX:MaterialExpressionAdd_2"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_2"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_3"',/Script/Engine.MaterialExpressionClamp'"MF_Aurora_Sword_FX:MaterialExpressionClamp_1"',/Script/Engine.MaterialExpressionMultiply'"MF_Aurora_Sword_FX:MaterialExpressionMultiply_5"',/Script/Engine.MaterialExpressionFunctionInput'"MF_Aurora_Sword_FX:MaterialExpressionFunctionInput_2"',/Script/Engine.MaterialExpressionOneMinus'"MF_Aurora_Sword_FX:MaterialExpressionOneMinus_4"',/Script/Engine.MaterialExpressionLinearInterpolate'"MF_Aurora_Sword_FX:MaterialExpressionLinearInterpolate_8"',/Script/Engine.MaterialExpressionConstant'"MF_Aurora_Sword_FX:MaterialExpressionConstant_2"'))
+      End Object
+      bUseMaterialAttributes=True
+      StateId=45076D264C925C9831D02AA102C2F900
+      ReferencedTextureGuids(0)=634BD5984E08509323D259B7FB43DEEA
+      EditorOnlyData=/Script/Engine.MaterialEditorOnlyData'"Material_0EditorOnlyData"'
+      ThumbnailInfo=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive'"MF_Aurora_Sword_FX:SceneThumbnailInfoWithPrimitive_0"'
+      LightingGuid=CF139EA24708E3446863CBA40F59A530
+   End Object
+   DependentFunctionExpressionCandidates(0)=/Script/Engine.MaterialExpressionMaterialFunctionCall'"MaterialExpressionMaterialFunctionCall_16"'
+   DependentFunctionExpressionCandidates(1)=/Script/Engine.MaterialExpressionMaterialFunctionCall'"MaterialExpressionMaterialFunctionCall_0"'
+   EditorOnlyData=/Script/Engine.MaterialFunctionEditorOnlyData'"MF_Aurora_Sword_FXEditorOnlyData"'
+   StateId=CF7B5E924046A41BEED714807DB9F764
+   CombinedInputTypes=271
+   CombinedOutputTypes=256
+   ThumbnailInfo=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_0"'
+End Object
