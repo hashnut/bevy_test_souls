@@ -61,7 +61,8 @@
       "Bash(dir assetsAnimations_GLTFAurora*Idle*.glb assetsAnimations_GLTFAurora*Jog*.glb assetsAnimations_GLTFAurora*Primary*.glb /B)",
       "Bash(ls)",
       "Bash(powershell -ExecutionPolicy Bypass -File convert_with_blender.ps1 -BlenderPath \"C:\\Program Files\\Blender Foundation\\Blender 4.5\\blender.exe\" -SkipExisting)",
-      "Bash(./target/debug/dark-rust.exe)"
+      "Bash(./target/debug/dark-rust.exe)",
+      "Bash(timeout 15 cargo run)"
     ],
     "deny": []
   },

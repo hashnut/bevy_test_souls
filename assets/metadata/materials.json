@@ -1,0 +1,186 @@
+{
+  "materials": [
+    {
+      "material_id": "terrain_rock",
+      "display_name": "Rocky Terrain",
+      "base_color": [0.4, 0.35, 0.3, 1.0],
+      "metallic": 0.0,
+      "roughness": 0.9,
+      "texture_paths": {
+        "diffuse": "textures/terrain/rock_diffuse.png",
+        "normal": "textures/terrain/rock_normal.png",
+        "metallic_roughness": "textures/terrain/rock_metallic_roughness.png",
+        "ambient_occlusion": "textures/terrain/rock_ao.png",
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "terrain_grass",
+      "display_name": "Grass Terrain",
+      "base_color": [0.2, 0.4, 0.15, 1.0],
+      "metallic": 0.0,
+      "roughness": 0.8,
+      "texture_paths": {
+        "diffuse": "textures/terrain/grass_diffuse.png",
+        "normal": "textures/terrain/grass_normal.png",
+        "metallic_roughness": "textures/terrain/grass_metallic_roughness.png",
+        "ambient_occlusion": null,
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "crystal_blue",
+      "display_name": "Blue Crystal",
+      "base_color": [0.2, 0.4, 0.8, 0.7],
+      "metallic": 0.0,
+      "roughness": 0.1,
+      "texture_paths": {
+        "diffuse": "textures/crystal/crystal_blue_diffuse.png",
+        "normal": "textures/crystal/crystal_normal.png",
+        "metallic_roughness": null,
+        "ambient_occlusion": null,
+        "emissive": "textures/crystal/crystal_blue_emissive.png"
+      }
+    },
+    {
+      "material_id": "crystal_purple",
+      "display_name": "Purple Crystal",
+      "base_color": [0.6, 0.2, 0.8, 0.7],
+      "metallic": 0.0,
+      "roughness": 0.1,
+      "texture_paths": {
+        "diffuse": "textures/crystal/crystal_purple_diffuse.png",
+        "normal": "textures/crystal/crystal_normal.png",
+        "metallic_roughness": null,
+        "ambient_occlusion": null,
+        "emissive": "textures/crystal/crystal_purple_emissive.png"
+      }
+    },
+    {
+      "material_id": "stone_brick",
+      "display_name": "Stone Brick",
+      "base_color": [0.5, 0.45, 0.4, 1.0],
+      "metallic": 0.0,
+      "roughness": 0.7,
+      "texture_paths": {
+        "diffuse": "textures/building/stone_brick_diffuse.png",
+        "normal": "textures/building/stone_brick_normal.png",
+        "metallic_roughness": "textures/building/stone_brick_metallic_roughness.png",
+        "ambient_occlusion": "textures/building/stone_brick_ao.png",
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "stone_brick_weathered",
+      "display_name": "Weathered Stone Brick",
+      "base_color": [0.4, 0.38, 0.35, 1.0],
+      "metallic": 0.0,
+      "roughness": 0.85,
+      "texture_paths": {
+        "diffuse": "textures/building/stone_brick_weathered_diffuse.png",
+        "normal": "textures/building/stone_brick_weathered_normal.png",
+        "metallic_roughness": "textures/building/stone_brick_weathered_metallic_roughness.png",
+        "ambient_occlusion": "textures/building/stone_brick_weathered_ao.png",
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "stone_dark",
+      "display_name": "Dark Stone",
+      "base_color": [0.2, 0.18, 0.16, 1.0],
+      "metallic": 0.0,
+      "roughness": 0.8,
+      "texture_paths": {
+        "diffuse": "textures/building/stone_dark_diffuse.png",
+        "normal": "textures/building/stone_dark_normal.png",
+        "metallic_roughness": "textures/building/stone_dark_metallic_roughness.png",
+        "ambient_occlusion": "textures/building/stone_dark_ao.png",
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "stone_fortress",
+      "display_name": "Fortress Stone",
+      "base_color": [0.6, 0.55, 0.5, 1.0],
+      "metallic": 0.0,
+      "roughness": 0.6,
+      "texture_paths": {
+        "diffuse": "textures/building/stone_fortress_diffuse.png",
+        "normal": "textures/building/stone_fortress_normal.png",
+        "metallic_roughness": "textures/building/stone_fortress_metallic_roughness.png",
+        "ambient_occlusion": "textures/building/stone_fortress_ao.png",
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "gold_ornate",
+      "display_name": "Ornate Gold",
+      "base_color": [0.9, 0.7, 0.3, 1.0],
+      "metallic": 1.0,
+      "roughness": 0.3,
+      "texture_paths": {
+        "diffuse": "textures/building/gold_ornate_diffuse.png",
+        "normal": "textures/building/gold_ornate_normal.png",
+        "metallic_roughness": "textures/building/gold_ornate_metallic_roughness.png",
+        "ambient_occlusion": null,
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "water_murky",
+      "display_name": "Murky Water",
+      "base_color": [0.1, 0.2, 0.25, 0.8],
+      "metallic": 0.0,
+      "roughness": 0.0,
+      "texture_paths": {
+        "diffuse": null,
+        "normal": "textures/water/water_normal.png",
+        "metallic_roughness": null,
+        "ambient_occlusion": null,
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "wood_dead",
+      "display_name": "Dead Wood",
+      "base_color": [0.3, 0.25, 0.2, 1.0],
+      "metallic": 0.0,
+      "roughness": 0.9,
+      "texture_paths": {
+        "diffuse": "textures/nature/wood_dead_diffuse.png",
+        "normal": "textures/nature/wood_dead_normal.png",
+        "metallic_roughness": "textures/nature/wood_dead_metallic_roughness.png",
+        "ambient_occlusion": "textures/nature/wood_dead_ao.png",
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "metal_rusted",
+      "display_name": "Rusted Metal",
+      "base_color": [0.4, 0.25, 0.15, 1.0],
+      "metallic": 0.8,
+      "roughness": 0.8,
+      "texture_paths": {
+        "diffuse": "textures/metal/metal_rusted_diffuse.png",
+        "normal": "textures/metal/metal_rusted_normal.png",
+        "metallic_roughness": "textures/metal/metal_rusted_metallic_roughness.png",
+        "ambient_occlusion": "textures/metal/metal_rusted_ao.png",
+        "emissive": null
+      }
+    },
+    {
+      "material_id": "crystal_crown",
+      "display_name": "Crown Crystal",
+      "base_color": [1.0, 0.9, 0.7, 0.5],
+      "metallic": 0.2,
+      "roughness": 0.05,
+      "texture_paths": {
+        "diffuse": "textures/crystal/crystal_crown_diffuse.png",
+        "normal": "textures/crystal/crystal_crown_normal.png",
+        "metallic_roughness": "textures/crystal/crystal_crown_metallic_roughness.png",
+        "ambient_occlusion": null,
+        "emissive": "textures/crystal/crystal_crown_emissive.png"
+      }
+    }
+  ]
+}

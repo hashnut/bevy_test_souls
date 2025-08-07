@@ -14,6 +14,9 @@ pub mod map_generator;
 pub mod scene_serializer;
 pub mod map_data;
 pub mod third_person_camera;
+pub mod world_generation;
+pub mod world_objects;
+pub mod simple_world;
 
 pub use player_movement::*;
 pub use camera::*;
@@ -31,3 +34,6 @@ pub use map_generator::*;
 pub use scene_serializer::*;
 pub use map_data::*;
 pub use third_person_camera::*;
+pub use world_generation::*;
+pub use world_objects::*;
+pub use simple_world::*;

@@ -1,0 +1,242 @@
+{
+  "objects": [
+    {
+      "object_id": "rock_large_01",
+      "display_name": "Large Boulder",
+      "category": "environment",
+      "zones": ["pilgrims_ascent", "gravity_mines"],
+      "prefab_path": "prefabs/rocks/rock_large_01.glb",
+      "material_id": "terrain_rock",
+      "scale": [2.0, 2.5, 2.0],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "box"
+      }
+    },
+    {
+      "object_id": "rock_medium_01",
+      "display_name": "Medium Rock",
+      "category": "environment",
+      "zones": ["all"],
+      "prefab_path": "prefabs/rocks/rock_medium_01.glb",
+      "material_id": "terrain_rock",
+      "scale": [1.0, 1.2, 1.0],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "box"
+      }
+    },
+    {
+      "object_id": "checkpoint_torch",
+      "display_name": "Pilgrim's Torch",
+      "category": "interactive",
+      "zones": ["all"],
+      "prefab_path": "prefabs/interactive/checkpoint_torch.glb",
+      "material_id": "stone_brick",
+      "scale": [1.0, 3.0, 1.0],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "capsule"
+      },
+      "light": {
+        "type": "point",
+        "color": [1.0, 0.6, 0.2],
+        "intensity": 5000.0,
+        "range": 20.0
+      }
+    },
+    {
+      "object_id": "dead_tree_01",
+      "display_name": "Withered Tree",
+      "category": "nature",
+      "zones": ["pilgrims_ascent"],
+      "prefab_path": "prefabs/nature/dead_tree_01.glb",
+      "material_id": "wood_dead",
+      "scale": [1.5, 4.0, 1.5],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "capsule"
+      }
+    },
+    {
+      "object_id": "crystal_tree_01",
+      "display_name": "Crystalized Oak",
+      "category": "nature",
+      "zones": ["crystalized_forest"],
+      "prefab_path": "prefabs/nature/crystal_tree_01.glb",
+      "material_id": "crystal_blue",
+      "scale": [2.0, 6.0, 2.0],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "capsule"
+      },
+      "emissive": {
+        "strength": 2.0
+      }
+    },
+    {
+      "object_id": "crystal_formation_small",
+      "display_name": "Small Crystal Cluster",
+      "category": "environment",
+      "zones": ["crystalized_forest", "crowns_heart"],
+      "prefab_path": "prefabs/crystals/crystal_formation_small.glb",
+      "material_id": "crystal_purple",
+      "scale": [0.5, 1.0, 0.5],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "box"
+      },
+      "emissive": {
+        "strength": 3.0
+      }
+    },
+    {
+      "object_id": "sunken_building_tower",
+      "display_name": "Collapsed Tower",
+      "category": "architecture",
+      "zones": ["sunken_city"],
+      "prefab_path": "prefabs/buildings/sunken_tower_01.glb",
+      "material_id": "stone_brick_weathered",
+      "scale": [8.0, 15.0, 8.0],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "mesh"
+      }
+    },
+    {
+      "object_id": "gargoyle_statue",
+      "display_name": "Gargoyle Sentinel",
+      "category": "decoration",
+      "zones": ["sunken_city", "gilded_fortress"],
+      "prefab_path": "prefabs/statues/gargoyle_01.glb",
+      "material_id": "stone_dark",
+      "scale": [1.5, 2.0, 1.5],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "box"
+      }
+    },
+    {
+      "object_id": "floating_rock_platform",
+      "display_name": "Gravity Platform",
+      "category": "environment",
+      "zones": ["gravity_mines", "crowns_heart"],
+      "prefab_path": "prefabs/rocks/floating_platform_01.glb",
+      "material_id": "terrain_rock",
+      "scale": [3.0, 2.0, 3.0],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": false,
+        "shape": "box"
+      },
+      "floating": {
+        "base_height": 10.0,
+        "bob_amplitude": 2.0,
+        "bob_speed": 0.5
+      }
+    },
+    {
+      "object_id": "mining_drill_abandoned",
+      "display_name": "Abandoned Mining Drill",
+      "category": "industrial",
+      "zones": ["gravity_mines"],
+      "prefab_path": "prefabs/industrial/mining_drill_01.glb",
+      "material_id": "metal_rusted",
+      "scale": [2.0, 3.0, 2.0],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "mesh"
+      }
+    },
+    {
+      "object_id": "golden_knight_statue",
+      "display_name": "Knight Commander Statue",
+      "category": "decoration",
+      "zones": ["gilded_fortress"],
+      "prefab_path": "prefabs/statues/golden_knight_01.glb",
+      "material_id": "gold_ornate",
+      "scale": [2.0, 5.0, 2.0],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "box"
+      },
+      "emissive": {
+        "strength": 0.3
+      }
+    },
+    {
+      "object_id": "fortress_wall_segment",
+      "display_name": "Fortress Wall Section",
+      "category": "architecture",
+      "zones": ["gilded_fortress"],
+      "prefab_path": "prefabs/buildings/fortress_wall_01.glb",
+      "material_id": "stone_fortress",
+      "scale": [10.0, 8.0, 2.0],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "box"
+      }
+    },
+    {
+      "object_id": "crown_fragment_large",
+      "display_name": "Crown Fragment",
+      "category": "special",
+      "zones": ["crowns_heart"],
+      "prefab_path": "prefabs/crown/crown_fragment_large.glb",
+      "material_id": "crystal_crown",
+      "scale": [5.0, 10.0, 5.0],
+      "physics": {
+        "collision_enabled": false,
+        "is_static": false,
+        "shape": "mesh"
+      },
+      "floating": {
+        "base_height": 50.0,
+        "bob_amplitude": 5.0,
+        "bob_speed": 0.2
+      },
+      "emissive": {
+        "strength": 10.0
+      }
+    },
+    {
+      "object_id": "chest_wooden",
+      "display_name": "Wooden Chest",
+      "category": "interactive",
+      "zones": ["all"],
+      "prefab_path": "prefabs/interactive/chest_wooden.glb",
+      "material_id": "wood_dead",
+      "scale": [1.0, 0.8, 0.6],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": true,
+        "shape": "box"
+      }
+    },
+    {
+      "object_id": "door_iron",
+      "display_name": "Iron Door",
+      "category": "interactive",
+      "zones": ["sunken_city", "gilded_fortress"],
+      "prefab_path": "prefabs/interactive/door_iron.glb",
+      "material_id": "metal_rusted",
+      "scale": [2.0, 3.0, 0.3],
+      "physics": {
+        "collision_enabled": true,
+        "is_static": false,
+        "shape": "box"
+      }
+    }
+  ]
+}

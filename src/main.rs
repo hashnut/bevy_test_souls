@@ -35,7 +35,15 @@ fn main() {
         .init_resource::<InputMapping>()
         .init_resource::<MouseLook>()
         .init_resource::<MyAssets>()
-        .add_systems(Startup, (setup_scene, setup_ui, generate_procedural_map))
+        .init_resource::<world_objects::ObjectDatabase>()
+        .init_resource::<world_generation::MaterialDatabase>()
+        .add_systems(Startup, (
+            setup_scene, 
+            setup_ui, 
+            setup_simple_world.after(setup_scene),
+            world_generation::setup_material_database,
+            world_objects::spawn_world_objects.after(world_generation::setup_material_database),
+        ))
         // 플레이어 관련 시스템
         .add_systems(
             Update,
@@ -137,12 +145,11 @@ fn setup_scene(
     mut meshes: ResMut<Assets<Mesh>>,
     mut materials: ResMut<Assets<StandardMaterial>>,
 ) {
-    // 프로시저럴 맵을 사용하므로 기본 바닥은 생성하지 않음
-    // generate_procedural_map 시스템에서 바닥과 벽을 생성함
+    // 월드 생성 시스템이 지형을 생성함
 
-    // 플레이어 생성 - Y 오프셋을 낮춰서 지면에 더 가깝게
+    // 플레이어 생성
     let player_entity = commands.spawn((
-        Transform::from_xyz(2.5, 0.5, 2.5),  // 중앙에서 약간 벗어난 안전한 위치
+        Transform::from_xyz(0.0, 2.0, 0.0),  // 지면 위
         Player::default(),
         Health { current: 100.0, max: 100.0 },
         Stamina { current: 100.0, max: 100.0, regen_rate: 20.0 },
@@ -180,14 +187,14 @@ fn setup_scene(
         },
     ));
 
-    // 테스트용 적 생성 - Y 위치도 조정
+    // 테스트용 적 생성 - Z1 지역에 배치
     commands.spawn((
         Mesh3d(meshes.add(Capsule3d::default().mesh())),
         MeshMaterial3d(materials.add(StandardMaterial {
             base_color: Color::srgb(0.3, 0.8, 0.3),
             ..default()
         })),
-        Transform::from_xyz(5.0, 0.5, 0.0),  // 1.0에서 0.5로 낮춤
+        Transform::from_xyz(10.0, 2.0, 5.0),  // 플레이어 근처
         Enemy::default(),
         Health { current: 50.0, max: 50.0 },
         AIState::default(),
@@ -197,12 +204,5 @@ fn setup_scene(
         Velocity::default(),
     ));
 
-    // 조명 생성
-    commands.spawn((
-        DirectionalLight {
-            shadows_enabled: true,
-            ..default()
-        },
-        Transform::from_rotation(Quat::from_euler(EulerRot::XYZ, -0.5, -0.5, 0.0)),
-    ));
+    // 조명은 월드 생성 시스템에서 추가됨
 }
